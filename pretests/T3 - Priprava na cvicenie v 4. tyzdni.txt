@@ -1,0 +1,405 @@
+NAME: T3 – Príprava na cvičenie v 4. týždni
+SOURCE: 2025-T03--bez-ES--Test-Príprava-na-ďalší-týždeň--na cvičenie v 4. týždni (pokus 1, 46/47)
+
+Otázka 1
+Správna odpoveď
+Vyjadrite aké práva nastavíme súboru „file“ službou
+chmod(“file”,0463)
+Nastavené práva vyjadrite vo forme rwxrwxrwx uvedením písmen r,w,x tam, kde je právo pridelené a znakom “-“ (minus), kde právo udelené nie je. Nezabudnite na úvodné mínus, indikujúce, že ide o obyčajný súbor.
+Odpoveď: Otázka 1
+-r--rw--wx
+Správna odpoveď je: -r--rw--wx.
+
+Otázka 2
+Správna odpoveď
+Požadujeme pre súbor „file“ nastaviť prístupové práva na hodnotu -r----x-wx. Uveďte hodnotu osmičkovej konštanty, ktorú použijeme pri volaní služby chmod(). Konštantu zapíšte v tvare korektnej osmičkovej konštanty jazyka C.
+Odpoveď: Otázka 2
+0413
+Správna odpoveď je: 0413.
+
+Otázka 3
+Správna odpoveď
+Po zadaní príkazu
+$ls –lin
+sme dostali nasledujúci výstup:
+ 100 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 vuc
+
+ 101 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 skf
+
+ 101 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 tqa
+
+ 100 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 fih
+
+ 102 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 xqx
+
+ 101 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 eiy
+
+Uveďte, ktorý z vyššie uvedených súborov je zaručene identický so súborom
+tqa
+Uveďte práve jeden aj vtedy, ak ich je viac (vtedy - hociktorý z nich). Ak žiaden, uveďte “žiadny” alebo “ziadny” (bez úvodzoviek). Súbor tqa sa nepočíta. Hodnota tretej položky výpisu bola skrytá – znak X.
+Odpoveď: Otázka 3
+skf
+Správna odpoveď je: skf.
+
+Otázka 4
+Správna odpoveď
+Po zadaní príkazu
+$ls –lin
+sme dostali nasledujúci výstup:
+162 -rw-r--r-- 4 63 28 30 2011-02-26 06:35 sss
+
+Určte hodnotu premennej
+x.d_name,
+po úspešnom volaní služby
+readdir(&x),
+vzťahujúcom sa na horeuvedený súbor.
+Odpoveď: Otázka 4
+sss
+Správna odpoveď je: sss.
+
+Otázka 5
+Správna odpoveď
+Po zadaní príkazu
+$ls –lin
+sme dostali nasledujúci výstup:
+128 -rw-r--r-- 8 81 22 82 2011-02-26 06:35 eee
+
+Určte hodnotu premennej
+x.st_gid,
+po úspešnom volaní služby
+stat(”eee”,&x)
+pre horeuvedený súbor.
+Odpoveď: Otázka 5
+22
+Správna odpoveď je: 22.
+
+Otázka 6
+Správna odpoveď
+Po zadaní príkazu
+$ls –lin
+sme dostali nasledujúci výstup:
+172 -rw-r--r-- 4 75 80 31 2011-02-26 06:35 ccc
+
+Určte hodnotu premennej
+x.st_ino,
+po úspešnom volaní služby
+stat(”ccc”,&x)
+pre horeuvedený súbor.
+Odpoveď: Otázka 6
+172
+Správna odpoveď je: 172.
+
+Otázka 7
+Správna odpoveď
+Po zadaní príkazu
+$ls –lin
+sme dostali nasledujúci výstup:
+183 -rw-r--r-- 5 15 39 59 2011-02-26 06:35 nnn
+
+Určte hodnotu premennej
+x.st_nlink,
+po úspešnom volaní služby
+stat(”nnn”,&x)
+pre horeuvedený súbor.
+Odpoveď: Otázka 7
+5
+Správna odpoveď je: 5.
+
+Otázka 8
+Správna odpoveď
+Po zadaní príkazu
+$ls –lin
+sme dostali nasledujúci výstup:
+180 -rw-r--r-- 8 80 71 11 2011-02-26 06:35 ggg
+
+Určte hodnotu premennej
+x.st_size,
+po úspešnom volaní služby
+stat(”ggg”,&x)
+pre horeuvedený súbor.
+Odpoveď: Otázka 8
+11
+Správna odpoveď je: 11.
+
+Otázka 9
+Správna odpoveď
+Po zadaní príkazu
+$ls –lin
+sme dostali nasledujúci výstup:
+176 -rw-r--r-- 2 23 54 73 2011-02-26 06:35 vvv
+
+Určte hodnotu premennej
+x.st_uid,
+po úspešnom volaní služby
+stat(”vvv”,&x)
+pre horeuvedený súbor.
+Odpoveď: Otázka 9
+23
+Správna odpoveď je: 23.
+
+Otázka 10
+Správna odpoveď
+Doplňte vetu: "Služba umask() slúži na nastavenie .... ... súboru". (viď Sofia, služba umask(), POSTUP; dve slová)
+Odpoveď: Otázka 10
+masky práv
+Správna odpoveď je: masky práv.
+
+Otázka 11
+Správna odpoveď
+Doplňte vetu: "Masku práv súboru nastavíme službou ... ."
+Odpoveď: Otázka 11
+umask()
+Správna odpoveď je: umask.
+
+Otázka 12
+Správna odpoveď
+Uveďte maximálny počet parametrov služby umask(). (viď man 2 umask. Počet vyjadrite číslom)
+Odpoveď: Otázka 12
+1
+Správna odpoveď je: 1.
+
+Otázka 13
+Správna odpoveď
+Uveďte minimálny počet parametrov služby umask(). (viď man 2 umask. Počet vyjadrite číslom)
+Odpoveď: Otázka 13
+1
+Správna odpoveď je: 1.
+
+Otázka 14
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby umask() (podľa man 2 umask.)
+Odpoveď: Otázka 14
+mode_t
+Správna odpoveď je: mode_t.
+
+Otázka 15
+Správna odpoveď
+Akú hodnotu vráti služba umask() po svojom úspešnom vykonaní? (viď sekcia RETURN VALUE manulálovej stránky man 2 umask; hodnotu špecifikujte niektorou z relácií <, >, <=, >=, =, != a číslom bez medzier!)
+Odpoveď: Otázka 15
+>=0
+Správna odpoveď je: >=0.
+
+Otázka 16
+Správna odpoveď
+Uveďte význam (sémantiku) návratovej hodnoty služby umask() ? (viď sekcia RETURN VALUE manulálovej stránky man 2 umask()
+Pozn. - bez slovesa; po slovensky; v prvom páde (nominatív)
+Odpoveď: Otázka 16
+predchádzajúca maska
+Správna odpoveď je: predchádzajúca hodnota.
+
+Otázka 17
+Správna odpoveď
+Doplňte vetu: "Služba chmod() slúži na zmenu/nastavenie .... ... súboru". (viď Sofia, služba chmod(), KROK 1; doplňte dve slová)
+Odpoveď: Otázka 17
+prístupových práv
+Správna odpoveď je: prístupových práv.
+
+Otázka 18
+Správna odpoveď
+Doplňte vetu: "Prístupové práva súboru nastavíme/zmeníme službou ... ."
+Odpoveď: Otázka 18
+chmod()
+Správna odpoveď je: chmod.
+
+Otázka 19
+Správna odpoveď
+Uveďte maximálny počet parametrov služby chmod(). (viď man 2 chmod. Počet vyjadrite číslom v desiatkovej sústave)
+Odpoveď: Otázka 19
+2
+Správna odpoveď je: 2.
+
+Otázka 20
+Správna odpoveď
+Uveďte minimálny počet parametrov služby chmod(). (viď man 2 chmod. Počet vyjadrite číslom v desiatkovej sústave)
+Odpoveď: Otázka 20
+2
+Správna odpoveď je: 2.
+
+Otázka 21
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby chmod() (podľa man 2 chmod.)
+Odpoveď: Otázka 21
+int
+Správna odpoveď je: int.
+
+Otázka 22
+Správna odpoveď
+Akú hodnotu vráti služba chmod() po svojom úspešnom vykonaní? (viď sekcia RETURN VALUE manulálovej stránky man 2 chmod; hodnotu špecifikujte niektorou z relácií <, >, <=, >=, =, != a číslom bez medzier!)
+Odpoveď: Otázka 22
+=0
+Správna odpoveď je: =0.
+
+Otázka 23
+Správna odpoveď
+Akú hodnotu vráti služba chmod() po svojom neúspešnom vykonaní? (viď sekcia RETURN VALUE manulálovej stránky man 2 chmod; hodnotu špecifikujte celým číslom bez typovej konverzie!)
+Odpoveď: Otázka 23
+-1
+Správna odpoveď je: -1.
+
+Otázka 24
+Správna odpoveď
+Uveďte názov globálnej premennej, v ktorej jadro (kernel) vráti kód chyby po neúspešnom vykonaní služby chmod ? (viď sekcia RETURN VALUE manulálovej stránky man 2 chmod
+Odpoveď: Otázka 24
+errno
+Správna odpoveď je: errno.
+
+Otázka 25
+Správna odpoveď
+Uveďte význam (sémantiku) návratovej hodnoty služby chmod() pri úspešnom vykonaní služby (viď sekcia RETURN VALUE manulálovej stránky man 2 chmod)
+Odpoveď: Otázka 25
+vracia nulu
+Správna odpoveď je: vracia nulu.
+
+Otázka 26
+Správna odpoveď
+Doplňte vetu: "Služba chown() slúži na zmenu/nastavenie .... súboru". (viď Sofia, služba chown(), sekcia POSTUP; doplňte jedno slovo)
+Odpoveď: Otázka 26
+vlastníka
+Správna odpoveď je: vlastníka.
+
+Otázka 27
+Správna odpoveď
+Doplňte vetu: "Vlastníka súboru zmeníme/nastavíme službou ... ."
+Odpoveď: Otázka 27
+chown()
+Správna odpoveď je: chown.
+
+Otázka 28
+Správna odpoveď
+Uveďte maximálny počet parametrov služby chown(). (viď man 2 chown. Počet vyjadrite číslom)
+Odpoveď: Otázka 28
+3
+Správna odpoveď je: 3.
+
+Otázka 29
+Správna odpoveď
+Uveďte minimálny počet parametrov služby chown(). (viď man 2 chown. Počet vyjadrite číslom)
+Odpoveď: Otázka 29
+3
+Správna odpoveď je: 3.
+
+Otázka 30
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby chown() (podľa man 2 chown).
+Odpoveď: Otázka 30
+int
+Správna odpoveď je: int.
+
+Otázka 31
+Správna odpoveď
+Akú hodnotu vráti služba chown() po svojom úspešnom vykonaní? (viď sekcia RETURN VALUE manulálovej stránky man 2 chown; hodnotu špecifikujte niektorou z relácií <, >, <=, >=, =, != a číslom bez medzier!)
+Odpoveď: Otázka 31
+=0
+Správna odpoveď je: =0.
+
+Otázka 32
+Správna odpoveď
+Akú hodnotu vráti služba chown() po svojom neúspešnom vykonaní? (viď sekcia RETURN VALUE manulálovej stránky man 2 chown; hodnotu špecifikujte celým číslom bez typovej konverzie!)
+Odpoveď: Otázka 32
+-1
+Správna odpoveď je: -1.
+
+Otázka 33
+Správna odpoveď
+Uveďte názov globálnej premennej, v ktorej jadro (kernel) vráti kód chyby po neúspešnom vykonaní služby chown ? (viď sekcia RETURN VALUE manulálovej stránky man 2 chown
+Odpoveď: Otázka 33
+errno
+Správna odpoveď je: errno.
+
+Otázka 34
+Správna odpoveď
+Uveďte význam (sémantiku) návratovej hodnoty služby chown pri úspešnom vykonaní služby (viď sekcia RETURN VALUE manulálovej stránky man 2 chown).
+Odpoveď: Otázka 34
+vracia nulu
+Správna odpoveď je: vracia nulu.
+
+Otázka 35
+Správna odpoveď
+Uveďte zoznam služieb relevatných k téme "ovládanie zariadení". (Podľa Sofie, Téma: Ovládanie zariadení, terminálová disciplína, str. 2. Služby uveďte v poradí, v akom sú uvedené v dokumente, oddelené práve jednou medzerou).
+Odpoveď: Otázka 35
+ioctl tcgetattr tcsetattr
+Správna odpoveď je: ioctl tcgetattr tcsetattr.
+
+Otázka 36
+Správna odpoveď
+Uveďte zoznam dátových štruktúr relevatných k téme "ovládanie zariadení". (Podľa Sofie, Téma: Ovládanie zariadení, terminálová disciplína, str. 2. Dátové štruktúry uveďte v poradí, v akom sú uvedené v dokumente, oddelené práve jednou medzerou).
+Odpoveď: Otázka 36
+termios
+Správna odpoveď je: termios.
+
+Otázka 37
+Správna odpoveď
+Doplňte vetu: "Operačný systém UNIX/Linux, podobne ako väčšina oper. systémov, komunikuje s technickým vybavením počítača pomocou programových komponentov zvaných ... ... (Viď Sofia, dve slová).
+Odpoveď: Otázka 37
+ovládače zariadení
+Správna odpoveď je: ovládače zariadení.
+
+Otázka 38
+Správna odpoveď
+Doplňte vetu: "Zariadenie, do ktorého OS zapisuje dáta ako sekvenčnú postupnosť bajtov, nazývame zariadením ... (viď Sofia; pozor na správny pád doplňovaného slova).
+Odpoveď: Otázka 38
+znakovým
+Správna odpoveď je: znakovým.
+
+Otázka 39
+Správna odpoveď
+Doplňte vetu: "Zariadenie, do ktorého OS zapisuje dáta v blokoch stanovenej veľkosti, nazývame zariadením ... (viď Sofia).
+Odpoveď: Otázka 39
+blokovým
+Správna odpoveď je: blokovým.
+
+Otázka 40
+Správna odpoveď
+Uveďte úplné meno súboru (úplná cesta a názov súboru), ktorý reprezentuje zariadenie - genericky terminál (aktuálny terminál, riadiaci terminál procesu)
+Odpoveď: Otázka 40
+/dev/tty
+Správna odpoveď je: /dev/tty.
+
+Otázka 41
+Správna odpoveď
+Ktorým príkazom OS UNIX/Linux získame meno špeciálneho súboru, ktorý reprezentuje klávesnicu/monitor? (nie generický terminál)
+Odpoveď: Otázka 41
+tty
+Správna odpoveď je: tty.
+
+Otázka 42
+Správna odpoveď
+Uveďte príkaz, ktorým vypneme zobrazovanie znakov na obrazovku (jednotlivé časti príkazu oddeľte vždy práve jednou medzerou)
+Odpoveď: Otázka 42
+stty -echo
+Správna odpoveď je: stty -echo.
+
+Otázka 43
+Správna odpoveď
+Uveďte príkaz, ktorým zapneme zobrazovanie znakov na obrazovku (jednotlivé časti príkazu oddeľte vždy práve jednou medzerou)
+Odpoveď: Otázka 43
+stty echo
+Správna odpoveď je: stty echo.
+
+Otázka 44
+Správna odpoveď
+Uveďte príkaz, ktorým sa zobrazujú resp. nastavujú parametre terminálu
+Odpoveď: Otázka 44
+stty
+Správna odpoveď je: stty.
+
+Otázka 45
+Správna odpoveď
+Uveďte názov služby, ktorá poskytuje rozhranie pre riadenie periférnych zariadení
+Odpoveď: Otázka 45
+ioctl()
+Správna odpoveď je: ioctl().
+
+Otázka 46
+Správna odpoveď
+Uveďte názov funkcie, ktorá zjednodušuje zisťovanie atribútov terminálu oproti službe ioctl()
+Odpoveď: Otázka 46
+tcgetattr()
+Správna odpoveď je: tcgetattr.
+
+Otázka 47
+Správna odpoveď
+Uveďte názov funkcie, ktorá zjednodušuje nastavovanie atribútov terminálu oproti službe ioctl()
+Odpoveď: Otázka 47
+tcsetattr()
+Správna odpoveď je: tcsetattr.

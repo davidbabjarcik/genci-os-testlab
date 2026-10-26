@@ -1,0 +1,198 @@
+NAME: T4 – Príprava na cvičenie v 5. týždni
+SOURCE: 2025-T04--bez-ES--Test-Príprava-na-ďalší-týždeň--test-na cvičenie v 5. týždni (pokus 1, 25,60/27)
+
+Otázka 1
+Správna odpoveď
+Uveďte aké prístupové práva bude mať súbor „abc“ po vykonaní fragmentu programu
+
+ . . .
+ umask(006);
+ open(“abc”,O_RDWR|O_CREAT,0774);
+ . . .
+
+Predpokladáme, že súbor „abc“ neexistoval.
+Odpoveď: Otázka 1
+0770
+Správna odpoveď je: 0770.
+
+Otázka 2
+Správna odpoveď
+Aký je najmenší počet argumentov (parametrov) funkcie main() - začiatok vykonávania C programu?
+(Odpoveď zadajte číslom)
+Odpoveď: Otázka 2
+0
+Správna odpoveď je: 0.
+
+Otázka 3
+Správna odpoveď
+Aký je maximálny počet argumentov (parametrov) funkcie main() - začiatok vykonávania C programu?
+Odpoveď: Otázka 3
+3
+Správna odpoveď je: 3.
+
+Otázka 4
+Správna odpoveď
+Uveďte počet argumentov (parametrov) služby execve()?
+Odpoveď: Otázka 4
+3
+Správna odpoveď je: 3.
+
+Otázka 5
+Správna odpoveď
+Uveďte počet argumentov (parametrov) služby fork(). (Číslom)
+Odpoveď: Otázka 5
+0
+Správna odpoveď je: 0.
+
+Otázka 6
+Správna odpoveď
+Uveďte počet argumentov (parametrov) služby wait()?
+Odpoveď: Otázka 6
+1
+Správna odpoveď je: 1.
+
+Otázka 7
+Správna odpoveď
+Uveďte počet argumentov (parametrov) služby waitpid()?
+Odpoveď: Otázka 7
+3
+Správna odpoveď je: 3.
+
+Otázka 8
+Správna odpoveď
+Uveďte počet argumentov (parametrov) služby getpid()?
+Odpoveď: Otázka 8
+0
+Správna odpoveď je: 0.
+
+Otázka 9
+Správna odpoveď
+Uveďte počet argumentov (parametrov) služby getppid()?
+Odpoveď: Otázka 9
+0
+Správna odpoveď je: 0.
+
+Otázka 10
+Správna odpoveď
+Uveďte typ návratovej hodnoty funkcie main()?
+Odpoveď: Otázka 10
+int
+Správna odpoveď je: int.
+
+Otázka 11
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby execve()?
+Odpoveď: Otázka 11
+int
+Správna odpoveď je: int.
+
+Otázka 12
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby fork()?
+Odpoveď: Otázka 12
+int
+Správna odpoveď je: pid_t.
+
+Otázka 13
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby wait()?
+Odpoveď: Otázka 13
+int
+Správna odpoveď je: pid_t.
+
+Otázka 14
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby waitpid()?
+Odpoveď: Otázka 14
+int
+Správna odpoveď je: pid_t.
+
+Otázka 15
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby getpid()?
+Odpoveď: Otázka 15
+int
+Správna odpoveď je: pid_t.
+
+Otázka 16
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby getppid()?
+Odpoveď: Otázka 16
+int
+Správna odpoveď je: pid_t.
+
+Otázka 17
+Správna odpoveď
+Akú návratovú hodnotu vracia funkcia exit() po svojom úspešnom vykonaní do programu, ktorý ju 'aktivoval'/vyvolal? (Jedno slovo)
+Odpoveď: Otázka 17
+ziadnu
+Správna odpoveď je: žiadnu.
+
+Otázka 18
+Správna odpoveď
+Akú návratovú hodnotu vracia funkcia execve() po svojom úspešnom vykonaní do programu, ktorý ju 'aktivoval'/vyvolal? (Jedno slovo)
+Odpoveď: Otázka 18
+ziadnu
+Správna odpoveď je: žiadnu.
+
+Otázka 19
+Správna odpoveď
+Doplňte tvrdenie: Služba execve() slúži na ... programu. (Sofia alebo man 2 execve)
+Odpoveď: Otázka 19
+spustenie
+Správna odpoveď je: spustenie.
+
+Otázka 20
+Nezodpovedané
+Doplňte tvrdenie: Služba fork() slúži na vytvorenie ... ... . (dve slová - Sofia alebo man 2 fork)
+Odpoveď: Otázka 20
+Správna odpoveď je: dcérskeho procesu.
+
+Otázka 21
+Správna odpoveď
+Doplňte tvrdenie: Služba wait() slúži na ... vykonávania rodičovského procesu . (Sofia alebo man 2 wait)
+Odpoveď: Otázka 21
+pozastavenie
+Správna odpoveď je: pozastavenie.
+
+Otázka 22
+Správna odpoveď
+Doplňte tvrdenie: Služba waitpid() slúži na ... vykonávania rodičovského procesu . (Sofia alebo man 2 waitpid)
+Odpoveď: Otázka 22
+pozastavenie
+Správna odpoveď je: pozastavenie.
+
+Otázka 23
+Správna odpoveď
+Doplňte tvrdenie: Služba getpid() slúži na zistenie ID ... . (Sofia alebo man 2 getpid)
+Odpoveď: Otázka 23
+procesu
+Správna odpoveď je: procesu.
+
+Otázka 24
+Správna odpoveď
+Doplňte tvrdenie: Služba getppid() slúži na zistenie ID ... procesu. (Sofia alebo man 2 getpid)
+Odpoveď: Otázka 24
+rodiča
+Správna odpoveď je: rodiča.
+
+Otázka 25
+Správna odpoveď
+Doplňte tvrdenie: Služba/funkcia exit() slúži na ... procesu. (Sofia alebo man 2 exit)
+Odpoveď: Otázka 25
+ukončenie
+Správna odpoveď je: ukončenie.
+
+Otázka 26
+Správna odpoveď
+Uveďte názov funkcie, ktorej služba execve() "odovzdá riadenie" v spustenom programe napísanom v jazuky C (man 2 execve, sekcia DESCRIPTION)
+Odpoveď: Otázka 26
+main
+Správna odpoveď je: main.
+
+Otázka 27
+Správna odpoveď
+Doplňte tvrdenie: Služba wait() vráti ID procesu .... potomka. (man 2 wait, sekcia RETURN VALUE)
+Odpoveď: Otázka 27
+ukončeného
+Správna odpoveď je: ukončeného.

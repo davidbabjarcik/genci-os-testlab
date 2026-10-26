@@ -1,0 +1,622 @@
+NAME: T1 – Príprava na cvičenie v 2. týždni
+SOURCE: 2025-T02--REDUK--bez-ES---Test-Príprava-na-ďalší-týždeň--na cvičenie v 2. týždni (pokus 1, 84/89)
+
+Otázka 1
+Správna odpoveď
+Doplňte vetu: "Služba open() slúži na .... súboru alebo zariadenia". (viď služba open() sekcia NAME na http://www.kernel.org/doc/man-pages/online/pages/man2/read.2.html; jedným slovom)
+Odpoveď: Otázka 1
+otvorenie
+Správna odpoveď je: otvorenie.
+
+Otázka 2
+Správna odpoveď
+Uveďte maximálny počet parametrov služby open(). (viď man 2 open() na adrese http://www.kernel.org/doc/man-pages/online/pages/man2/open.2.html. Počet vyjadrite číslom)
+Odpoveď: Otázka 2
+3
+Správna odpoveď je: 3.
+
+Otázka 3
+Správna odpoveď
+Uveďte minimálny počet parametrov služby open(). (viď manuálová stránka http://www.kernel.org/doc/man-pages/online/pages/man2/open.2.html . Počet vyjadrite číslom)
+Odpoveď: Otázka 3
+2
+Správna odpoveď je: 2.
+
+Otázka 4
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby open() (podľa man 2 open() na URL http://www.kernel.org/doc/man-pages/online/pages/man2/open.2.html)
+Odpoveď: Otázka 4
+int
+Správna odpoveď je: int.
+
+Otázka 5
+Správna odpoveď
+Akú hodnotu vráti služba open() po svojom úspešnom vykonaní? (viď sekcia RETURN VALUE služby open() na http://www.kernel.org/doc/man-pages/online/pages/man2/open.2.html; hodnotu špecifikujte niektorou z relácií <, >, <=, >=, =, != a číslom bez medzier!). Pozn. - špecifikujte ako "interval", do ktorého tieto hodnoty patria.
+Odpoveď: Otázka 5
+>=0
+Správna odpoveď je: >=0.
+
+Otázka 6
+Správna odpoveď
+Akú hodnotu vráti služba open() po svojom neúspešnom vykonaní? (viď sekcia RETURN VALUE manulálovej stránky man 2 open() na adrese http://www.kernel.org/doc/man-pages/online/pages/man2/read.2.html; hodnotu špecifikujte celým číslom bez typovej konverzie!)
+Odpoveď: Otázka 6
+-1
+Správna odpoveď je: -1.
+
+Otázka 7
+Správna odpoveď
+Uveďte názov globálnej premennej, v ktorej jadro (kernel) vráti kód chyby po neúspešnom vykonaní služby open() ? (viď sekcia RETURN VALUE manuálovej stránky http://www.kernel.org/doc/man-pages/online/pages/man2/open.2.html )
+Odpoveď: Otázka 7
+errno
+Správna odpoveď je: errno.
+
+Otázka 8
+Správna odpoveď
+Uveďte význam (sémantiku) návratovej hodnoty služby open() v prípade úspešného volania (viď sekcia RETURN VALUE manulálovej stránky man 2 open() - http://www.kernel.org/doc/man-pages/online/pages/man2/open.2.html
+Odpoveď: Otázka 8
+file descriptor
+Správna odpoveď je: deskriptor súboru.
+
+Otázka 9
+Správna odpoveď
+Služba open() vracia celé číslo. Uveďte význam tohto čísla v prípade, že číslo je záporné. (viď Sofia - opis služby open() KROK1, (jedným slovom)
+Odpoveď: Otázka 9
+chyba
+Správna odpoveď je: chyba.
+
+Otázka 10
+Správna odpoveď
+Uveďte celú TYPOVÚ špecifikáciu prvého parametra služby open(), podľa manuálovej stránky na http://www.kernel.org/doc/man-pages/online/pages/man2/open.2.html. Pozn. Bez názvu premennej.
+Odpoveď: Otázka 10
+const char *
+Správna odpoveď je: const char.
+
+Otázka 11
+Správna odpoveď
+Doplňte tvrdenie: „Ako prvý parameter služby open() musíme uviesť ... konštantu“. Vyberte z (celočíselnu, znakovú, reálnu (float), reťazcovú, pole, záznam (štruktúru)).
+Odpoveď: Otázka 11
+reťazcovú
+Správna odpoveď je: reťazcovú.
+
+Otázka 12
+Správna odpoveď
+Uveďte typ druhého parametra služby open() podľa manuálovej stránky na http://www.kernel.org/doc/man-pages/online/pages/man2/open.2.html. Pozn. Bez názvu premennej.
+Odpoveď: Otázka 12
+int
+Správna odpoveď je: int.
+
+Otázka 13
+Správna odpoveď
+Uveďte hodnoty príznakov druhého parametra služby open(), z ktorých aspoň jedna musí byť použitá pri volaní služby. Hodnoty príznakov uveďte v poradí, ako sú uvedené v manuálových stránkach služby open() na http://www.kernel.org/doc/man-pages/online/pages/man2/open.2.html, oddelené práve jednou medzerou! Symbolické konštanty, nie čísla!
+Odpoveď: Otázka 13
+O_RDONLY O_WRONLY O_RDWR
+Správna odpoveď je: O_RDONLY O_WRONLY O_RDWR.
+
+Otázka 14
+Správna odpoveď
+Hodnota príznaku O_RDONLY zabezpečí, že súbor bude otvorený/sprítupnený … na …. (Uveďte presne dve slová oddelené práve jednou medzerou)
+Odpoveď: Otázka 14
+iba čítanie
+Správna odpoveď je: iba čítanie.
+
+Otázka 15
+Správna odpoveď
+Hodnota príznaku O_WRONLY zabezpečí, že súbor bude otvorený/sprístupnený … na …. (Uveďte presne dve chýbajúce slová, oddelené práve jednou medzerou!)
+Odpoveď: Otázka 15
+iba zápis
+Správna odpoveď je: iba zápis.
+
+Otázka 16
+Správna odpoveď
+Hodnota príznaku O_RDWR zabezpečí, že súbor bude otvorený/sprístupnený na ... a ... . (Uveďte presne dve slová oddelené medzerou)
+Odpoveď: Otázka 16
+čítanie zápis
+Správna odpoveď je: zápis čítanie.
+
+Otázka 17
+Správna odpoveď
+Doplňte charakteristiku príznaku služby open() podľa interného materiálu kurzu (Sofia - KROK 3 opisu služby open() ): "O_RDONLY - Otvoriť súbor ..."
+Odpoveď: Otázka 17
+len pre čítanie
+Správna odpoveď je: len pre čítanie.
+
+Otázka 18
+Správna odpoveď
+Doplňte charakteristiku príznaku služby open() podľa interného materiálu kurzu (Sofia - KROK 3 opisu služby open() ): "O_WRONLY - Otvoriť súbor ..."
+Odpoveď: Otázka 18
+len pre zápis
+Správna odpoveď je: len pre zápis.
+
+Otázka 19
+Správna odpoveď
+Doplňte charakteristiku príznaku služby open() podľa interného materiálu kurzu (Sofia - KROK 3 opisu služby open() ): "O_RDWR - Otvoriť súbor ..."
+Odpoveď: Otázka 19
+pre zápis aj čítanie
+Správna odpoveď je: pre zápis aj čítanie.
+
+Otázka 20
+Správna odpoveď
+Špecifikujte hodnotu druhého parametra služby open(), pre otvorenie súboru v režime "Otvoriť súbor len pre čítanie" (Sofia - KROK 3 opisu služby open() )
+Odpoveď: Otázka 20
+O_RDONLY
+Správna odpoveď je: O_RDONLY.
+
+Otázka 21
+Správna odpoveď
+Špecifikujte hodnotu druhého parametra služby open(), pre otvorenie súboru v režime "Otvoriť súbor len pre zápis" (Sofia - KROK 3 opisu služby open() )
+Odpoveď: Otázka 21
+O_WRONLY
+Správna odpoveď je: O_WRONLY.
+
+Otázka 22
+Správna odpoveď
+Špecifikujte hodnotu druhého parametra služby open(), pre otvorenie súboru v režime "Otvoriť súbor pre zápis aj čítanie" (Sofia - KROK 3 opisu služby open() )
+Odpoveď: Otázka 22
+O_RDWR
+Správna odpoveď je: O_RDWR.
+
+Otázka 23
+Správna odpoveď
+Špecifikujte hodnotu druhého parametra služby open(), pre otvorenie súboru v režime "Doplnenie pre každý zápis" (Sofia - KROK 3 opisu služby open() )
+Odpoveď: Otázka 23
+O_APPEND
+Správna odpoveď je: O_APPEND.
+
+Otázka 24
+Správna odpoveď
+Špecifikujte hodnotu druhého parametra služby open(), pre otvorenie súboru v režime "Vytvoriť súbor ak neexistuje" (Sofia - KROK 3 opisu služby open() )
+Odpoveď: Otázka 24
+O_CREAT
+Správna odpoveď je: O_CREAT.
+
+Otázka 25
+Správna odpoveď
+Špecifikujte hodnotu druhého parametra služby open(), pre otvorenie súboru v režime "Skrátiť veľkosť súboru na 0 bajtov" (Sofia - KROK 3 opisu služby open() )
+Odpoveď: Otázka 25
+O_TRUNC
+Správna odpoveď je: O_TRUNC.
+
+Otázka 26
+Správna odpoveď
+Špecifikujte hodnotu druhého parametra služby open(), pre otvorenie súboru v režime "Chyba, ak súbor už existuje" (Sofia - KROK 3 opisu služby open() )
+Odpoveď: Otázka 26
+O_EXCL
+Správna odpoveď je: O_EXCL.
+
+Otázka 27
+Správna odpoveď
+Pre zabezpečenie vytvorenia neexistujúceho súboru musíme k povinnému príznaku druhého parametra služby open() pridať príznak(y) [príznaky oddeľte práve jednou medzerou]
+Odpoveď: Otázka 27
+O_CREAT
+Správna odpoveď je: O_CREAT.
+
+Otázka 28
+Správna odpoveď
+Aby sme zabránili prepísaniu existujúceho súboru, k povinnému príznaku druhého parametra služby open() musíme pridať príznak(y) [príznaky oddeľte práve jednou medzerou]
+Odpoveď: Otázka 28
+O_EXCL
+Správna odpoveď je: O_EXCL.
+
+Otázka 29
+Správna odpoveď
+Aký znak používame na skombinovanie viacerých príznakov v druhom parametri služby open()? [viď napr. interné materiály kurzu (Sofia) – KROK 6, 2. program]
+Odpoveď: Otázka 29
+|
+Správna odpoveď je: |.
+
+Otázka 30
+Správna odpoveď
+Čo určuje tretí parameter služby open()? (Sofia - KROK 3 opisu služby open() )
+Odpoveď: Otázka 30
+prístupové práva
+Správna odpoveď je: prístupové práva.
+
+Otázka 31
+Správna odpoveď
+Aký znak používame na skombinovanie viacerých príznakov v treťom parametri služby open()? [viď napr. interné materiály kurzu (Sofia) – KROK 6, 2. program]
+Odpoveď: Otázka 31
+|
+Správna odpoveď je: |.
+
+Otázka 32
+Správna odpoveď
+Doplňte vetu: "Služba read() slúži na .... dát z deskriptora súboru".
+Odpoveď: Otázka 32
+načítanie
+Správna odpoveď je: čítanie.
+
+Otázka 33
+Správna odpoveď
+Doplňte vetu: "Obsah súboru sprístupnime v programe službou ... ."
+Odpoveď: Otázka 33
+read()
+Správna odpoveď je: read.
+
+Otázka 34
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby read() (podľa man 2 read() na adrese http://www.kernel.org/doc/man-pages/online/pages/man2/read.2.html)
+Odpoveď: Otázka 34
+ssize_t
+Správna odpoveď je: int.
+
+Otázka 35
+Správna odpoveď
+Akú hodnotu vráti služba read() po svojom úspešnom vykonaní? (viď sekcia RETURN VALUE manulálovej stránky man 2 read() - http://www.kernel.org/doc/man-pages/online/pages/man2/read.2.html ; hodnotu špecifikujte niektorou z relácií <, >, <=, >=, =, != a číslom bez medzier!)
+Odpoveď: Otázka 35
+>=0
+Správna odpoveď je: >=0.
+
+Otázka 36
+Správna odpoveď
+Akú hodnotu vráti služba read() po svojom neúspešnom vykonaní? (viď sekcia RETURN VALUE manulálovej stránky man 2 read() - http://www.kernel.org/doc/man-pages/online/pages/man2/read.2.html ; hodnotu špecifikujte celým číslom bez typovej konverzie!)
+Odpoveď: Otázka 36
+-1
+Správna odpoveď je: -1.
+
+Otázka 37
+Správna odpoveď
+Uveďte názov globálnej premennej, v ktorej jadro (kernel) vráti kód chyby po neúspešnom vykonaní služby read() ? (viď sekcia RETURN VALUE manulálovej stránky man 2 read() na http://www.kernel.org/doc/man-pages/online/pages/man2/read.2.html.
+Odpoveď: Otázka 37
+errno
+Správna odpoveď je: errno.
+
+Otázka 38
+Správna odpoveď
+Služba read() vracia celé číslo. Uveďte význam tohto čísla v prípade, že číslo je kladné. (viď Sofia - opis služby read() KROK1, (tri slová)
+Odpoveď: Otázka 38
+počet načítaných bajtov
+Správna odpoveď je: počet načítaných bajtov.
+
+Otázka 39
+Správna odpoveď
+Služba read() vracia celé číslo. Uveďte význam tohto čísla v prípade, že číslo je záporné. (viď Sofia - opis služby read() KROK1, (jedným slovom)
+Odpoveď: Otázka 39
+chyba
+Správna odpoveď je: chyba.
+
+Otázka 40
+Správna odpoveď
+Akú zápornú hodnotu môže nadobudnúť návratová hodnota služby read() ? (špecifikujte číslom!)
+Odpoveď: Otázka 40
+-1
+Správna odpoveď je: -1.
+
+Otázka 41
+Správna odpoveď
+Akú návratovú hodnotu vráti služba read(), ak sa jej nepodarí prečítať dáta zo súboru z dôvodu chyby? (špecifikujte číslom!)
+Odpoveď: Otázka 41
+-1
+Správna odpoveď je: -1.
+
+Otázka 42
+Správna odpoveď
+Akú návratovú hodnotu vráti služba read(), ak sa jej nepodarí prečítať dáta zo súboru z dôvodu, že všetky dáta už boli prečítané (EOF)? (špecifikujte relačným operátorom [<, >, <=, >=, =, !=] a číslom bez medzier!)
+Odpoveď: Otázka 42
+=0
+Správna odpoveď je: =0.
+
+Otázka 43
+Správna odpoveď
+Akú návratovú hodnotu vráti služba read(), ak sa jej podarí prečítať dáta zo súboru? (špecifikujte relačným operátorom [<, >, <=, >=, =, !=] a číslom bez medzier!)
+Odpoveď: Otázka 43
+>0
+Správna odpoveď je: >0.
+
+Otázka 44
+Správna odpoveď
+Doplňte vetu: 'Chyba EBADF pre službu read() znamená, že bol použitý ... deskriptor súboru'. (Doplňte jedno slovo viď služba read() sekcia ERRORS na http://www.kernel.org/doc/man-pages/online/pages/man2/read.2.html.) Pozn. Najprv si zmysluplne preložte vetu z manuálu a potom doplňte chýbajúce slovo.
+Odpoveď: Otázka 44
+neplatný
+Správna odpoveď je: neplatný.
+
+Otázka 45
+Správna odpoveď
+Ako nazýva prvý parameter služby read() interný materiál kurzu (Sofia - KROK 2 opisu služby read() )?
+Odpoveď: Otázka 45
+deskriptor súboru
+Správna odpoveď je: deskriptor súboru.
+
+Otázka 46
+Správna odpoveď
+Uveďte celú typovú špecifikáciu prvého parametra služby read(), presne podľa manuálovej stránky man 2 read
+Odpoveď: Otázka 46
+int
+Správna odpoveď je: int.
+
+Otázka 47
+Správna odpoveď
+Akou službou získame hodnotu prvého parametra služby read()? (poznámka 1 pod čiarou v internom materáli kurzu - Sofia)
+Odpoveď: Otázka 47
+open()
+Správna odpoveď je: open.
+
+Otázka 48
+Správna odpoveď
+Doplňte vetu: "Služba read() prečíta obsah súboru špecifikovaného prostredníctvom prvého parametra, ktorý nazývame .... . " (dve slová)
+Odpoveď: Otázka 48
+deskriptor súboru
+Správna odpoveď je: deskriptor súboru.
+
+Otázka 49
+Správna odpoveď
+Ako nazýva druhý parameter služby read() interný materiál kurzu (Sofia)? (viď KROK 2 opisu služby read)
+Odpoveď: Otázka 49
+buffer
+Správna odpoveď je: buffer.
+
+Otázka 50
+Správna odpoveď
+Uveďte typ druhého parametra služby read() presne podľa manuálovej stránky man 2 read (http://www.kernel.org/doc/man-pages/online/pages/man2/read.2.html)
+Odpoveď: Otázka 50
+void *
+
+Otázka 51
+Správna odpoveď
+Čo určuje tretí parameter služby read()? (Sofia - KROK 2 opisu služby read(); TRI slová na základe charakteristiky tretieho parametra v KROK 2 opisu služby open() )
+Odpoveď: Otázka 51
+počet prenesených slabík
+Správna odpoveď je: počet prenesených slabík.
+
+Otázka 52
+Správna odpoveď
+Uveďte typ tretieho parametra služby read(), presne podľa manuálovej stránky man 2 read
+Odpoveď: Otázka 52
+size_t
+Správna odpoveď je: size_t.
+
+Otázka 53
+Správna odpoveď
+Doplňte vetu: "Dáta z programu prenesieme do súboru službou ... ."
+Odpoveď: Otázka 53
+write()
+Správna odpoveď je: write.
+
+Otázka 54
+Správna odpoveď
+Uveďte minimálny počet parametrov služby write(). (viď manuálová stránka http://www.kernel.org/doc/man-pages/online/pages/man2/write.2.html . Počet vyjadrite číslom)
+Odpoveď: Otázka 54
+3
+Správna odpoveď je: 3.
+
+Otázka 55
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby write() (podľa man 2 write() na stránke http://www.kernel.org/doc/man-pages/online/pages/man2/write.2.html)
+Odpoveď: Otázka 55
+ssize_t
+Správna odpoveď je: ssize_t.
+
+Otázka 56
+Správna odpoveď
+Akú hodnotu vráti služba write() po svojom úspešnom vykonaní? (viď sekcia RETURN VALUE manulálovej stránky http://www.kernel.org/doc/man-pages/online/pages/man2/write.2.html ; hodnotu špecifikujte niektorou z relácií <, >, <=, >=, =, != a číslom bez medzier!). Pozn. - špecifikujte ako "interval", do ktorého tieto hodnoty patria.
+Odpoveď: Otázka 56
+>=0
+Správna odpoveď je: >=0.
+
+Otázka 57
+Správna odpoveď
+Akú hodnotu vráti služba write() po svojom neúspešnom vykonaní? (viď sekcia RETURN VALUE manuálovej stránky http://www.kernel.org/doc/man-pages/online/pages/man2/write.2.html ; hodnotu špecifikujte celým číslom bez typovej konverzie!)
+Odpoveď: Otázka 57
+-1
+Správna odpoveď je: -1.
+
+Otázka 58
+Správna odpoveď
+Služba write() vracia celé číslo. Uveďte význam tohto čísla v prípade, že číslo je záporné. (viď Sofia - opis služby write() KROK1, (jedným slovom)
+Odpoveď: Otázka 58
+chyba
+Správna odpoveď je: chyba.
+
+Otázka 59
+Správna odpoveď
+Akú návratovú hodnotu vráti služba write() (viď. manuálová stránka http://www.kernel.org/doc/man-pages/online/pages/man2/write.2.html), ak sa jej nepodarí zapísať dáta do súboru z dôvodu chyby? (špecifikujte číslom!)
+Odpoveď: Otázka 59
+-1
+Správna odpoveď je: -1.
+
+Otázka 60
+Správna odpoveď
+Akú návratovú hodnotu vráti služba write(), ak sa jej nepodarí zapísať žiadne dáta do súboru, ale nedošlo k chybe? (špecifikujte relačným operátorom [<, >, <=, >=, =, !=] a číslom bez medzier!)
+Odpoveď: Otázka 60
+=0
+Správna odpoveď je: =0.
+
+Otázka 61
+Správna odpoveď
+Akú návratovú hodnotu vráti služba write(), ak sa jej podarí zapísať dáta do súboru? (špecifikujte relačným operátorom [<, >, <=, >=, =, !=] a číslom bez medzier!)
+Odpoveď: Otázka 61
+>0
+Správna odpoveď je: >0.
+
+Otázka 62
+Správna odpoveď
+Doplňte vetu: 'Chyba EFAULT pre službu write() znamená, že vyrovnávacia pamäť je ... dostupný adresný priestor .' (viď manuálová stránka http://www.kernel.org/doc/man-pages/online/pages/man2/write.2.html sekcia ERRORS)
+Odpoveď: Otázka 62
+mimo
+Správna odpoveď je: mimo.
+
+Otázka 63
+Správna odpoveď
+Ako nazýva prvý parameter služby write() manuálová stránka man 2 write na adrese http://www.kernel.org/doc/man-pages/online/pages/man2/write.2.html?
+Odpoveď: Otázka 63
+file descriptor
+Správna odpoveď je: file descriptor.
+
+Otázka 64
+Správna odpoveď
+Ako špecifikuje prvý parameter služby write() interný materiál kurzu (Sofia)? (viď KROK 2 opisu služby write)
+Odpoveď: Otázka 64
+deskriptor súboru
+Správna odpoveď je: fd.
+
+Otázka 65
+Správna odpoveď
+Akou službou získame hodnotu prvého parametra služby write()? (poznámka 1 pod čiarou v internom materáli kurzu - Sofia)
+Odpoveď: Otázka 65
+open()
+Správna odpoveď je: open.
+
+Otázka 66
+Správna odpoveď
+Doplňte vetu: "Služba write() zapíše dáta do súboru špecifikovaného prostredníctvom prvého parametra, ktorý nazývame .... . " (dve slová)
+Odpoveď: Otázka 66
+deskriptor súboru
+Správna odpoveď je: deskriptor súboru.
+
+Otázka 67
+Správna odpoveď
+Ako sa nazýva druhý parameter služby write() manuálová stránka http://www.kernel.org/doc/man-pages/online/pages/man2/write.2.html? (NIE názov premennej)
+Odpoveď: Otázka 67
+buffer
+Správna odpoveď je: buffer.
+
+Otázka 68
+Správna odpoveď
+Uveďte typ druhého parametra služby write() podľa interného materiálu kurzu (Sofia)? (viď KROK 1 opisu služby write() )
+Odpoveď: Otázka 68
+const char *
+
+Otázka 69
+Správna odpoveď
+Čo určuje tretí parameter služby write()? (Sofia - KROK 2 opisu služby write(); TRI slová na základe charakteristiky tretieho parametra opisu služby open() v KROK 2; bez slovesa). Pozn. - ak píšete s diakritikou, tak dôsledne - vo všetkých slovách
+Odpoveď: Otázka 69
+počet prenesených slabík
+Správna odpoveď je: počet prenesených slabík.
+
+Otázka 70
+Správna odpoveď
+Uveďte typ tretieho parametra služby write(), presne podľa manuálovej stránky http://www.kernel.org/doc/man-pages/online/pages/man2/write.2.html .
+Odpoveď: Otázka 70
+size_t
+Správna odpoveď je: size_t.
+
+Otázka 71
+Správna odpoveď
+Doplňte vetu ohľadom tretieho argumentu služby write(): "Tretí argument udáva ..., ktoré budú prenesené. " (podľa Sofia - KROK 2 služby write() )
+Odpoveď: Otázka 71
+počet slabík
+Správna odpoveď je: počet slabík.
+
+Otázka 72
+Nezodpovedané
+Uveďte význam (sémantiku) návratovej hodnoty služby lseek() ? (viď sekcia POSTUP opisu služby lseek() v Sofii. Pozn. - Odpoveď je dlhšia, skutočne nazrite do "Sofie".)
+Odpoveď: Otázka 72
+Správna odpoveď je: ukazovateľ aktuálnej pozície v súbore.
+
+Otázka 73
+Správna odpoveď
+Služba lseek() vracia celé číslo. Uveďte význam tohto čísla v prípade, že číslo je kladné. (viď Sofia - opis služby lseek() sekcia POSTUP, (prvé tri slová)
+Odpoveď: Otázka 73
+nový offset
+Správna odpoveď je: ukazovateľ aktuálnej pozície.
+
+Otázka 74
+Správna odpoveď
+Čo indikuje záporná návratová hodnota služby lseek()? (jedným slovom)
+Odpoveď: Otázka 74
+chybu
+Správna odpoveď je: chybu.
+
+Otázka 75
+Správna odpoveď
+Akú návratovú hodnotu vráti služba lseek(), ak sa jej nepodarí posunúť súborový kurzor? (špecifikujte číslom!)
+Odpoveď: Otázka 75
+-1
+Správna odpoveď je: -1.
+
+Otázka 76
+Správna odpoveď
+Doplňte vetu: 'Chyba EBADF pre službu lseek() znamená, že bol použitý ... deskriptor súboru'. (viď man 2 lseek() na adrese http://www.kernel.org/doc/man-pages/online/pages/man2/lseek.2.html; sekcia ERRORS)
+Odpoveď: Otázka 76
+neplatný
+Správna odpoveď je: neotvorený.
+
+Otázka 77
+Správna odpoveď
+Ako je pomenovaný prvý parameter služby lseek() v "man 2 lseek!? (sekcia DESCRIPTION; uveďte presný anglický názov podľa http://www.kernel.org/doc/man-pages/online/pages/man2/lseek.2.html)
+Odpoveď: Otázka 77
+fildes
+Správna odpoveď je: file descriptor.
+
+Otázka 78
+Správna odpoveď
+Uveďte celú typovú špecifikáciu prvého parametra služby lseek(), presne podľa manuálovej stránky man 2 lseek - http://www.kernel.org/doc/man-pages/online/pages/man2/lseek.2.html
+Odpoveď: Otázka 78
+int
+Správna odpoveď je: int.
+
+Otázka 79
+Správna odpoveď
+Aký je názov premennej jazyka C, podľa manuálovej stránky, v ktorej je zadaný deskriptor súboru v prípade služby lseek()? (viď signatúra v manuálovej stránke http://www.kernel.org/doc/man-pages/online/pages/man2/lseek.2.html)
+Odpoveď: Otázka 79
+fd
+Správna odpoveď je: fd.
+
+Otázka 80
+Správna odpoveď
+Akou službou získame hodnotu prvého parametra služby lseek()?
+Odpoveď: Otázka 80
+open()
+Správna odpoveď je: open.
+
+Otázka 81
+Správna odpoveď
+Doplňte vetu: "Služba lseek() posunie súborový kurzor súboru špecifikovaného prostredníctvom prvého parametra služby. Prvý parameter služby lseek() nazývame .... . " (dve slová)
+Odpoveď: Otázka 81
+deskriptor súboru
+Správna odpoveď je: deskriptor súboru.
+
+Otázka 82
+Správna odpoveď
+Ako nazýva druhý parameter služby lseek() interný materiál kurzu (Sofia)? (viď KROK 1 opisu služby lseek; NIE názov premennej)
+Odpoveď: Otázka 82
+offset
+Správna odpoveď je: offset.
+
+Otázka 83
+Správna odpoveď
+Uveďte typ druhého parametra služby lseek() presne podľa manuálovej stránky man 2 lseek na http://www.kernel.org/doc/man-pages/online/pages/man2/lseek.2.html
+Odpoveď: Otázka 83
+off_t
+Správna odpoveď je: off_t.
+
+Otázka 84
+Správna odpoveď
+Koľko bitov má premenná jazyka C typu long? (na 32-bitových systémoch)
+Odpoveď: Otázka 84
+32
+Správna odpoveď je: 32.
+
+Otázka 85
+Správna odpoveď
+Uveďte typ tretieho parametra služby lseek(), presne podľa manuálovej stránky man 2 lseek na adrese http://www.kernel.org/doc/man-pages/online/pages/man2/lseek.2.html
+Odpoveď: Otázka 85
+int
+Správna odpoveď je: int.
+
+Otázka 86
+Správna odpoveď
+Doplňte vetu ohľadom tretieho argumentu služby lseek(): "Tretí argument služby lseek() udáva ... v súbore, voči ktorej bude vykonaný posun súborového kurzora." (na základe opisu služby lseek() v internom materiáli kurzu - Sofia)
+Odpoveď: Otázka 86
+pozíciu
+Správna odpoveď je: pozíciu.
+
+Otázka 87
+Správna odpoveď
+Uveďte názov symbolickej konštanty pre tretí parameter služby lseek(), ktorou sa posun súborového kurzora vykoná voči "pozícii kurzora s hodnotou začiatku súboru" (Sofia - služba lseek(), KROK 2)
+Odpoveď: Otázka 87
+SEEK_SET
+Správna odpoveď je: SEEK_SET.
+
+Otázka 88
+Správna odpoveď
+Uveďte názov symbolickej konštanty pre tretí parameter služby lseek(), ktorou sa posun súborového kurzora vykoná voči "aktuálnej pozícii kurzoru v súbore" (Sofia - služba lseek(), KROK 2)
+Odpoveď: Otázka 88
+SEEK_CUR
+Správna odpoveď je: SEEK_CUR.
+
+Otázka 89
+Správna odpoveď
+Uveďte názov symbolickej konštanty pre tretí parameter služby lseek() (http://www.kernel.org/doc/man-pages/online/pages/man2/lseek.2.html), ktorou sa posun súborového kurzora vykoná voči pozícii konca súboru.
+Odpoveď: Otázka 89
+SEEK_END
+Správna odpoveď je: SEEK_END.

@@ -1,0 +1,615 @@
+NAME: T2 – Práca so súbormi I. – príprava na cvičenie v 3. týždni
+SOURCE: 2025-T02--bez-ES--Test-Práca so subormi I. - príprava na cvičenie v 3. týždni (kópia) (pokus 1, 66,30/67)
+
+Otázka 1
+Správna odpoveď
+Hodnotu ktorej zložky i-nodu reprezentovanú záznamom (štruktúrou) "struct stat" ovplyvní úspešné vykonanie služby link()?
+Odpoveď: Otázka 1
+st_nlink
+Správna odpoveď je: st_nlink.
+
+Otázka 2
+Správna odpoveď
+Ktorou službou získame relevantnú hodnotu prvého parametra služby read()?
+Odpoveď: Otázka 2
+open()
+Správna odpoveď je: open.
+
+Otázka 3
+Správna odpoveď
+Ktorou službou získame relevantnú hodnotu prvého parametra služby write()?
+Odpoveď: Otázka 3
+open()
+Správna odpoveď je: open.
+
+Otázka 4
+Správna odpoveď
+Ktorou službou získame relevantnú hodnotu prvého parametra služby lseek()?
+Odpoveď: Otázka 4
+open()
+Správna odpoveď je: open.
+
+Otázka 5
+Správna odpoveď
+Ktorým parametrom služby read() určujeme počet načítaných bajtov? (uveďte číslom)
+Odpoveď: Otázka 5
+3
+Správna odpoveď je: 3.
+
+Otázka 6
+Správna odpoveď
+Uveďte názov služby, ktorá pri prenose dát vždy posunie súborový kurzor
+Odpoveď: Otázka 6
+read()
+Správna odpoveď je: read.
+
+Otázka 7
+Správna odpoveď
+Ktorou funkciou získame relevantnú hodnotu prvého parametra služby readdir()?
+Odpoveď: Otázka 7
+opendir()
+Správna odpoveď je: opendir.
+
+Otázka 8
+Správna odpoveď
+Doplňte názov záznamu (štruktúry), v ktorom nájdeme aktuálne meno súboru pri spracovávaní adresárových záznamov
+Odpoveď: Otázka 8
+dirent
+Správna odpoveď je: dirent.
+
+Otázka 9
+Správna odpoveď
+Uveďte názov služby jadra, ktorou môžeme získať hodnotu ekvivalentnú návratovej hodnote volania jadra lseek(fd,0,SEEK_END). Hodnota musí byť ekvivalentná nielen číselne, ale aj svojou sémantikou (významom).
+Pozn. službu môžme zavolať iba raz, bez ohľadu na veľkosť súboru.
+Odpoveď: Otázka 9
+stat
+Správna odpoveď je: stat.
+
+Otázka 10
+Správna odpoveď
+Uveďte príznak, resp. kombináciu príznakov (korektný syntaktický zápis v jazyku C bez akýchkoľvek medzier), ktoré musíme použiť, ak chceme, pri sprístupňovaní súboru programu pre čítanie a/alebo zápis, zabezpečiť úspešnosť systémového volania, bez ohľadu na existenciu, či neexistenciu súboru.
+Odpoveď: Otázka 10
+O_CREAT
+Správna odpoveď je: O_CREAT.
+
+Otázka 11
+Správna odpoveď
+Uveďte príznak, resp. kombináciu príznakov (korektný syntaktický zápis v jazyku C bez akýchkoľvek medzier), ktoré musíme použiť, ak chceme, pri sprístupňovaní súboru v programe pre čítanie a/alebo zápis, zabrániť prepísaniu existujúceho súboru.
+Odpoveď: Otázka 11
+O_CREAT|O_EXCL
+Správna odpoveď je: O_CREAT|O_EXCL.
+
+Otázka 12
+Správna odpoveď
+Uveďte príznak, resp. kombináciu príznakov (korektný synaktický zápis v jazyku C bez akýchkoľvek medzier), ktoré musíme použiť, ak chceme, pri sprístupňovaní súboru v programe pre čítanie a/alebo zápis, zabrániť prepísaniu obsahu existujúceho súboru
+Odpoveď: Otázka 12
+O_APPEND
+Správna odpoveď je: O_APPEND.
+
+Otázka 13
+Správna odpoveď
+Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'read(0,buff,3)' po svojom úspešnom vykonaní a prenesení požadovaného počtu bajtov.
+Odpoveď: Otázka 13
+3
+Správna odpoveď je: 3.
+
+Otázka 14
+Správna odpoveď
+Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'write(2,buff,6)' po svojom úspešnom vykonaní.
+Odpoveď: Otázka 14
+6
+Správna odpoveď je: 6.
+
+Otázka 15
+Správna odpoveď
+Veľkosť súboru je 57 bajtov. Aktuálna pozícia súborového kurzora je 43, fd má hodnotu 5. Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'lseek(fd,45L,SEEK_SET)' po svojom úspešnom vykonaní.
+Odpoveď: Otázka 15
+45
+Správna odpoveď je: 45.
+
+Otázka 16
+Správna odpoveď
+Veľkosť súboru je 87 bajtov. Aktuálna pozícia súborového kurzora je 25, fd má hodnotu 5. Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'lseek(fd,-10L,SEEK_CUR)' po svojom úspešnom vykonaní.
+Odpoveď: Otázka 16
+15
+Správna odpoveď je: 15.
+
+Otázka 17
+Správna odpoveď
+Veľkosť (!!!) súboru je 100 bajtov. Aktuálna pozícia súborového kurzora je 25, fd má hodnotu 5. Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'lseek(fd,2L,SEEK_END)' po svojom úspešnom vykonaní.
+Odpoveď: Otázka 17
+102
+Správna odpoveď je: 102.
+
+Otázka 18
+Správna odpoveď
+Veľkosť (!!!) súboru je 80 bajtov. Aktuálna pozícia súborového kurzora je 25, fd má hodnotu 5. Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'lseek(fd,-7L,SEEK_SET)' po svojom vykonaní.
+Odpoveď: Otázka 18
+-1
+Správna odpoveď je: -1.
+
+Otázka 19
+Správna odpoveď
+Veľkosť (!!!) súboru je 101 bajtov. Aktuálna pozícia súborového kurzora je 29, fd má hodnotu 5. Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'lseek(fd,-2L,SEEK_SET)' po svojom vykonaní.
+Odpoveď: Otázka 19
+-1
+Správna odpoveď je: -1.
+
+Otázka 20
+Správna odpoveď
+Majme súbor qwe.txt, ktorého aktuálny stav v mieste vykonania služby read() je definovaný takto:
+  Znaky:        anrcnmouhwyjpmbwpjdbkoupie
+  Pozicia:      00000000001111111111222222
+                01234567890123456789012345
+  Ukazovatel:   ...................^
+
+  a fragmnet kodu:
+  	//--------- zaciatok fragmnetu
+  	int fd,i;
+  	char buffer[80];
+  	...
+  	fd=open("qwe.txt",O_RDONLY);
+  	...
+  	i=read(fd,buffer,6);
+  	printf("%d",i);
+  	...
+  	//--------- koniec fragmnetu
+
+
+Špecifikujte postupnosť znakov, ktoré do vyrovnávacej pamäte "buffer" umiestni fragment kódu v jazyku C uvedený vyššie. Predpokladáme, že sa obe služby vykonajú korektne. (Reťazec špecifikujte presne aj so zohľadnením malých a veľkých písmen.)
+Odpoveď: Otázka 20
+bkoupi
+Správna odpoveď je: bkoupi.
+
+Otázka 21
+Správna odpoveď
+Majme súbor qwe.txt, aktuálny stav ktorého (obsah a súborový kurzor) je v mieste vykonania služby read() definovaný takto:
+ Znaky:        pnywpxsvmiaaoqldhwbnlwlcwr
+ Pozicia:      00000000001111111111222222
+               01234567890123456789012345
+ Ukazovatel:   .....................^
+
+ a fragmnet kodu:
+       //--------- zaciatok fragmentu
+       int fd,i;
+       char buffer[80];
+       ...
+       fd=open("qwe.txt",O_RDONLY);
+       ...
+       i=read(fd,buffer,3);
+       printf("%d",i);
+       ...
+       //--------- koniec fragmentu
+
+Špecifikujte akú hodnotu premennej i vytlačí fragment kódu v jazyku C. Predpokladáme, že sa obe služby vykonajú korektne.
+Odpoveď: Otázka 21
+3
+Správna odpoveď je: 3.
+
+Otázka 22
+Správna odpoveď
+Majme súbor qwe.txt, ktorého aktuálny stav v mieste vykonania služby read() je definovaný takto:
+  Znaky:        ghpyngsjbettperycucoafopbr
+  Pozicia:      00000000001111111111222222
+                01234567890123456789012345
+  Ukazovatel:   .....................^
+
+  a fragmnet kodu:
+  	//--------- zaciatok fragmnetu
+  	int fd,i;
+  	char buffer[80];
+  	...
+  	fd=open("qwe.txt",O_RDONLY);
+  	...
+  	i=read(fd,buffer,7);
+  	printf("%d",i);
+  	...
+  	//--------- koniec fragmnetu
+
+
+Špecifikujte postupnosť znakov, ktoré do vyrovnávacej pamäte "buffer" umiestni fragment kódu v jazyku C uvedený vyššie. Predpokladáme, že sa obe služby vykonajú korektne. (Reťazec špecifikujte presne aj so zohľadnením malých a veľkých písmen.)
+Odpoveď: Otázka 22
+fopbr
+Správna odpoveď je: fopbr.
+
+Otázka 23
+Správna odpoveď
+Majme súbor qwe.txt, aktuálny stav ktorého (obsah a súborový kurzor) je v mieste vykonania služby read() definovaný takto:
+ Znaky:        pnywpxsvmiaaoqldhwbnlwlcwr
+ Pozicia:      00000000001111111111222222
+               01234567890123456789012345
+ Ukazovatel:   ........................^
+
+ a fragmnet kodu:
+       //--------- zaciatok fragmentu
+       int fd,i;
+       char buffer[80];
+       ...
+       fd=open("qwe.txt",O_RDONLY);
+       ...
+       i=read(fd,buffer,5);
+       printf("%d",i);
+       ...
+       //--------- koniec fragmentu
+
+Špecifikujte akú hodnotu premennej i vytlačí fragment kódu v jazyku C. Predpokladáme, že sa obe služby vykonajú korektne.
+Odpoveď: Otázka 23
+2
+Správna odpoveď je: 2.
+
+Otázka 24
+Správna odpoveď
+Majme súbor qwe.txt, aktuálny stav ktorého (obsah a súborový kurzor) je v mieste vykonania služby write() definovaný takto:
+ Znaky:         qijqfdfryu
+ Pozicia:       0123456789
+ Ukazovatel:    ___^
+
+ a fragmnet kodu:
+        //--------- zaciatok fragmnetu
+        int fd,i;
+        char buffer[80]="PKUJHKETKK";
+        ...
+        i=write(fd,&buffer[5],2);
+         ...
+        //--------- koniec fragmnetu
+
+Špecifikujte vo forme reťazca obsah súboru qwe.txt po vykonaní uvedeného fragmentu kódu v jazyku C. (Reťazec špecifikujte presne aj so zohľadnením malých a veľkých písmen.)
+Odpoveď: Otázka 24
+qijKEdfryu
+Správna odpoveď je: qijKEdfryu.
+
+Otázka 25
+Správna odpoveď
+Majme súbor qwe.txt, aktuálny stav ktorého (obsah a súborový kurzor) je definovaný takto:
+ Znaky:         ovmeojkwel
+ Pozicia:       0123456789
+
+a fragmnet kodu:
+       //--------- zaciatok fragmnetu
+       int fd,i;
+       char buffer[80]="GXCQQ";
+       ...
+       fd=open("qwe.txt",O_WRONLY|O_APPEND);
+       i=write(fd,buffer,4);
+         ...
+       //--------- koniec fragmnetu
+
+Špecifikujte vo forme reťazca obsah súboru qwe.txt po vykonaní uvedeného fragmentu kódu v jazyku C.
+Pozn.
+1.Reťazec špecifikujte presne aj so zohľadnením malých a veľkých písmen.
+2.Nezabudnite zohľadniť príznaky (flags) služby open().
+3.Predpokladáme, že všetky služby sa vykonajú korektne.
+Odpoveď: Otázka 25
+ovmeojkwelGXCQ
+Správna odpoveď je: ovmeojkwelGXCQ.
+
+Otázka 26
+Správna odpoveď
+Majme súbor qwe.txt, aktuálny stav ktorého pred volanim sluzby open() je definovaný takto:
+ Znaky:    	  ojoqasmjtg
+ Pozicia:	  0123456789
+ Ukazovatel:
+
+
+ a fragmnet kodu:
+ 	//--------- zaciatok fragmnetu
+ 	int fd,i;
+ 	char buffer[80]= "KFRDGPSJBC";
+ 	...
+ 	fd=open("qwe.txt",O_RDWR);
+ 	lseek(fd,5,SEEK_SET)
+ 	read(fd,buffer,1);
+ 	lseek(fd,5,SEEK_SET)
+ 	write(fd,buffer,3);
+       ...
+ 	//--------- koniec fragmnetu
+
+Špecifikujte obsah súboru po vykonaní fragmentu kodu v programe v jazyku C, za predpokladu, ze sa všetky služby vykonajú korektne.
+Odpoveď: Otázka 26
+ojoqasFRtg
+Správna odpoveď je: ojoqasFRtg.
+
+Otázka 27
+Správna odpoveď
+Potrebujete zrealizovať program, ktorý realizuje nasledujúcu činnosť:
+prekopíruje obsah súboru zadaného na štandardnom vstupe do súboru zadaného na príkazovom riadku (teda v jednom prípade využije presmerovanie vstupu) Vyberte minimálny súbor služieb jadra operačného systému UNIX/Linux, ktoré musíte použiť pre napísanie takéhoto programu.
+
+Možnosti:
+a.	open()
+b.	read()
+c.	write()
+d.	lseek()
+e.	stat()
+f.	link()
+g.	umask()
+h.	ftruncate()
+i.	chmod()
+j.	chown()
+k.	opendir()
+l.	readdir()
+Odpoveď špecifikujte ako postupnosť písmen, ktorými sú služby označené v zozname služieb, v abecednom poradí v sekcii možnosti. (t.j. napr. ak chcete uviesť služby link(), read() a chown() zadáte bfj).
+Odpoveď: Otázka 27
+abc
+Správna odpoveď je: abc.
+
+Otázka 28
+Správna odpoveď
+Doplňte vetu: "Služby dup() a dup2() slúžia na .... deskriptora súboru" (jedno slovo).
+Odpoveď: Otázka 28
+duplikovanie
+Správna odpoveď je: duplikovanie.
+
+Otázka 29
+Správna odpoveď
+Doplňte vetu: "Služby stat(), lstat() a fstat() využívame na ... ... o súbore". (viď Sofia, napr. služba fstat(), KROK 1)
+Odpoveď: Otázka 29
+získanie informácií
+Správna odpoveď je: získanie informácií.
+
+Otázka 30
+Správna odpoveď
+Doplňte vetu: "Služba link() slúži na vytvorenie ... mena súboru" (viď man 2 link).
+Odpoveď: Otázka 30
+ďalšieho
+Správna odpoveď je: nového.
+
+Otázka 31
+Správna odpoveď
+Doplňte vetu: "Služba unlink() slúži na zmazanie .... mena súboru". (viď man 2 unlink)
+Odpoveď: Otázka 31
+alternatívneho
+Správna odpoveď je: alternatívneho.
+
+Otázka 32
+Správna odpoveď
+Doplňte vetu: "Služba truncate() slúži na nastavenie novej .... súboru". (viď man 2 truncate)
+Odpoveď: Otázka 32
+veľkosti
+Správna odpoveď je: dĺžky.
+
+Otázka 33
+Správna odpoveď
+Doplňte vetu: "Duplikovanie deskriptora súboru vykonáme službou ... ."
+Odpoveď: Otázka 33
+dup()
+Správna odpoveď je: dup.
+
+Otázka 34
+Správna odpoveď
+Akú hodnotu vráti služba dup() po svojom úspešnom vykonaní? (Hodnotu špecifikujte niektorou z relácií <, >, <=, >=, =, != a číslom, bez medzier!)
+Odpoveď: Otázka 34
+>=0
+Správna odpoveď je: >=0.
+
+Otázka 35
+Správna odpoveď
+Doplňte vetu: "Informácie o atribútoch súboru získame službou ... ."
+Odpoveď: Otázka 35
+stat()
+Správna odpoveď je: stat.
+
+Otázka 36
+Správna odpoveď
+Doplňte vetu: "Alternatívne meno súboru nastavíme službou ... ."
+Odpoveď: Otázka 36
+link()
+Správna odpoveď je: link.
+
+Otázka 37
+Správna odpoveď
+Doplňte vetu: "Nový odkaz vo forme mena súboru na už existujúci súbor vytvoríme službou ... ."
+Odpoveď: Otázka 37
+link()
+Správna odpoveď je: link.
+
+Otázka 38
+Správna odpoveď
+Doplňte vetu: "Alternatívne meno súboru zrušíme službou ... ."
+Odpoveď: Otázka 38
+unlink()
+Správna odpoveď je: unlink.
+
+Otázka 39
+Správna odpoveď
+Doplňte vetu: "Novú dĺžku/veľkosť súboru nastavíme službou ... ."
+Odpoveď: Otázka 39
+truncate()
+Správna odpoveď je: truncate.
+
+Otázka 40
+Správna odpoveď
+Uveďte význam (sémantiku) návratovej hodnoty služieb dup() a dup2()? (viď sekcia RETURN VALUE manulálovej stránky man 2 dup().
+Pozn. Dve, prípadne tri slová, bez slovesa a po slovensky.
+Odpoveď: Otázka 40
+nový deskriptor
+Správna odpoveď je: nový deskriptor.
+
+Otázka 41
+Správna odpoveď
+Uveďte význam (sémantiku) návratovej hodnoty služieb stat(), lstat() a fstat(), po úspešnom vykonaní služby? (viď sekcia RETURN VALUE manulálovej stránky man 2 stat() )
+Odpoveď: Otázka 41
+0
+Správna odpoveď je: vracia nulu.
+
+Otázka 42
+Správna odpoveď
+Uveďte význam (sémantiku) návratovej hodnoty služieb link() a unlink(), po úspešnom vykonaní služby? (viď sekcia RETURN VALUE manulálovej stránky man 2 link() )
+Odpoveď: Otázka 42
+0
+Správna odpoveď je: vracia nulu.
+
+Otázka 43
+Správna odpoveď
+V premennej akého typu vráti funkcia stat() informáciu o súbore? Uveďte iba typ premennej, nie premennú samotnú!
+Odpoveď uveďte podľa syntaxe jazyka C.
+Odpoveď: Otázka 43
+struct stat
+Správna odpoveď je: struct stat.
+
+Otázka 44
+Správna odpoveď
+V akej zložke/prvku záznamu (štruktúry) "struc stat" vráti služba stat() ID vlastníka súboru?
+Odpoveď: Otázka 44
+st_uid
+Správna odpoveď je: st_uid.
+
+Otázka 45
+Správna odpoveď
+V akej zložke/prvku záznamu (štruktúry) "struc stat" vráti služba stat() veľkosť súboru?
+Odpoveď: Otázka 45
+st_size
+Správna odpoveď je: st_size.
+
+Otázka 46
+Správna odpoveď
+V akej zložke/prvku záznamu (štruktúry) "struc stat" vráti služba stat() čas poslednej modifikácie súboru?
+Odpoveď: Otázka 46
+st_mtime
+Správna odpoveď je: st_mtime.
+
+Otázka 47
+Správna odpoveď
+V akej zložke/prvku záznamu (štruktúry) "struc stat" vráti služba stat() počet alternatívnych mien súboru?
+Odpoveď: Otázka 47
+st_nlink
+Správna odpoveď je: st_nlink.
+
+Otázka 48
+Správna odpoveď
+Akú hodnotu musí mať premenná udávajúca počet alternatívnych mien súboru (tzv. hard links), aby pri volani služby unlink() došlo k fyzickému zmazaniu súboru z disku? (hodnotu uveďte číslom)
+Odpoveď: Otázka 48
+1
+Správna odpoveď je: 1.
+
+Otázka 49
+Správna odpoveď
+O akú hodnotu sa zvýši hodnota premennej reprezentovaná položkou st_nlink záznamu (štruktúry) "struct stat" v korešpondujúcom i-node súboru, pri vytvorení nového alternatívneho mena súboru službou link()? Hodnotu uveďte čislom!
+Odpoveď: Otázka 49
+1
+Správna odpoveď je: 1.
+
+Otázka 50
+Správna odpoveď
+Doplňte vetu: "Služba mkdir() slúži na vytvorenie špeciálneho súboru, nazývaného ... ."
+Odpoveď: Otázka 50
+adresár
+Správna odpoveď je: adresár.
+
+Otázka 51
+Správna odpoveď
+Doplňte vetu: "Služba rmdir() slúži na ... prázdneho adresára (priečinku, zložky)."
+Odpoveď: Otázka 51
+odstránenie
+Správna odpoveď je: zmazanie.
+
+Otázka 52
+Správna odpoveď
+Doplňte vetu: "Funkcia opendir() vráti ukazovateľ/smerník na ..., typovo označovaný DIR." (dve slová)
+Odpoveď: Otázka 52
+adresárový prúd
+Správna odpoveď je: adresárový prúd.
+
+Otázka 53
+Správna odpoveď
+Doplňte vetu: "Funckia readdir() vráti ukazovateľ/smerník na ... ."
+Odpoveď: Otázka 53
+štruktúru dirent
+Správna odpoveď je: štruktúru dirent.
+
+Otázka 54
+Správna odpoveď
+Doplňte vetu: "Na vytvorenie nového adresára (priečinku) slúži služba ... ."
+Odpoveď: Otázka 54
+mkdir()
+Správna odpoveď je: mkdir.
+
+Otázka 55
+Správna odpoveď
+Doplňte vetu: "Prázdny adresár (priečinok) zmažeme/zrušíme službou ... ."
+Odpoveď: Otázka 55
+rmdir()
+Správna odpoveď je: rmdir.
+
+Otázka 56
+Správna odpoveď
+Doplňte vetu: "Ukazovateľ na adresárový prúd získame funkciou ... "
+Odpoveď: Otázka 56
+opendir()
+Správna odpoveď je: opendir.
+
+Otázka 57
+Správna odpoveď
+Uveďte úplný typ návratovej hodnoty funkcie opendir().
+Odpoveď: Otázka 57
+DIR *
+Správna odpoveď je: DIR.
+
+Otázka 58
+Správna odpoveď
+Doplňte vetu: "Relevantnú hodnotu ukazovateľa (smerník) na štruktúru dirent získame funkciou ... "
+Odpoveď: Otázka 58
+readdir()
+Správna odpoveď je: readdir.
+
+Otázka 59
+Správna odpoveď
+Uveďte úplný typ návratovej hodnoty funkcie readdir().
+Odpoveď: Otázka 59
+struct dirent *
+Správna odpoveď je: struct dirent.
+
+Otázka 60
+Správna odpoveď
+Doplňte vetu: "Hodnotu argumentu pre službu readdir() získame službou ... ."
+Odpoveď: Otázka 60
+opendir()
+Správna odpoveď je: opendir.
+
+Otázka 61
+Správna odpoveď
+Akú hodnotu vráti funkcia opendir() v prípade chyby? (viď sekcia RETURN VALUE)
+Odpoveď: Otázka 61
+NULL
+Správna odpoveď je: NULL.
+
+Otázka 62
+Správna odpoveď
+Akú hodnotu vráti funkcia readdir() v prípade chyby? (viď sekcia RETURN VALUE)
+Odpoveď: Otázka 62
+NULL
+Správna odpoveď je: NULL.
+
+Otázka 63
+Správna odpoveď
+V akom prvku/zložke záznamu (štruktúry) "dirent" zistíme meno súboru (uveďte názov premennej).
+Odpoveď: Otázka 63
+d_name
+Správna odpoveď je: d_name.
+
+Otázka 64
+Správna odpoveď
+V akom prvku/zložke záznamu (štruktúry) "dirent" zistíme číslo i-nodu (uveďte názov premennej).
+Odpoveď: Otázka 64
+d_ino
+Správna odpoveď je: d_ino.
+
+Otázka 65
+Správna odpoveď
+V akom prvku/zložke záznamu (štruktúry) "dirent" zistíme, že súbor je adresárom/priečinkom? (Uveďte názov premennej.)
+Odpoveď: Otázka 65
+d_type
+Správna odpoveď je: d_type.
+
+Otázka 66
+Správna odpoveď
+V akom prvku/zložke záznamu (štruktúry) "dirent" zistíme, že pracujeme so záznamom o obyčajnom súbore? (Uveďte názov premennej.)
+Odpoveď: Otázka 66
+d_type
+Správna odpoveď je: d_type.
+
+Otázka 67
+Správna odpoveď
+Ako sa nazýva štruktúra, ktorá v natívnom súborovom systéme OS UNIX/Linux uchováva všetky atribúty súboru (okrem mena).
+Odpoveď: Otázka 67
+inode
+Správna odpoveď je: i-node.
