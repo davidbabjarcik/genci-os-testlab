@@ -27,6 +27,8 @@ function createWindow() {
   win.loadFile(path.join(__dirname, 'public', 'index.html'));
 }
 
+ipcMain.handle('app-version', () => app.getVersion());
+
 ipcMain.handle('load-json', async (event, file) => {
   if (!ALLOWED.includes(file)) return null;
   try {

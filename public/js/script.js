@@ -256,6 +256,15 @@ async function init() {
   buildPoolSelect();
   onPoolChange();
   goHome();
+  showVersion();
+}
+
+async function showVersion() {
+  let v = 'web verzia';
+  try {
+    if (window.api && window.api.getVersion) v = 'v' + (await window.api.getVersion());
+  } catch { /* staršia verzia bez getVersion */ }
+  document.querySelectorAll('.app-version').forEach(el => el.textContent = v);
 }
 
 // =======================
