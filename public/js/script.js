@@ -51,6 +51,43 @@ function shuffle(arr) {
   return a;
 }
 
+// Vlastné okná namiesto alert()/confirm(): systémové okná v Electrone na Windows
+// po zatvorení „zamknú“ písanie do textových polí.
+function toast(msg) {
+  const el = $('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toast.t);
+  toast.t = setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+function askConfirm(msg) {
+  return new Promise(resolve => {
+    const modal = $('modal');
+    $('modalText').textContent = msg;
+    modal.classList.add('show');
+    const done = (val) => {
+      modal.classList.remove('show');
+      $('modalYes').onclick = $('modalNo').onclick = null;
+      document.removeEventListener('keydown', onKey);
+      resolve(val);
+    };
+    const onKey = (e) => {
+      if (e.key === 'Escape') done(false);
+      if (e.key === 'Enter') { e.preventDefault(); done(true); }
+    };
+    $('modalYes').onclick = () => done(true);
+    $('modalNo').onclick = () => done(false);
+    document.addEventListener('keydown', onKey);
+    $('modalYes').focus();
+  });
+}
+
+function focusAnswer() {
+  const input = $('answerInput');
+  if (input && !input.disabled && $('typeBox').style.display !== 'none') input.focus();
+}
+
 function stripDiacritics(s) {
   return s.normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
@@ -264,7 +301,7 @@ function toggleFavoriteCurrent() {
 // =======================
 function startTest() {
   const pool = currentPool();
-  if (!pool.length) return alert('V tomto výbere nie sú žiadne otázky');
+  if (!pool.length) return toast('V tomto výbere nie sú žiadne otázky');
   const count = $('countSelect').value;
   const n = count === 'all' ? pool.length : Math.min(Number(count), pool.length);
   testQuestions = shuffle(pool).slice(0, n);
@@ -273,13 +310,13 @@ function startTest() {
 }
 
 function startWrongTest() {
-  if (!wrongIds.length) return alert('Žiadne zlé otázky 👍');
+  if (!wrongIds.length) return toast('Žiadne zlé otázky 👍');
   testQuestions = shuffle(wrongIds.map(id => byId.get(id)));
   initTest('Zlé otázky');
 }
 
 function startFavoritesTest() {
-  if (!favoriteIds.length) return alert('Nemáš žiadne obľúbené otázky ⭐');
+  if (!favoriteIds.length) return toast('Nemáš žiadne obľúbené otázky ⭐');
   testQuestions = shuffle(favoriteIds.map(id => byId.get(id)));
   initTest('Obľúbené');
 }
@@ -421,7 +458,10 @@ function showFeedback(kind, html) {
 }
 
 function nextQuestion() {
-  if (!answered) return alert('Najprv odpovedz alebo preskoč');
+  if (!answered) {
+    toast('Najprv odpovedz alebo preskoč');
+    return focusAnswer();
+  }
   current++;
   current < testQuestions.length ? showQuestion() : endTest();
 }
@@ -454,7 +494,7 @@ function endTest() {
 }
 
 function confirmEndTest() {
-  if (confirm('Naozaj chceš ukončiť test?')) endTest();
+  askConfirm('Naozaj chceš ukončiť test?').then(ok => ok ? endTest() : focusAnswer());
 }
 
 // =======================
@@ -487,15 +527,15 @@ function renderHistory() {
   });
 }
 
-function deleteTest(id) {
-  if (!confirm('Naozaj chceš zmazať tento test?')) return;
+async function deleteTest(id) {
+  if (!(await askConfirm('Naozaj chceš zmazať tento test?'))) return;
   history = history.filter(t => t.id !== id);
   store.saveJSON('history.json', history);
   renderHistory();
 }
 
-function clearHistory() {
-  if (!confirm('Naozaj chceš zmazať CELÚ históriu?')) return;
+async function clearHistory() {
+  if (!(await askConfirm('Naozaj chceš zmazať CELÚ históriu?'))) return;
   history = [];
   store.saveJSON('history.json', []);
   renderHistory();

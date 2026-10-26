@@ -197,6 +197,24 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--prim
 
 .source { text-align: center; color: var(--muted); font-size: 0.85rem; padding-bottom: 12px; }
 
+/* ===== TOAST & MODAL ===== */
+.toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px);
+  background: var(--card); color: var(--text); border: 1px solid var(--border);
+  padding: 12px 20px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,.25);
+  opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 50;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+.modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,.55);
+  display: none; align-items: center; justify-content: center; z-index: 60; padding: 16px;
+}
+.modal.show { display: flex; }
+.modal-box { max-width: 420px; width: 100%; text-align: center; margin: 0; }
+.modal-box p { font-size: 1.05rem; margin-top: 0; }
+.modal-box .action-row button { min-width: 120px; }
+
 @media (max-width: 600px) {
   .action-row button { min-width: 100%; }
   .question { font-size: 1.05rem; }
