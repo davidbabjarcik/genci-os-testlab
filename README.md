@@ -72,10 +72,10 @@ Hotové pretesty:
 - **T2** – Práca so súbormi I. – príprava na cvičenie v 3. týždni (67 otázok)
 - **T3** – Príprava na cvičenie v 4. týždni (47 otázok)
 - **T4** – Príprava na cvičenie v 5. týždni (27 otázok)
-- v 5. týždni pretest nebol, 6. týždeň = zápočet (z T1–T4)
+- v 5. týždni pretest nebol, zápočet bol v 6. týždni (z T1–T4)
 - **T5** – Zdieľaná pamäť – príprava na cvičenie v 7. týždni (25 otázok)
 
-## 🎓 Zápočet (6. týždeň)
+## 🎓 Zápočet (bol v 6. týždni)
 
 Režimy zápočtu berú len pretesty **T1–T4** (zoznam `ZAPOCET_PRETESTS` v `public/js/script.js`).
 

@@ -161,7 +161,7 @@ function buildPoolSelect() {
     const np = allQuestions.filter(q => inZapocet(q) && isPractical(q)).length;
     const ncm = allQuestions.filter(isCopymaster).length;
     const ncmCode = allQuestions.filter(q => isCopymaster(q) && q.kind === 'code').length;
-    html += `<optgroup label="🎓 Zápočet (6. týždeň) – pretesty T1–T4">`;
+    html += `<optgroup label="🎓 Zápočet (bol v 6. týždni) – pretesty T1–T4">`;
     html += `<option value="any">Zápočet – všetko z pretestov T1–T4 (${nz})</option>`;
     html += `<option value="practical">Zápočet – praktické úlohy T1–T4 + copymaster (${np + ncm})</option>`;
     html += `<option value="practical-only">Zápočet – len praktické úlohy T1–T4 (${np})</option>`;
@@ -209,7 +209,7 @@ function onPoolChange() {
   const pool = currentPool();
   const pretests = allPretests();
   $('poolInfo').innerText = pretests.length
-    ? `V tomto výbere je ${pool.length} otázok. · T1–T4 = pretesty pred cvičením v 2.–5. týždni · 6. týždeň = zápočet (T1–T4) · T5 = zdieľaná pamäť (7. týždeň)`
+    ? `V tomto výbere je ${pool.length} otázok. · T1–T4 = pretesty pred cvičením v 2.–5. týždni · zápočet bol v 6. týždni (z T1–T4) · T5 = zdieľaná pamäť (7. týždeň)`
     : 'Zatiaľ nie sú označené žiadne pretesty – test ide zo všetkých otázok.';
 }
 
