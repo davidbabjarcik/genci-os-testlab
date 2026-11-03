@@ -2943,7 +2943,7 @@ window.QUESTIONS = [
     "answer": "ipc",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -2952,7 +2952,7 @@ window.QUESTIONS = [
     "answer": "shmget",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -2961,7 +2961,7 @@ window.QUESTIONS = [
     "answer": "shmat",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -2970,7 +2970,7 @@ window.QUESTIONS = [
     "answer": "shmdt",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -2979,7 +2979,7 @@ window.QUESTIONS = [
     "answer": "shmctl",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -2988,7 +2988,7 @@ window.QUESTIONS = [
     "answer": "shmctl",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -2997,7 +2997,7 @@ window.QUESTIONS = [
     "answer": "shmctl",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3006,7 +3006,7 @@ window.QUESTIONS = [
     "answer": "identifikátor",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3015,7 +3015,7 @@ window.QUESTIONS = [
     "answer": "key",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3024,7 +3024,7 @@ window.QUESTIONS = [
     "answer": "IPC_CREAT",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3033,7 +3033,7 @@ window.QUESTIONS = [
     "answer": "IPC_EXCL",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3042,7 +3042,7 @@ window.QUESTIONS = [
     "answer": "9",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3051,7 +3051,7 @@ window.QUESTIONS = [
     "answer": "x",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3062,7 +3062,7 @@ window.QUESTIONS = [
       "sys/shm.h"
     ],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3071,7 +3071,7 @@ window.QUESTIONS = [
     "answer": "adresu",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3080,7 +3080,7 @@ window.QUESTIONS = [
     "answer": "NULL",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3089,7 +3089,7 @@ window.QUESTIONS = [
     "answer": "shmget",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3098,7 +3098,7 @@ window.QUESTIONS = [
     "answer": "zdedí",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3107,7 +3107,7 @@ window.QUESTIONS = [
     "answer": "odpojené",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3116,7 +3116,7 @@ window.QUESTIONS = [
     "answer": "adresy",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3125,7 +3125,7 @@ window.QUESTIONS = [
     "answer": "shmat",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3137,7 +3137,7 @@ window.QUESTIONS = [
       "IPC_RMID"
     ],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3146,7 +3146,7 @@ window.QUESTIONS = [
     "answer": "shmid_ds.shm_nattch",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3155,7 +3155,7 @@ window.QUESTIONS = [
     "answer": "ipc_perm.mode",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
@@ -3164,7 +3164,7 @@ window.QUESTIONS = [
     "answer": "ftok",
     "alt": [],
     "pretests": [
-      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 7. týždni"
     ]
   },
   {
