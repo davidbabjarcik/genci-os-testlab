@@ -72,11 +72,14 @@ Hotové pretesty:
 - **T2** – Práca so súbormi I. – príprava na cvičenie v 3. týždni (67 otázok)
 - **T3** – Príprava na cvičenie v 4. týždni (47 otázok)
 - **T4** – Príprava na cvičenie v 5. týždni (27 otázok)
-- v 5. týždni pretest nebol
+- v 5. týždni pretest nebol, 6. týždeň = zápočet (z T1–T4)
+- **T5** – Zdieľaná pamäť – príprava na cvičenie v 8. týždni (25 otázok)
 
 ## 🎓 Zápočet (6. týždeň)
 
-- **Zápočet – všetko z pretestov** – mix otázok z T1–T4
+Režimy zápočtu berú len pretesty **T1–T4** (zoznam `ZAPOCET_PRETESTS` v `public/js/script.js`).
+
+- **Zápočet – všetko z pretestov T1–T4**
 - **Zápočet – praktické úlohy z pretestov + copymaster** – výpočty a ukážky kódu z pretestov (lseek, read/write fragmenty, chmod, umask, výpis `ls`…) spolu s otázkami ku copymasteru
 - **Zápočet – len praktické úlohy z pretestov**
 - **Tréning – všetky praktické varianty** – aj s variantmi z gencisearch, ktoré v pretestoch neboli

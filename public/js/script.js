@@ -146,6 +146,9 @@ function isPractical(q) {
 }
 
 const inPretest = (q) => (q.pretests || []).length > 0;
+// 1. zápočet (6. týždeň) pokrýva len pretesty T1–T4
+const ZAPOCET_PRETESTS = ['T1', 'T2', 'T3', 'T4'];
+const inZapocet = (q) => (q.pretests || []).some(p => ZAPOCET_PRETESTS.includes(p.split(' ')[0]));
 const isCopymaster = (q) => q.topic === 'copymaster';
 
 function buildPoolSelect() {
@@ -154,17 +157,19 @@ function buildPoolSelect() {
   let html = `<option value="all">Všetky otázky (${allQuestions.length})</option>`;
   if (pretests.length) {
     const n = allQuestions.filter(inPretest).length;
-    const np = allQuestions.filter(q => inPretest(q) && isPractical(q)).length;
+    const nz = allQuestions.filter(inZapocet).length;
+    const np = allQuestions.filter(q => inZapocet(q) && isPractical(q)).length;
     const ncm = allQuestions.filter(isCopymaster).length;
     const ncmCode = allQuestions.filter(q => isCopymaster(q) && q.kind === 'code').length;
-    html += `<optgroup label="🎓 Zápočet (6. týždeň)">`;
-    html += `<option value="any">Zápočet – všetko z pretestov (${n})</option>`;
-    html += `<option value="practical">Zápočet – praktické úlohy z pretestov + copymaster (${np + ncm})</option>`;
-    html += `<option value="practical-only">Zápočet – len praktické úlohy z pretestov (${np})</option>`;
+    html += `<optgroup label="🎓 Zápočet (6. týždeň) – pretesty T1–T4">`;
+    html += `<option value="any">Zápočet – všetko z pretestov T1–T4 (${nz})</option>`;
+    html += `<option value="practical">Zápočet – praktické úlohy T1–T4 + copymaster (${np + ncm})</option>`;
+    html += `<option value="practical-only">Zápočet – len praktické úlohy T1–T4 (${np})</option>`;
     html += `</optgroup><optgroup label="📄 Copymaster (zadanie 1)">`;
     html += `<option value="cm">Copymaster – všetko (${ncm})</option>`;
     html += `<option value="cm-code">Copymaster – fragment kódu → prepínač (${ncmCode})</option>`;
     html += `</optgroup><optgroup label="Pretesty">`;
+    html += `<option value="all-pretests">Všetky pretesty ${pretests.length > 1 ? pretests[0].split(' ')[0] + '–' + pretests[pretests.length - 1].split(' ')[0] : ''} (${n})</option>`;
     pretests.forEach(p => {
       const c = allQuestions.filter(q => (q.pretests || []).includes(p)).length;
       html += `<option value="p:${esc(p)}">${esc(p)} (${c})</option>`;
@@ -182,13 +187,14 @@ function buildPoolSelect() {
 
 function currentPool() {
   const v = $('poolSelect').value;
-  if (v === 'any') return allQuestions.filter(inPretest);
-  if (v === 'practical') return allQuestions.filter(q => (inPretest(q) && isPractical(q)) || isCopymaster(q));
+  if (v === 'any') return allQuestions.filter(inZapocet);
+  if (v === 'all-pretests') return allQuestions.filter(inPretest);
+  if (v === 'practical') return allQuestions.filter(q => (inZapocet(q) && isPractical(q)) || isCopymaster(q));
   if (v === 'practical-all') return allQuestions.filter(isPractical);
   if (v === 'none') return allQuestions.filter(q => !inPretest(q) && !isCopymaster(q));
   if (v === 'cm') return allQuestions.filter(isCopymaster);
   if (v === 'cm-code') return allQuestions.filter(q => isCopymaster(q) && q.kind === 'code');
-  if (v === 'practical-only') return allQuestions.filter(q => inPretest(q) && isPractical(q));
+  if (v === 'practical-only') return allQuestions.filter(q => inZapocet(q) && isPractical(q));
   if (v.startsWith('p:')) {
     const p = v.slice(2);
     return allQuestions.filter(q => (q.pretests || []).includes(p));
@@ -203,7 +209,7 @@ function onPoolChange() {
   const pool = currentPool();
   const pretests = allPretests();
   $('poolInfo').innerText = pretests.length
-    ? `V tomto výbere je ${pool.length} otázok. · T1–T4 = pretesty pred cvičením v 2.–5. týždni · v 5. týždni pretest nebol · 6. týždeň = zápočet`
+    ? `V tomto výbere je ${pool.length} otázok. · T1–T4 = pretesty pred cvičením v 2.–5. týždni · 6. týždeň = zápočet (T1–T4) · T5 = zdieľaná pamäť (8. týždeň)`
     : 'Zatiaľ nie sú označené žiadne pretesty – test ide zo všetkých otázok.';
 }
 

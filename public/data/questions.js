@@ -2942,175 +2942,230 @@ window.QUESTIONS = [
     "q": "Uveďte skratku kategórie systémových prostriedkov, do ktorej patrí mechanizmus zdieľanej pamäte (Sofia, shm, str. 1).",
     "answer": "ipc",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 352,
     "q": "Uveďte službu jadra, ktorou vytvoríme segment zdieľanej pamäte?",
     "answer": "shmget",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 353,
     "q": "Uveďte službu jadra, ktorou pripojíme segment zdieľanej pamäte do logického adresného priestoru aplikácie?",
     "answer": "shmat",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 354,
     "q": "Uveďte službu jadra, ktorou odpojíme segment zdieľanej pamäte z logického adresného priestoru aplikácie?",
     "answer": "shmdt",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 355,
     "q": "Uveďte službu jadra, ktorou zrušíme segment zdieľanej pamäte?",
     "answer": "shmctl",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 356,
-    "q": "Uveďte službu jadra, ktorou  vieme zistiť niektoré parametre segmentu zdieľanej pamäte?",
+    "q": "Uveďte službu jadra, ktorou vieme zistiť niektoré parametre segmentu zdieľanej pamäte?",
     "answer": "shmctl",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 357,
-    "q": "Uveďte službu jadra, ktorou  vieme nastaviť niektoré parametre segmentu zdieľanej pamäte?",
+    "q": "Uveďte službu jadra, ktorou vieme nastaviť niektoré parametre segmentu zdieľanej pamäte?",
     "answer": "shmctl",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 358,
-    "q": "Doplňte: \"Služba shmget() vracia  ... zdieľanej pamäte.\"",
+    "q": "Doplňte: \"Služba shmget() vracia ... zdieľanej pamäte.\"",
     "answer": "identifikátor",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 359,
     "q": "Doplňte: \"Na identifikáciu segmentu zdieľanej pamäte, ku ktorému sa chceme pripojiť, používame parameter ... služby shmget().\" (uveďte názov parametra podľa 'man 2 shmget' resp. Sofie)",
     "answer": "key",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 360,
     "q": "Akú hodnotu musí v sebe zahŕňať parameter 'shmflg' služby shmget(), aby sa zabezpečilo vytvorenie segmentu zdieľanej pamäte? (hodnotu špecifikujte symbolickou konštantou)",
     "answer": "IPC_CREAT",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 361,
     "q": "Akú hodnotu musí v sebe zahŕňať parameter 'shmflg' služby shmget(), aby sa zabránilo konfliktom (pripojenie k nechcenému segmentu) pri vytváraní nového segmentu zdieľanej pamäte? (hodnotu špecifikujte symbolickou konštantou)",
     "answer": "IPC_EXCL",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 362,
     "q": "Koľko bitov parametra shmflg služby shmget() slúži na definovanie prístupových práv k segmentu zdieľanej pamäte?",
     "answer": "9",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 363,
     "q": "Ktorý z príznakov prístupových práv nie je podporovaný pre zdieľanú pamäť? (viď 'man 2 shmget'; uveďte symbolicky, vo forme bežne používanej pre súbory)",
     "answer": "x",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 364,
     "q": "Uveďte jeden z hlavičkových súborov, ktorý musíme použiť pre službu shmget().",
     "answer": "sys/ipc.h",
-    "alt": [],
-    "pretests": []
+    "alt": [
+      "sys/shm.h"
+    ],
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 365,
-    "q": "Doplňte: \"Služba shmat() vracia  ... pripojenej zdieľanej pamäte.\" (jedno slovo; akuzatív)",
+    "q": "Doplňte: \"Služba shmat() vracia ... pripojenej zdieľanej pamäte.\" (jedno slovo; akuzatív)",
     "answer": "adresu",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 366,
     "q": "Akú hodnotu musí mať paramter 'shmaddr' služby shmat(), aby systém sám vybral vhodnú adresu na pripojenie segmentu zdieľanej pamäte? (hodnotu špecifikujte symbolickou konštantou)",
     "answer": "NULL",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 367,
     "q": "Ktorou službou získame hodnotu prvého parametra služby shmat()?",
     "answer": "shmget",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 368,
     "q": "Doplňte: \"Po úspešnom vykonaní služby fork() potomok ... pripojené segmenty zdieľanej pamäte.\" (viď 'man 2 shmat'; jedno slovo)",
     "answer": "zdedí",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 369,
     "q": "Doplňte: \"Po úspešnom vykonaní služby execve() pripojené segmenty zdieľanej pamäte budú ... od procesu.\" (viď 'man 2 shmat'; jedno slovo)",
     "answer": "odpojené",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 370,
-    "q": "Doplňte: \"Segment zdieľanej pamäte pri odpojovaní od procesu identifikujeme pomocou jeho ... . \" (viď 'man 2 shmat'; jedno slovo; genitív)",
+    "q": "Doplňte: \"Segment zdieľanej pamäte pri odpojovaní od procesu identifikujeme pomocou jeho ... .\" (viď 'man 2 shmat'; jedno slovo; genitív)",
     "answer": "adresy",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 371,
     "q": "Ktorou službou získame hodnotu parametra služby shmdt()?",
     "answer": "shmat",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 372,
     "q": "Uveďte jeden z všeobecne podporovaných príkazov služby shmctl() (hodnotu špecifikujte symbolickou konštantou).",
     "answer": "IPC_STAT",
-    "alt": [],
-    "pretests": []
+    "alt": [
+      "IPC_SET",
+      "IPC_RMID"
+    ],
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 373,
-    "q": "Uveďte názov premennej v ktorej získame aktuálny počet pripojení na segment zdieľanej pamäte. Premenú uveďte v tvare \"nazov_struktury.nazov_zlozky\", teda presne tak, ako by ste ju uviedli v zdrojovom kóde jazyka C. Názov záznamu/štruktúry a jej zložky/prvku uveďte podľa 'man 2 shmctl'.",
+    "q": "Uveďte názov premennej v ktorej získame aktuálny počet pripojení na segment zdieľanej pamäte. Premennú uveďte v tvare \"nazov_struktury.nazov_zlozky\", teda presne tak, ako by ste ju uviedli v zdrojovom kóde jazyka C. Názov záznamu/štruktúry a jej zložky/prvku uveďte podľa 'man 2 shmctl'.",
     "answer": "shmid_ds.shm_nattch",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 374,
-    "q": "Uveďte názov premennej prostredníctvom ktorej vieme zmeniť prístupové práva na segment zdieľanej pamäte. Premenú uveďte v tvare \"nazov_struktury.nazov_zlozky\", teda presne tak, ako by ste ju uviedli v zdrojovom kóde jazyka C. Názov záznamu/štruktúry a jej zložky/prvku uveďte  podľa 'man 2 shmctl'.",
+    "q": "Uveďte názov premennej prostredníctvom ktorej vieme zmeniť prístupové práva na segment zdieľanej pamäte. Premennú uveďte v tvare \"nazov_struktury.nazov_zlozky\", teda presne tak, ako by ste ju uviedli v zdrojovom kóde jazyka C. Názov záznamu/štruktúry a jej zložky/prvku uveďte podľa 'man 2 shmctl'.",
     "answer": "ipc_perm.mode",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 375,
     "q": "Uveďte názov funkcie pre zabezpečenie jednoznačnosti identifikátora segmentu zdieľanej pamäte (viď sekcia SEE ALSO 'man 2 shmget').",
     "answer": "ftok",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni"
+    ]
   },
   {
     "id": 376,

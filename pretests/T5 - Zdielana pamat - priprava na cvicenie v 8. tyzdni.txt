@@ -1,0 +1,175 @@
+NAME: T5 – Zdieľaná pamäť – príprava na cvičenie v 8. týždni
+SOURCE: 2025-T08--bez-ES--Test-Príprava-na-ďalší-týždeň--na cvičenie v 8. týždni (kópia) (prepísané zo screenshotov)
+
+Otázka 1
+Správna odpoveď
+Uveďte skratku kategórie systémových prostriedkov, do ktorej patrí mechanizmus zdieľanej pamäte (Sofia, shm, str. 1).
+Odpoveď: Otázka 1
+ipc
+Správna odpoveď je: ipc.
+
+Otázka 2
+Správna odpoveď
+Uveďte službu jadra, ktorou vytvoríme segment zdieľanej pamäte?
+Odpoveď: Otázka 2
+shmget
+Správna odpoveď je: shmget.
+
+Otázka 3
+Správna odpoveď
+Uveďte službu jadra, ktorou pripojíme segment zdieľanej pamäte do logického adresného priestoru aplikácie?
+Odpoveď: Otázka 3
+shmat
+Správna odpoveď je: shmat.
+
+Otázka 4
+Správna odpoveď
+Uveďte službu jadra, ktorou odpojíme segment zdieľanej pamäte z logického adresného priestoru aplikácie?
+Odpoveď: Otázka 4
+shmdt
+Správna odpoveď je: shmdt.
+
+Otázka 5
+Správna odpoveď
+Uveďte službu jadra, ktorou zrušíme segment zdieľanej pamäte?
+Odpoveď: Otázka 5
+shmctl
+Správna odpoveď je: shmctl.
+
+Otázka 6
+Správna odpoveď
+Uveďte službu jadra, ktorou vieme zistiť niektoré parametre segmentu zdieľanej pamäte?
+Odpoveď: Otázka 6
+shmctl
+Správna odpoveď je: shmctl.
+
+Otázka 7
+Správna odpoveď
+Uveďte službu jadra, ktorou vieme nastaviť niektoré parametre segmentu zdieľanej pamäte?
+Odpoveď: Otázka 7
+shmctl
+Správna odpoveď je: shmctl.
+
+Otázka 8
+Správna odpoveď
+Doplňte: "Služba shmget() vracia ... zdieľanej pamäte."
+Odpoveď: Otázka 8
+identifikator
+Správna odpoveď je: identifikátor.
+
+Otázka 9
+Správna odpoveď
+Doplňte: "Na identifikáciu segmentu zdieľanej pamäte, ku ktorému sa chceme pripojiť, používame parameter ... služby shmget()." (uveďte názov parametra podľa 'man 2 shmget' resp. Sofie)
+Odpoveď: Otázka 9
+key
+Správna odpoveď je: key.
+
+Otázka 10
+Správna odpoveď
+Akú hodnotu musí v sebe zahŕňať parameter 'shmflg' služby shmget(), aby sa zabezpečilo vytvorenie segmentu zdieľanej pamäte? (hodnotu špecifikujte symbolickou konštantou)
+Odpoveď: Otázka 10
+IPC_CREAT
+Správna odpoveď je: IPC_CREAT.
+
+Otázka 11
+Správna odpoveď
+Akú hodnotu musí v sebe zahŕňať parameter 'shmflg' služby shmget(), aby sa zabránilo konfliktom (pripojenie k nechcenému segmentu) pri vytváraní nového segmentu zdieľanej pamäte? (hodnotu špecifikujte symbolickou konštantou)
+Odpoveď: Otázka 11
+IPC_EXCL
+Správna odpoveď je: IPC_EXCL.
+
+Otázka 12
+Správna odpoveď
+Koľko bitov parametra shmflg služby shmget() slúži na definovanie prístupových práv k segmentu zdieľanej pamäte?
+Odpoveď: Otázka 12
+9
+Správna odpoveď je: 9.
+
+Otázka 13
+Správna odpoveď
+Ktorý z príznakov prístupových práv nie je podporovaný pre zdieľanú pamäť? (viď 'man 2 shmget'; uveďte symbolicky, vo forme bežne používanej pre súbory)
+Odpoveď: Otázka 13
+x
+Správna odpoveď je: x.
+
+Otázka 14
+Správna odpoveď
+Uveďte jeden z hlavičkových súborov, ktorý musíme použiť pre službu shmget().
+Odpoveď: Otázka 14
+sys/ipc.h
+Správna odpoveď je: sys/ipc.h.
+
+Otázka 15
+Správna odpoveď
+Doplňte: "Služba shmat() vracia ... pripojenej zdieľanej pamäte." (jedno slovo; akuzatív)
+Odpoveď: Otázka 15
+adresu
+Správna odpoveď je: adresu.
+
+Otázka 16
+Správna odpoveď
+Akú hodnotu musí mať paramter 'shmaddr' služby shmat(), aby systém sám vybral vhodnú adresu na pripojenie segmentu zdieľanej pamäte? (hodnotu špecifikujte symbolickou konštantou)
+Odpoveď: Otázka 16
+NULL
+Správna odpoveď je: NULL.
+
+Otázka 17
+Správna odpoveď
+Ktorou službou získame hodnotu prvého parametra služby shmat()?
+Odpoveď: Otázka 17
+shmget
+Správna odpoveď je: shmget.
+
+Otázka 18
+Správna odpoveď
+Doplňte: "Po úspešnom vykonaní služby fork() potomok ... pripojené segmenty zdieľanej pamäte." (viď 'man 2 shmat'; jedno slovo)
+Odpoveď: Otázka 18
+zdedi
+Správna odpoveď je: zdedí.
+
+Otázka 19
+Správna odpoveď
+Doplňte: "Po úspešnom vykonaní služby execve() pripojené segmenty zdieľanej pamäte budú ... od procesu." (viď 'man 2 shmat'; jedno slovo)
+Odpoveď: Otázka 19
+odpojene
+Správna odpoveď je: odpojené.
+
+Otázka 20
+Správna odpoveď
+Doplňte: "Segment zdieľanej pamäte pri odpojovaní od procesu identifikujeme pomocou jeho ... ." (viď 'man 2 shmat'; jedno slovo; genitív)
+Odpoveď: Otázka 20
+adresy
+Správna odpoveď je: adresy.
+
+Otázka 21
+Správna odpoveď
+Ktorou službou získame hodnotu parametra služby shmdt()?
+Odpoveď: Otázka 21
+shmat
+Správna odpoveď je: shmat.
+
+Otázka 22
+Správna odpoveď
+Uveďte jeden z všeobecne podporovaných príkazov služby shmctl() (hodnotu špecifikujte symbolickou konštantou).
+Odpoveď: Otázka 22
+IPC_STAT
+Správna odpoveď je: IPC_STAT.
+
+Otázka 23
+Nezodpovedané
+Uveďte názov premennej v ktorej získame aktuálny počet pripojení na segment zdieľanej pamäte. Premennú uveďte v tvare "nazov_struktury.nazov_zlozky", teda presne tak, ako by ste ju uviedli v zdrojovom kóde jazyka C. Názov záznamu/štruktúry a jej zložky/prvku uveďte podľa 'man 2 shmctl'.
+Odpoveď: Otázka 23
+Správna odpoveď je: shmid_ds.shm_nattch.
+
+Otázka 24
+Nezodpovedané
+Uveďte názov premennej prostredníctvom ktorej vieme zmeniť prístupové práva na segment zdieľanej pamäte. Premennú uveďte v tvare "nazov_struktury.nazov_zlozky", teda presne tak, ako by ste ju uviedli v zdrojovom kóde jazyka C. Názov záznamu/štruktúry a jej zložky/prvku uveďte podľa 'man 2 shmctl'.
+Odpoveď: Otázka 24
+Správna odpoveď je: ipc_perm.mode.
+
+Otázka 25
+Správna odpoveď
+Uveďte názov funkcie pre zabezpečenie jednoznačnosti identifikátora segmentu zdieľanej pamäte (viď sekcia SEE ALSO 'man 2 shmget').
+Odpoveď: Otázka 25
+ftok
+Správna odpoveď je: ftok.
