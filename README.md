@@ -73,7 +73,7 @@ Hotové pretesty:
 - **T3** – Príprava na cvičenie v 4. týždni (47 otázok)
 - **T4** – Príprava na cvičenie v 5. týždni (27 otázok)
 - v 5. týždni pretest nebol, zápočet bol v 6. týždni (z T1–T4)
-- **T5** – Zdieľaná pamäť – príprava na cvičenie v 7. týždni (25 otázok)
+- **T6** – Zdieľaná pamäť – príprava na cvičenie v 8. týždni (25 otázok)
 
 ## 🎓 Zápočet (bol v 6. týždni)
 

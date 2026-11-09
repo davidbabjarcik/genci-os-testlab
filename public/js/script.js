@@ -169,7 +169,7 @@ function buildPoolSelect() {
     html += `<option value="cm">Copymaster – všetko (${ncm})</option>`;
     html += `<option value="cm-code">Copymaster – fragment kódu → prepínač (${ncmCode})</option>`;
     html += `</optgroup><optgroup label="Pretesty">`;
-    html += `<option value="all-pretests">Všetky pretesty ${pretests.length > 1 ? pretests[0].split(' ')[0] + '–' + pretests[pretests.length - 1].split(' ')[0] : ''} (${n})</option>`;
+    html += `<option value="all-pretests">Všetky pretesty – ${pretests.map(p => p.split(' ')[0]).join(', ')} (${n})</option>`;
     pretests.forEach(p => {
       const c = allQuestions.filter(q => (q.pretests || []).includes(p)).length;
       html += `<option value="p:${esc(p)}">${esc(p)} (${c})</option>`;
@@ -209,7 +209,7 @@ function onPoolChange() {
   const pool = currentPool();
   const pretests = allPretests();
   $('poolInfo').innerText = pretests.length
-    ? `V tomto výbere je ${pool.length} otázok. · T1–T4 = pretesty pred cvičením v 2.–5. týždni · zápočet bol v 6. týždni (z T1–T4) · T5 = zdieľaná pamäť (7. týždeň)`
+    ? `V tomto výbere je ${pool.length} otázok. · T1–T4 = pretesty pred cvičením v 2.–5. týždni · zápočet bol v 6. týždni (z T1–T4) · T6 = zdieľaná pamäť (8. týždeň)`
     : 'Zatiaľ nie sú označené žiadne pretesty – test ide zo všetkých otázok.';
 }
 
