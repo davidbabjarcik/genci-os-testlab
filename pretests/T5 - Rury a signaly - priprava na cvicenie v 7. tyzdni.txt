@@ -1,0 +1,211 @@
+NAME: T5 – Rúry a signály – príprava na cvičenie v 7. týždni
+SOURCE: 2025-T07--bez-ES--Test-Príprava-na-ďalší-týždeň---na cvičenie v 7. týždni (pokus 1, 28,20/30, prepísané zo screenshotov)
+
+Otázka 1
+Správna odpoveď
+Uveďte skratku kategórie systémových prostriedkov, do ktorej patrí mechanizmus rúr (pipes) (Sofia, pipes, str. 1)
+Odpoveď: Otázka 1
+ipc
+Správna odpoveď je: ipc.
+
+Otázka 2
+Správna odpoveď
+Uveďte službu jadra, ktorou vytvoríme nepomenovaný pipe (rúru)
+Odpoveď: Otázka 2
+pipe
+Správna odpoveď je: pipe.
+
+Otázka 3
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby pipe() podľa manuálovej stránky
+Odpoveď: Otázka 3
+int
+Správna odpoveď je: int.
+
+Otázka 4
+Správna odpoveď
+Akú návratovú hodnotu vráti služba pipe(), ak sa jej podarí vytvoriť pipe (rúru)? (špecifikujte relačným operátorom [<, >, <=, >=, =, !=] a číslom; bez medzier!)
+Odpoveď: Otázka 4
+=0
+Správna odpoveď je: =0.
+
+Otázka 5
+Správna odpoveď
+Akú návratovú hodnotu vráti služba pipe(), ak sa jej nepodarí vytvoriť pipe (rúru)? (špecifikujte číslom)
+Odpoveď: Otázka 5
+-1
+Správna odpoveď je: -1.
+
+Otázka 6
+Správna odpoveď
+Ktorý systémový prostriedok využíva mechanizmus pipe (rúr) na dočasné uchovanie dát? (nominatív singuláru)
+Odpoveď: Otázka 6
+pamat
+Správna odpoveď je: pamat.
+
+Otázka 7
+Správna odpoveď
+Akú prístupovú disciplínu využíva mechanizmus pipe/rúr (viď napr. Sofia; na jej označenie sa používajú veľké písmená )
+Odpoveď: Otázka 7
+FIFO
+Správna odpoveď je: FIFO.
+
+Otázka 8
+Správna odpoveď
+Služba pipe() okrem tradičnej návratovej hodnoty vracia aj ďalšie dáta. Aký je typ návratovej hodnoty každej z týchto dátových položiek? (neštrukturovaný dátový typ)
+Odpoveď: Otázka 8
+int
+Správna odpoveď je: int.
+
+Otázka 9
+Správna odpoveď
+Ktorý zo "základných" príznakov (flag) služby open() charakterizuje filedes[0]?
+Odpoveď: Otázka 9
+O_RDONLY
+Správna odpoveď je: O_RDONLY.
+
+Otázka 10
+Správna odpoveď
+Ktorý zo "základných" príznakov (flag) služby open() charakterizuje filedes[1]?
+Odpoveď: Otázka 10
+O_WRONLY
+Správna odpoveď je: O_WRONLY.
+
+Otázka 11
+Správna odpoveď
+Uveďte niektorý z prostriedkov (služby jadra, funkcie, príkazy), pomocou ktorých vieme vytvoriť pomenovaný pipe/rúru (Sofia, pipes, str. 1)
+Odpoveď: Otázka 11
+mkfifo
+Správna odpoveď je: mkfifo.
+
+Otázka 12
+Správna odpoveď
+Uveďte skratku kategórie systémových prostriedkov, do ktorej patrí mechanizmus signálov (Sofia, signaly, str. 1).
+Odpoveď: Otázka 12
+ipc
+Správna odpoveď je: ipc.
+
+Otázka 13
+Správna odpoveď
+Uveďte službu jadra, ktorou zaregistrujeme obslužný program prerušenia?
+Odpoveď: Otázka 13
+signal
+Správna odpoveď je: signal.
+
+Otázka 14
+Správna odpoveď
+Koľko parametrov má služba signal()?
+Odpoveď: Otázka 14
+2
+Správna odpoveď je: 2.
+
+Otázka 15
+Správna odpoveď
+Uveďte typ návratovej hodnoty služby signal() podľa manuálovej stránky.
+Odpoveď: Otázka 15
+sighandler_t
+Správna odpoveď je: sighandler_t.
+
+Otázka 16
+Správna odpoveď
+Uveďte sémantiku (význam) návratovej hodnoty služby signal() v pojmoch "objektov" jazyka C!
+Odpoveď: Otázka 16
+funkcia
+Správna odpoveď je: funkcia.
+
+Otázka 17
+Správna odpoveď
+Uveďte akú návratovú hodnotu vráti služba signal() v prípade chyby. Hodnotu uveďte ako relevantnú symbolickú konštantu (viď napr. man 2 signal).
+Odpoveď: Otázka 17
+SIG_ERR
+Správna odpoveď je: SIG_ERR.
+
+Otázka 18
+Správna odpoveď
+Uveďte hodnotu pre obslužný program prerušenia, ktorú musíme použiť vo volaní služby signal(), ak chceme ignorovať konkrétny signál. Hodnotu uveďte ako relevantnú symbolickú konštantu.
+Odpoveď: Otázka 18
+SIG_IGN
+Správna odpoveď je: SIG_IGN.
+
+Otázka 19
+Správna odpoveď
+Uveďte službu jadra, ktorou môžeme poslať signál procesu.
+Odpoveď: Otázka 19
+kill
+Správna odpoveď je: kill.
+
+Otázka 20
+Správna odpoveď
+Koľko parametrov má služba kill()?
+Odpoveď: Otázka 20
+2
+Správna odpoveď je: 2.
+
+Otázka 21
+Správna odpoveď
+Akú návratovú hodnotu vráti služba kill(), ak sa jej podarí poslať signál? (špecifikujte relačným operátorom [<, >, <=, >=, =, !=] a číslom; bez medzier!)
+Odpoveď: Otázka 21
+=0
+Správna odpoveď je: =0.
+
+Otázka 22
+Správna odpoveď
+Akú návratovú hodnotu vráti služba kill(), ak sa jej nepodarí poslať signál? (špecifikujte číslom)
+Odpoveď: Otázka 22
+-1
+Správna odpoveď je: -1.
+
+Otázka 23
+Správna odpoveď
+Signály sú rozdelené do niekoľkých kategórií. Ako sa volá kategória, pre ktorú podľa "man 7 signal" preddefinovaným správaním je ignorovať signál? (Uveďte presne podľa manuálu)
+Odpoveď: Otázka 23
+Ign
+Správna odpoveď je: Ign.
+
+Otázka 24
+Správna odpoveď
+Signály sú rozdelené do niekoľkých kategórií. Ako sa volá kategória, pre ktorú podľa "man 7 signal" preddefinovaným správaním je ukončiť proces? (Uveďte presne podľa manuálu)
+Odpoveď: Otázka 24
+Term
+Správna odpoveď je: Term.
+
+Otázka 25
+Správna odpoveď
+Uveďte názov signálu pre zastavenie procesu (man 7 signal).
+Odpoveď: Otázka 25
+SIGSTOP
+Správna odpoveď je: SIGSTOP.
+
+Otázka 26
+Správna odpoveď
+Uveďte názov signálu generovaného pri výskyte chyby výpočtu v pohyblivej rádovej čiarke (man 7 signal).
+Odpoveď: Otázka 26
+SIGFPE
+Správna odpoveď je: SIGFPE.
+
+Otázka 27
+Nezodpovedané
+Používateľ má k dispozícii signály pre vlastnú potrebu. Uveďte názov prvého z nich (man 7 signal).
+Odpoveď: Otázka 27
+Správna odpoveď je: SIGUSR1.
+
+Otázka 28
+Správna odpoveď
+Uveďte číselnú hodnotu pre signál SIGKILL (man 7 signal).
+Odpoveď: Otázka 28
+9
+Správna odpoveď je: 9.
+
+Otázka 29
+Správna odpoveď
+Doplňte: Preddefinovaná činnosť pri výskyte signálu SIGUSR1 je ... procesu" (man 7 signal)
+Odpoveď: Otázka 29
+ukončenie
+Správna odpoveď je: ukončenie.
+
+Otázka 30
+Správna odpoveď
+Doplňte: Preddefinovaná činnosť pri výskyte signálu SIGSTOP je ... procesu" (man 7 signal)
+Odpoveď: Otázka 30
+zastavenie
+Správna odpoveď je: zastavenie.

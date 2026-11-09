@@ -2732,210 +2732,272 @@ window.QUESTIONS = [
     "q": "Uveďte skratku kategórie systémových prostriedkov, do ktorej patrí mechanizmus rúr (pipes) (Sofia, pipes, str. 1)",
     "answer": "ipc",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 322,
     "q": "Uveďte službu jadra, ktorou vytvoríme nepomenovaný pipe (rúru)",
     "answer": "pipe",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 323,
     "q": "Uveďte typ návratovej hodnoty služby pipe() podľa manuálovej stránky",
     "answer": "int",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 324,
     "q": "Akú návratovú hodnotu vráti služba pipe(), ak sa jej podarí vytvoriť pipe (rúru)? (špecifikujte relačným operátorom [<, >, <=, >=, =, !=] a číslom; bez medzier!)",
     "answer": "=0",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 325,
     "q": "Akú návratovú hodnotu vráti služba pipe(), ak sa jej nepodarí vytvoriť pipe (rúru)? (špecifikujte číslom)",
     "answer": "-1",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 326,
-    "q": "Ktorý systémový prostriedok využíva mechanizmus pipe (rúr) na dočasné uschovanie dát? (nominatív singuláru)",
+    "q": "Ktorý systémový prostriedok využíva mechanizmus pipe (rúr) na dočasné uchovanie dát? (nominatív singuláru)",
     "answer": "pamat",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 327,
     "q": "Akú prístupovú disciplínu využíva mechanizmus pipe/rúr (viď napr. Sofia; na jej označenie sa používajú veľké písmená )",
     "answer": "FIFO",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 328,
     "q": "Služba pipe() okrem tradičnej návratovej hodnoty vracia aj ďalšie dáta. Aký je typ návratovej hodnoty každej z týchto dátových položiek? (neštrukturovaný dátový typ)",
     "answer": "int",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 329,
-    "q": "Ktorý zo \"základných\"  príznakov (flag) služby open() charakterizuje filedes[0]?",
+    "q": "Ktorý zo \"základných\" príznakov (flag) služby open() charakterizuje filedes[0]?",
     "answer": "O_RDONLY",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 330,
-    "q": "Ktorý zo \"základných\"  príznakov (flag) služby open() charakterizuje filedes[1]?",
+    "q": "Ktorý zo \"základných\" príznakov (flag) služby open() charakterizuje filedes[1]?",
     "answer": "O_WRONLY",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 331,
     "q": "Uveďte niektorý z prostriedkov (služby jadra, funkcie, príkazy), pomocou ktorých vieme vytvoriť pomenovaný pipe/rúru (Sofia, pipes, str. 1)",
     "answer": "mkfifo",
-    "alt": [],
-    "pretests": []
+    "alt": [
+      "mknod"
+    ],
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 332,
     "q": "Uveďte skratku kategórie systémových prostriedkov, do ktorej patrí mechanizmus signálov (Sofia, signaly, str. 1).",
     "answer": "ipc",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 333,
     "q": "Uveďte službu jadra, ktorou zaregistrujeme obslužný program prerušenia?",
     "answer": "signal",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 334,
     "q": "Koľko parametrov má služba signal()?",
     "answer": "2",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 335,
     "q": "Uveďte typ návratovej hodnoty služby signal() podľa manuálovej stránky.",
     "answer": "sighandler_t",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 336,
     "q": "Uveďte sémantiku (význam) návratovej hodnoty služby signal() v pojmoch \"objektov\" jazyka C!",
     "answer": "funkcia",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 337,
     "q": "Uveďte akú návratovú hodnotu vráti služba signal() v prípade chyby. Hodnotu uveďte ako relevantnú symbolickú konštantu (viď napr. man 2 signal).",
     "answer": "SIG_ERR",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 338,
     "q": "Uveďte hodnotu pre obslužný program prerušenia, ktorú musíme použiť vo volaní služby signal(), ak chceme ignorovať konkrétny signál. Hodnotu uveďte ako relevantnú symbolickú konštantu.",
     "answer": "SIG_IGN",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 339,
     "q": "Uveďte službu jadra, ktorou môžeme poslať signál procesu.",
     "answer": "kill",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 340,
     "q": "Koľko parametrov má služba kill()?",
     "answer": "2",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 341,
     "q": "Akú návratovú hodnotu vráti služba kill(), ak sa jej podarí poslať signál? (špecifikujte relačným operátorom [<, >, <=, >=, =, !=] a číslom; bez medzier!)",
     "answer": "=0",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 342,
     "q": "Akú návratovú hodnotu vráti služba kill(), ak sa jej nepodarí poslať signál? (špecifikujte číslom)",
     "answer": "-1",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 343,
     "q": "Signály sú rozdelené do niekoľkých kategórií. Ako sa volá kategória, pre ktorú podľa \"man 7 signal\" preddefinovaným správaním je ignorovať signál? (Uveďte presne podľa manuálu)",
     "answer": "Ign",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 344,
     "q": "Signály sú rozdelené do niekoľkých kategórií. Ako sa volá kategória, pre ktorú podľa \"man 7 signal\" preddefinovaným správaním je ukončiť proces? (Uveďte presne podľa manuálu)",
     "answer": "Term",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 345,
     "q": "Uveďte názov signálu pre zastavenie procesu (man 7 signal).",
     "answer": "SIGSTOP",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 346,
     "q": "Uveďte názov signálu generovaného pri výskyte chyby výpočtu v pohyblivej rádovej čiarke (man 7 signal).",
     "answer": "SIGFPE",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 347,
     "q": "Používateľ má k dispozícii signály pre vlastnú potrebu. Uveďte názov prvého z nich (man 7 signal).",
     "answer": "SIGUSR1",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 348,
     "q": "Uveďte číselnú hodnotu pre signál SIGKILL (man 7 signal).",
     "answer": "9",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 349,
     "q": "Doplňte: Preddefinovaná činnosť pri výskyte signálu SIGUSR1 je ... procesu\" (man 7 signal)",
     "answer": "ukončenie",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 350,
     "q": "Doplňte: Preddefinovaná činnosť pri výskyte signálu SIGSTOP je ... procesu\" (man 7 signal)",
     "answer": "zastavenie",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T5 – Rúry a signály – príprava na cvičenie v 7. týždni"
+    ]
   },
   {
     "id": 351,

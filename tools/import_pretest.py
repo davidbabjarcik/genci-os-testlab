@@ -127,6 +127,7 @@ def signature(q):
         values |= set(re.findall(r"-?\d+", args))
     values |= set(re.findall(r"(?<![\w-])[-d][-r][-w][-x][-r][-w][-x][-r][-w][-x](?![\w-])", raw))  # -rw-r--r--
     values |= set(re.findall(r"\b(?:st|d)_[a-z]+\b", raw))      # st_ino, d_name …
+    values |= {"[" + i + "]" for i in re.findall(r"\w\[(\d+)\]", raw)}  # filedes[0] vs filedes[1]
     values |= set(re.findall(r"Znaky:\s*(\w+)", q))
     values |= set(re.findall(r"\"([A-Za-z]{4,})\"", q))
     for line in q.splitlines():

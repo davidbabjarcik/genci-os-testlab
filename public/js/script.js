@@ -209,7 +209,7 @@ function onPoolChange() {
   const pool = currentPool();
   const pretests = allPretests();
   $('poolInfo').innerText = pretests.length
-    ? `V tomto výbere je ${pool.length} otázok. · T1–T4 = pretesty pred cvičením v 2.–5. týždni · zápočet bol v 6. týždni (z T1–T4) · T6 = zdieľaná pamäť (8. týždeň)`
+    ? `V tomto výbere je ${pool.length} otázok. · T1–T4 = pretesty pred cvičením v 2.–5. týždni · zápočet bol v 6. týždni (z T1–T4) · T5 = rúry a signály (7. týždeň) · T6 = zdieľaná pamäť (8. týždeň)`
     : 'Zatiaľ nie sú označené žiadne pretesty – test ide zo všetkých otázok.';
 }
 
