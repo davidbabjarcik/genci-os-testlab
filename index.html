@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Genči OS TestLab</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+<!-- HOME -->
+<section data-screen="home">
+  <header>
+    <div>
+      <h1>Genči OS TestLab</h1>
+      <p class="subtitle">Systémové volania v UNIX/Linux · <span id="qCount"></span> otázok · <span class="app-version"></span></p>
+    </div>
+    <button class="icon-btn" onclick="showScreen('settings')" title="Nastavenia">⚙️</button>
+  </header>
+
+  <div class="card action-card">
+    <div class="pool-row">
+      <label for="poolSelect">Otázky:</label>
+      <select id="poolSelect" onchange="onPoolChange()"></select>
+      <label for="countSelect">Počet:</label>
+      <select id="countSelect" onchange="onPoolChange()">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="40" selected>40</option>
+        <option value="all">všetky</option>
+      </select>
+    </div>
+    <p class="pool-info" id="poolInfo"></p>
+
+    <div class="action-row primary-actions">
+      <button class="btn-primary" onclick="startTest()">🎯 Spustiť test</button>
+      <button class="btn-secondary" onclick="startWrongTest()">❌ Test zo zlých otázok</button>
+      <button class="btn-secondary" onclick="startFavoritesTest()">⭐ Test z obľúbených</button>
+    </div>
+
+    <div class="action-row">
+      <button class="btn-accent" onclick="showSearch()">🔍 Hľadať otázku</button>
+      <button class="btn-accent" onclick="showWrong()">❌ Zlé otázky (<span id="wrongCount">0</span>)</button>
+      <button class="btn-accent" onclick="showFavorites()">⭐ Obľúbené (<span id="favCount">0</span>)</button>
+    </div>
+  </div>
+
+  <div class="card history-card">
+    <h3 class="history-title">História testov</h3>
+    <ul id="historyList" class="history-list"></ul>
+    <button class="btn-danger history-clear-btn" onclick="clearHistory()">Zmazať históriu</button>
+  </div>
+
+  <footer class="source">
+    Otázky a odpovede pochádzajú z
+    <a href="https://gencisearch.surge.sh/" target="_blank" rel="noopener">gencisearch.surge.sh</a>
+    a z pretestov T1–T4. Otázky ku copymasteru sú vlastné, zostavené podľa zadania.
+  </footer>
+</section>
+
+<!-- TEST -->
+<section data-screen="test" style="display:none">
+  <header class="test-header">
+    <span id="progress" class="muted"></span>
+    <span id="timer" class="timer">Čas: 30:00</span>
+    <span id="liveScore" class="muted"></span>
+  </header>
+
+  <div class="card">
+    <div class="question-row">
+      <div id="question" class="question"></div>
+      <button id="favBtn" class="fav-btn" onclick="toggleFavoriteCurrent()" title="Obľúbená">☆</button>
+    </div>
+    <div id="questionTags" class="tags"></div>
+
+    <!-- krátka odpoveď: píše sa -->
+    <form id="typeBox" class="type-box" onsubmit="submitTyped(event)">
+      <input id="answerInput" type="text" autocomplete="off" spellcheck="false" placeholder="Napíš odpoveď a stlač Enter">
+      <button type="submit" class="btn-primary">Overiť</button>
+    </form>
+
+    <!-- dlhá odpoveď: kartička -->
+    <div id="flashBox" class="flash-box">
+      <p class="muted">Táto odpoveď je dlhšia – skús si ju povedať a potom ju odkry.</p>
+      <button class="btn-primary" onclick="revealFlash()">Ukázať odpoveď</button>
+    </div>
+
+    <div id="feedback" class="feedback"></div>
+
+    <div class="controls">
+      <button class="btn-secondary" onclick="skipQuestion()">Preskočiť</button>
+      <button class="btn-primary" id="nextBtn" onclick="nextQuestion()">Ďalej ➜</button>
+      <button class="btn-danger" onclick="confirmEndTest()">Ukončiť</button>
+    </div>
+  </div>
+</section>
+
+<!-- RESULT -->
+<section data-screen="result" style="display:none">
+  <div class="card result-card">
+    <h2>Test dokončený</h2>
+    <div id="resultScore" class="result-score"></div>
+    <div class="action-row">
+      <button class="btn-primary" onclick="openReview(lastTest)">Pozrieť detail</button>
+      <button class="btn-secondary" onclick="goHome()">Domov</button>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW -->
+<section data-screen="review" style="display:none">
+  <header>
+    <h2>Detail testu</h2>
+    <button class="nav-btn" onclick="goHome()">Domov</button>
+  </header>
+  <div id="reviewContent"></div>
+</section>
+
+<!-- SEARCH -->
+<section data-screen="search" style="display:none">
+  <header>
+    <h2>Hľadať otázku 🔍</h2>
+    <button class="nav-btn" onclick="goHome()">Domov</button>
+  </header>
+  <div class="card">
+    <input id="searchInput" type="text" autocomplete="off" placeholder="Napíš časť otázky alebo odpovede (napr. open, errno, fork)" oninput="renderSearch()">
+    <p id="searchInfo" class="muted"></p>
+  </div>
+  <div id="searchResults"></div>
+</section>
+
+<!-- FAVORITES -->
+<section data-screen="favorites" style="display:none">
+  <header>
+    <h2>Obľúbené otázky ⭐</h2>
+    <button class="nav-btn" onclick="goHome()">Domov</button>
+  </header>
+  <div id="favoritesList"></div>
+</section>
+
+<!-- WRONG -->
+<section data-screen="wrong" style="display:none">
+  <header>
+    <h2>Zlé otázky ❌</h2>
+    <button class="nav-btn" onclick="goHome()">Domov</button>
+  </header>
+  <div id="wrongList"></div>
+</section>
+
+<!-- SETTINGS -->
+<section data-screen="settings" style="display:none">
+  <header>
+    <h2>Nastavenia</h2>
+    <button class="nav-btn" onclick="goHome()">Domov</button>
+  </header>
+
+  <div class="card setting-row">
+    <span>Vzhľad aplikácie</span>
+    <button class="toggle-btn" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+  <div class="card setting-row">
+    <span>Ignorovať diakritiku pri kontrole odpovede</span>
+    <input type="checkbox" id="ignoreDiacritics" onchange="saveCheckSettings()">
+  </div>
+
+  <div class="card about">
+    <strong>O aplikácii · <span class="app-version"></span></strong>
+    <p>Offline pomôcka na učenie. Otázky a odpovede pochádzajú z
+      <a href="https://gencisearch.surge.sh/" target="_blank" rel="noopener">https://gencisearch.surge.sh/</a>
+      a slúžia výhradne na študijné účely.</p>
+  </div>
+</section>
+
+</div>
+
+<!-- vlastné okná (namiesto alert/confirm) -->
+<div id="toast" class="toast" role="status"></div>
+<div id="modal" class="modal" role="dialog" aria-modal="true">
+  <div class="modal-box card">
+    <p id="modalText"></p>
+    <div class="action-row">
+      <button id="modalYes" class="btn-danger">Áno</button>
+      <button id="modalNo" class="btn-secondary">Nie</button>
+    </div>
+  </div>
+</div>
+
+<script src="data/questions.js"></script>
+<script src="data/copymaster.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
