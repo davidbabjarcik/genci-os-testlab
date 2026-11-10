@@ -5,6 +5,9 @@
 
 Je to sesterská aplikácia k [ZIM TestLab](https://github.com/davidbabjarcik/zim-testlab).
 
+🌐 **Webová verzia (bez inštalácie):** https://davidbabjarcik.github.io/genci-os-testlab/
+(história, zlé a obľúbené otázky sa na webe ukladajú v prehliadači)
+
 ---
 
 ## 📚 Zdroj otázok
