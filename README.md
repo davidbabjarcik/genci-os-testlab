@@ -24,6 +24,8 @@ Otázky a odpovede pochádzajú z **[https://gencisearch.surge.sh/](https://genc
 - ✔ Pri preklepe si odpoveď môžeš uznať tlačidlom **„Mal som pravdu“**
 - 🃏 Dlhé (opisné) odpovede fungujú ako kartička: odkryješ a povieš, či si vedel
 - 🏷️ **Filter podľa pretestov** – test len z konkrétneho pretestu alebo zo všetkých, ktoré môžu byť na zápočte
+- 📘 **Učenie na zápočet** – ťahák služieb z T1–T4 (hlavičky, parametre, návratové hodnoty tak, ako ich chcú pretesty) s precvičovaním po témach
+  a nástroje: práva rwx ↔ osmičkovo, umask + open, lseek kalkulačka, simulátor súboru (open/read/write/lseek krok po kroku), rozklad výpisu `ls -lin`
 - 🔍 Vyhľadávanie otázok (ako na gencisearch)
 - ❌ Zlé otázky + test z nich, ⭐ obľúbené otázky + test z nich
 - 📊 História testov a detail každého testu
