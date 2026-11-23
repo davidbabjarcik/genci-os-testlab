@@ -3234,238 +3234,312 @@ window.QUESTIONS = [
     "q": "Uveďte priezvisko vedca, ktorý zaviedol koncept semafórov. (viď napr. Wikipedia)",
     "answer": "Dijkstra",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 377,
-    "q": "Doplňte: \"Semafór je celé číslo, hodnote ktorého nie je dovolené ... pod nulu.\" (viď man 7 sem_overview, alebo http://www.kernel.org/doc/man-pages/online/pages/man7/sem_overview.7.html)",
+    "q": "Doplňte: \"Semafór je celé číslo, hodnote ktorého nie je dovolené ... pod nulu.\" (viď man 7 sem_overview, alebo)",
     "answer": "klesnúť",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 378,
     "q": "Nad semafórmi môžeme vykonávať dve operácie. Uveďte jednu z nich, podľa 'man 7 sem_overview'. (Jedno slovo, tak ako je uvedené v manuáli. Nie funkcie, ale názov operácií.)",
     "answer": "inkrement",
-    "alt": [],
-    "pretests": []
+    "alt": [
+      "dekrement"
+    ],
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 379,
     "q": "Uveďte označenie niektorej z 'teoretických' semafórových operácií. (Odpoveď nájdete napr. v Sofii)",
     "answer": "P",
-    "alt": [],
-    "pretests": []
+    "alt": [
+      "V"
+    ],
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 380,
     "q": "Uveďte skratku kategórie systémových prostriedkov, do ktorej patrí mechanizmus semafórov. (Sofia, shm, str. 1)",
     "answer": "ipc",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 381,
     "q": "Uveďte službu jadra, ktorou vytvoríme sadu semafórov (pool).",
     "answer": "semget",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 382,
-    "q": "Doplňte: \"Služba semget() vracia  ... sady semafórov (semaphore pool).\"",
+    "q": "Doplňte: \"Služba semget() vracia ... sady semafórov (semaphore pool).\"",
     "answer": "identifikátor",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 383,
     "q": "Doplňte: \"Na identifikáciu sady semafórov, ktorú chceme využiť, používame parameter ... služby semget().\" (uveďte názov parametra podľa 'man 2 semget' resp. Sofie)",
     "answer": "key",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 384,
     "q": "Doplňte: \"Vytvorenie NOVEJ (neverejnej) sady semafórov, zabezpečíme použitím symbolickej konštanty ... ako hodnoty prvého parametra služby semget().\" (uveďte názov konštanty podľa 'man 2 semget')",
     "answer": "IPC_PRIVATE",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 385,
     "q": "Doplňte: \"Druhý parameter služby semget() určuje ... semafórov v semafórovej sade (sade semafórov).\" ('man 2 semget' resp. Sofia)",
     "answer": "počet",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 386,
     "q": "Koľko bitov parametra semflg služby semget() slúži na definovanie prístupových práv k sade semafórov?",
     "answer": "9",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 387,
     "q": "Ktoré bity parametra semflg, služby semget(), slúžia na definovanie prístupových práv k sade semafórov? (man 2 semget; jedno slovo)",
     "answer": "najnižšie",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 388,
     "q": "Akú hodnotu (resp. aké hodnoty) musí v sebe zahŕňať parameter 'semflg' služby shmget(), aby sa zabezpečilo vytvorenie NOVEJ semafórovej sady? (hodnotu špecifikujte ako výraz jazyka C, ktorý bude adekvátnym spôsobom pridaný k zvyšným hodnotám parametra; bez medzier!)",
     "answer": "IPC_CREAT|IPC_EXCL",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 389,
     "q": "Ktoré \"prístupové\" právo oprávňuje používateľa meniť hodnoty semafórov v semafórovej sade? (Uveďte pomocou notácie používanej pre prístupové práva súborov vo výpise príkazu ls.)",
     "answer": "w",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 390,
     "q": "Akú hodnotu NESMIE mať parameter 'key' služby semget(), ak chceme vytvoriť semafór pre procesy, ktoré NIE SÚ vo vzťahu rodič/potomok.",
     "answer": "IPC_PRIVATE",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 391,
     "q": "Uveďte názov funkcie pre zabezpečenie jednoznačnosti identifikátora semafórovej sady (viď sekcia SEE ALSO 'man 2 semget').",
     "answer": "ftok",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 392,
     "q": "Uveďte službu jadra, ktorou vykonávame riadiace operácie nad semafórmi resp. semafórovou sadou.",
     "answer": "semctl",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 393,
     "q": "Ktorou službou získame hodnotu prvého parametra služby semctl()?",
     "answer": "semget",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 394,
     "q": "Ktorým parametrom služby semctl() špecifikujeme semafórovú sadu, ktorej sa týka riadiaca operácia? (Uveďte názov premennej podľa 'man 2 semctl' alebo podľa Sofie.)",
     "answer": "semid",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 395,
     "q": "Ktorým parametrom služby semctl() špecifikujeme konkrétny semafór, ktorého sa týka riadiaca operácia? (Uveďte názov premennej podľa 'man 2 semctl' alebo podľa Sofie.)",
     "answer": "semnum",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 396,
     "q": "Uveďte, akú hodnotu musí mať parameter 'cmd/command' služby semctl(), ak chceme zmazať semafórovú sadu. (Uveďte hodnotu symbolickej konštanty.)",
     "answer": "IPC_RMID",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 397,
     "q": "Uveďte, akú hodnotu musí mať parameter 'cmd/command' služby semctl(), ak chceme inicializovať konkrétny semafór. (Uveďte hodnotu symbolickej konštanty.)",
     "answer": "SETVAL",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 398,
     "q": "Uveďte, akú hodnotu musí mať parameter 'cmd/command' služby semctl(), ak chceme zistiť hodnotu konkrétneho semafóra. (Uveďte hodnotu symbolickej konštanty.)",
     "answer": "GETVAL",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 399,
     "q": "Návratovou hodnotou služby semctl() pre príkaz GETVAL je .... špecifikovaného semafóra. (viď 'man 2 semctl')",
     "answer": "hodnota",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 400,
     "q": "Uveďte názov služby jadra, ktorou realizujeme semafórové operácie.",
     "answer": "semop",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 401,
     "q": "Ktorou službou získame hodnotu prvého parametra služby semop()?",
     "answer": "semget",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 402,
     "q": "Ktorou službou inicializujeme semafóry semafórovej sady pred ich použitím službou semop()?",
     "answer": "semctl",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 403,
     "q": "Doplňte: \"Druhý parameter služby semop() je ... prvkov typu 'struct sembuf').\" ('man 2 semget' resp. Sofia)",
     "answer": "poľom",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 404,
     "q": "Doplňte: \"Jednotlivé prvky druhého parametra služby semop() špecifikujú semafórové ... .\" ('man 2 semop' alebo Sofia)",
     "answer": "operácie",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 405,
     "q": "Doplňte: \"Počet semafórových operácií nad semafórovou sadou určuje parameter ... služby semop().\" (Uveďte názov premennej zo signatúry funkcie podľa manuálovej stránky alebo Sofie.)",
     "answer": "nsops",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 406,
     "q": "Doplňte: \"Množina semafórových operácií špecifikovaných druhým parametrom služby semop() sa vykoná ... .\" (viď 'man 2 semop()', sekcia DESCRIPTION. Môže byť aj anglicky termín použitý v manuáli :)",
     "answer": "atomicky",
-    "alt": [],
-    "pretests": []
+    "alt": [
+      "atomically"
+    ],
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 407,
-    "q": "Doplňte: \"Konkrétna semafórová operácia je špecifikovaná v prvku/zložke … premennej záznamu/štruktúry 'struct sembuf'.\"",
+    "q": "Doplňte: \"Konkrétna semafórová operácia je špecifikovaná v prvku/zložke ... premennej záznamu/štruktúry 'struct sembuf'.\"",
     "answer": "sem_op",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 408,
     "q": "Doplňte: \"'V' operácii nad UNIX/Linux semafórom zodpovedá hodnota semafórovej operácie ... .\" (Špecifikujte relačným operátorom [<, >, <=, >=, =, !=] a číslom; bez medzier!)",
     "answer": ">0",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 409,
     "q": "Doplňte: \"'P' operácii nad UNIX/Linux semafórom zodpovedá hodnota semafórovej operácie ... .\" (Špecifikujte relačným operátorom [<, >, <=, >=, =, !=] a číslom; bez medzier!)",
     "answer": "<0",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T7 – Semafory – príprava na cvičenie v 9. týždni"
+    ]
   },
   {
     "id": 410,
