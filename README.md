@@ -26,6 +26,9 @@ Otázky a odpovede pochádzajú z **[https://gencisearch.surge.sh/](https://genc
 - 🏷️ **Filter podľa pretestov** – test len z konkrétneho pretestu alebo zo všetkých, ktoré môžu byť na zápočte
 - 📘 **Učenie na zápočet** – ťahák služieb z T1–T4 (hlavičky, parametre, návratové hodnoty tak, ako ich chcú pretesty) s precvičovaním po témach
   a nástroje: práva rwx ↔ osmičkovo, umask + open, lseek kalkulačka, simulátor súboru (open/read/write/lseek krok po kroku), rozklad výpisu `ls -lin`
+- ⚡ **Bleskovky** – učenie na týždenné testy (T1–T8): kartičky z pretestu daného týždňa (odkryješ odpoveď a povieš, či si vedel;
+  čo nevieš, príde znova), opakovanie len neznámych, rýchla bleskovka z 10 otázok a ťahák k téme týždňa
+- 🤖 Otázky ku copymasteru a ťaháky sú **AI generované** (Claude) – v appke majú fialový štítok a značku 🤖 vo výbere
 - 🔍 Vyhľadávanie otázok (ako na gencisearch)
 - ❌ Zlé otázky + test z nich, ⭐ obľúbené otázky + test z nich
 - 📊 História testov a detail každého testu
@@ -88,13 +91,13 @@ Hotové pretesty:
 Režimy zápočtu berú len pretesty **T1–T4** (zoznam `ZAPOCET_PRETESTS` v `public/js/script.js`).
 
 - **Zápočet – všetko z pretestov T1–T4**
-- **Zápočet – praktické úlohy z pretestov + copymaster** – výpočty a ukážky kódu z pretestov (lseek, read/write fragmenty, chmod, umask, výpis `ls`…) spolu s otázkami ku copymasteru
+- **Zápočet – praktické úlohy z pretestov + copymaster** – výpočty a ukážky kódu z pretestov (lseek, read/write fragmenty, chmod, umask, výpis `ls`…) spolu s AI generovanými otázkami ku copymasteru
 - **Zápočet – len praktické úlohy z pretestov**
 - **Tréning – všetky praktické varianty** – aj s variantmi z gencisearch, ktoré v pretestoch neboli
 
-## 📄 Copymaster (Zadanie 1, verzia 2024.01)
+## 🤖 Copymaster (Zadanie 1, verzia 2024.01) – AI generované otázky
 
-`public/data/copymaster.js` – 83 **vlastných otázok zostavených podľa textu zadania** (nie sú oficiálne):
+`public/data/copymaster.js` – 83 **AI generovaných otázok** (vytvoril ich Claude podľa textu zadania, nie sú oficiálne). V appke majú fialový štítok „🤖 AI generovaná“ a v ponuke výberu značku 🤖:
 - fragment kódu → ku ktorému prepínaču patrí (20)
 - opis / chybová správa / návratový kód → prepínač a naopak
 - formát chybového výpisu, konfliktné prepínače, getopt, make, týždne priebežnej kontroly

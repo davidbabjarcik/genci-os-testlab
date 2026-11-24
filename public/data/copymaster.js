@@ -1,5 +1,5 @@
 // Otázky ku Zadaniu 1 – COPYMASTER (verzia 2024.01).
-// VLASTNÉ otázky zostavené podľa textu zadania – nie sú z gencisearch ani z pretestov.
+// 🤖 AI GENEROVANÉ otázky (vytvoril Claude podľa textu zadania) – nie sú z gencisearch ani z pretestov, nie sú oficiálne.
 // Fragmenty kódu sú ilustračné (typické riešenie daného prepínača), nie oficiálne riešenie.
 //
 // kind: "code" = fragment kódu → prepínač, "spec" = otázka zo zadania

@@ -163,11 +163,11 @@ function buildPoolSelect() {
     const ncmCode = allQuestions.filter(q => isCopymaster(q) && q.kind === 'code').length;
     html += `<optgroup label="🎓 Zápočet (bol v 6. týždni) – pretesty T1–T4">`;
     html += `<option value="any">Zápočet – všetko z pretestov T1–T4 (${nz})</option>`;
-    html += `<option value="practical">Zápočet – praktické úlohy T1–T4 + copymaster (${np + ncm})</option>`;
+    html += `<option value="practical">Zápočet – praktické úlohy T1–T4 + 🤖 AI copymaster (${np} + ${ncm})</option>`;
     html += `<option value="practical-only">Zápočet – len praktické úlohy T1–T4 (${np})</option>`;
-    html += `</optgroup><optgroup label="📄 Copymaster (zadanie 1)">`;
-    html += `<option value="cm">Copymaster – všetko (${ncm})</option>`;
-    html += `<option value="cm-code">Copymaster – fragment kódu → prepínač (${ncmCode})</option>`;
+    html += `</optgroup><optgroup label="🤖 Copymaster (zadanie 1) – AI generované otázky, neoficiálne">`;
+    html += `<option value="cm">🤖 Copymaster – všetko, AI generované (${ncm})</option>`;
+    html += `<option value="cm-code">🤖 Copymaster – fragment kódu → prepínač, AI generované (${ncmCode})</option>`;
     html += `</optgroup><optgroup label="Pretesty">`;
     html += `<option value="all-pretests">Všetky pretesty – ${pretests.map(p => p.split(' ')[0]).join(', ')} (${n})</option>`;
     pretests.forEach(p => {
@@ -208,14 +208,16 @@ function onPoolChange() {
   store.saveJSON('settings.json', settings);
   const pool = currentPool();
   const pretests = allPretests();
+  const ai = pool.filter(isCopymaster).length;
+  const aiNote = ai ? ` 🤖 ${ai === pool.length ? 'Všetky sú' : ai + ' z nich je'} AI generované (copymaster, neoficiálne).` : '';
   $('poolInfo').innerText = pretests.length
-    ? `V tomto výbere je ${pool.length} otázok. · T1–T4 = pretesty pred cvičením v 2.–5. týždni · zápočet bol v 6. týždni (z T1–T4) · T5 = rúry a signály (7. týždeň) · T6 = zdieľaná pamäť (8. týždeň) · T7 = semafory (9. týždeň) · T8 = sokety (10. týždeň)`
+    ? `V tomto výbere je ${pool.length} otázok.${aiNote} · T1–T4 = pretesty pred cvičením v 2.–5. týždni · zápočet bol v 6. týždni (z T1–T4) · T5 = rúry a signály (7. týždeň) · T6 = zdieľaná pamäť (8. týždeň) · T7 = semafory (9. týždeň) · T8 = sokety (10. týždeň)`
     : 'Zatiaľ nie sú označené žiadne pretesty – test ide zo všetkých otázok.';
 }
 
 function tagsHtml(q) {
   const tags = (q.pretests || []).map(p => `<span class="tag">${esc(p)}</span>`);
-  if (isCopymaster(q)) tags.push('<span class="tag tag-cm">Copymaster · vlastná otázka podľa zadania</span>');
+  if (isCopymaster(q)) tags.push('<span class="tag tag-ai" title="Otázku vytvorila AI (Claude) podľa textu zadania copymaster – nie je z pretestu ani z gencisearch">🤖 AI generovaná · Copymaster – neoficiálna</span>');
   return tags.join('');
 }
 

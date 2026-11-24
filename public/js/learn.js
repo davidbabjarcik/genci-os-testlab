@@ -257,6 +257,7 @@ function showLearn(tab) {
 function learnTab(tab) {
   document.querySelectorAll('.learn-tabs button').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
   document.querySelectorAll('.learn-pane').forEach(p => p.style.display = p.dataset.pane === tab ? 'block' : 'none');
+  if (tab === 'blesk') renderBlesk();
 }
 
 function renderLearnSheet() {

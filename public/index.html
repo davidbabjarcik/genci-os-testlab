@@ -58,7 +58,7 @@
   <footer class="source">
     Otázky a odpovede pochádzajú z
     <a href="https://gencisearch.surge.sh/" target="_blank" rel="noopener">gencisearch.surge.sh</a>
-    a z pretestov T1–T4. Otázky ku copymasteru sú vlastné, zostavené podľa zadania.
+    a z pretestov. 🤖 Otázky ku copymasteru sú AI generované (vytvoril ich Claude podľa textu zadania) a nie sú oficiálne.
   </footer>
 </section>
 
@@ -172,6 +172,36 @@
     <p>Offline pomôcka na učenie. Otázky a odpovede pochádzajú z
       <a href="https://gencisearch.surge.sh/" target="_blank" rel="noopener">https://gencisearch.surge.sh/</a>
       a slúžia výhradne na študijné účely.</p>
+    <p>🤖 <b>AI generované:</b> otázky ku copymasteru (označené fialovým štítkom) a ťahák s nástrojmi v časti Učenie
+      vytvoril Claude podľa zadania a pretestov. Nie sú oficiálne – ak sa niečo nezhoduje so Sofiou alebo manuálom, platí Sofia a manuál.</p>
+  </div>
+</section>
+
+<!-- CARDS (kartičky na bleskovky) -->
+<section data-screen="cards" style="display:none">
+  <header>
+    <h2 id="cardsTitle">📖 Kartičky</h2>
+    <button class="nav-btn" onclick="cardsBack()">Späť</button>
+  </header>
+  <p id="cardsProgress" class="muted"></p>
+  <div class="card" id="cardsBox">
+    <div id="cardsQuestion" class="question"></div>
+    <div id="cardsTags" class="tags"></div>
+    <button id="cardsReveal" class="btn-primary cards-full" onclick="cardsReveal()">Ukázať odpoveď (medzera)</button>
+    <div id="cardsAnswer" class="feedback neutral" style="display:none"></div>
+    <div id="cardsGrade" class="controls" style="display:none">
+      <button class="btn-danger" onclick="cardsGrade(false)">❌ Nevedel som (←)</button>
+      <button class="btn-secondary" onclick="cardsGrade(true)">✅ Vedel som (→)</button>
+    </div>
+  </div>
+  <div class="card result-card" id="cardsDone" style="display:none">
+    <h2>Kartičky prejdené</h2>
+    <p id="cardsSummary"></p>
+    <div class="action-row">
+      <button class="btn-primary" onclick="cardsStart(cards.code, true)">🔁 Zopakovať, čo ešte neviem</button>
+      <button class="btn-accent" onclick="bleskTest(cards.code)">⚡ Bleskovka z tohto týždňa</button>
+      <button class="btn-secondary" onclick="cardsBack()">Späť na bleskovky</button>
+    </div>
   </div>
 </section>
 
@@ -185,9 +215,18 @@
   <div class="learn-tabs">
     <button data-tab="sheet" onclick="learnTab('sheet')">📋 Ťahák T1–T4</button>
     <button data-tab="tools" onclick="learnTab('tools')">🧰 Nástroje</button>
+    <button data-tab="blesk" onclick="learnTab('blesk')">⚡ Bleskovky</button>
+  </div>
+
+  <div class="learn-pane" data-pane="blesk" style="display:none">
+    <p class="muted ai-note">Učenie na týždenné testy (bleskovky): pre každý týždeň otázky z jeho pretestu.
+      📖 Kartičky – prečítaš otázku, odkryješ odpoveď a povieš, či si ju vedel (medzera = odkry, ← nevedel, → vedel).
+      ⚡ Bleskovka – rýchly test z 10 náhodných otázok. Ťaháky k týždňom vytvorila 🤖 AI podľa pretestov.</p>
+    <div id="bleskList"></div>
   </div>
 
   <div class="learn-pane" data-pane="sheet">
+    <p class="muted ai-note">🤖 Ťahák a nástroje vytvorila AI (Claude) podľa otázok a odpovedí z pretestov T1–T4. Ak sa niečo nezhoduje so Sofiou alebo manuálom, platí Sofia a manuál.</p>
     <div class="card learn-tips">
       <strong>Ako odpovedať na pretestoch</strong>
       <ul>
@@ -282,5 +321,6 @@
 <script src="data/copymaster.js"></script>
 <script src="js/script.js"></script>
 <script src="js/learn.js"></script>
+<script src="js/blesk.js"></script>
 </body>
 </html>

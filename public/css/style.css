@@ -151,6 +151,7 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--prim
 }
 
 .tag-cm { background: rgba(37, 99, 235, 0.15); border-color: var(--primary); }
+.tag-ai { background: rgba(168, 85, 247, 0.18); border-color: #a855f7; font-weight: 600; }
 
 .type-box { display: flex; gap: 10px; margin-top: 8px; }
 .type-box input { flex: 1; font-family: ui-monospace, Consolas, monospace; }
@@ -269,6 +270,23 @@ textarea:focus { outline: none; border-color: var(--primary); }
 .sim-buttons button { min-width: 0; flex: 0 1 auto; padding: 10px 14px; }
 .sim-step { margin: 12px 0 6px; line-height: 1.5; }
 .sim-result { font-size: 1.1rem; margin-top: 16px; }
+
+/* ===== BLESKOVKY & KARTIČKY ===== */
+.ai-note { font-size: 0.88rem; line-height: 1.5; margin: 0 0 14px; }
+.blesk-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.blesk-head strong { flex: 1; min-width: 200px; font-size: 1.05rem; }
+.blesk-week { font-size: 0.8rem; padding: 2px 8px; border-radius: 999px; background: rgba(37, 99, 235, 0.15); border: 1px solid var(--primary); }
+.blesk-bar { height: 6px; border-radius: 99px; background: var(--border); margin: 12px 0 14px; overflow: hidden; }
+.blesk-bar span { display: block; height: 100%; background: var(--secondary); transition: width .3s; }
+.blesk-actions { justify-content: flex-start; }
+.blesk-actions button { min-width: 0; flex: 1 1 180px; padding: 11px; }
+.blesk-actions button:disabled { opacity: .4; cursor: default; }
+.blesk-sheet { margin-top: 14px; }
+.blesk-sheet summary { cursor: pointer; color: var(--muted); font-weight: 600; }
+.blesk-topic > h4 { margin: 16px 0 0; }
+.blesk-topic .learn-intro, .blesk-topic .learn-item { margin-left: 0; margin-right: 0; }
+.cards-full { width: 100%; margin-top: 8px; }
+#cardsGrade button { flex: 1 1 160px; }
 
 @media (max-width: 600px) {
   .action-row button { min-width: 100%; }
