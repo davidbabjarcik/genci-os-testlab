@@ -3546,182 +3546,234 @@ window.QUESTIONS = [
     "q": "Uveďte názov služby jadra pre vytvorenie koncového komunikačného bodu.",
     "answer": "socket",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 411,
     "q": "Uveďte hodnotu prvého parametra služby pre vytvorenie koncového komunikačného bodu pre komunikáciu protokolom IPv4 (symbolická konstanta z manualovej stránky)",
     "answer": "PF_INET",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 412,
     "q": "Akú hodnotu musí mať druhý parameter služby pre vytvorenie koncového komunikačného bodu pre komunikáciu (transportným) protokolom s potvrdzovaním (spoľahlivý protokol, symbolická konštanta z manuálovej stránky)",
     "answer": "SOCK_STREAM",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 413,
     "q": "Akú hodnotu musí mať druhý parameter služby pre vytvorenie koncového komunikačného bodu pre komunikáciu (transportným) protokolom bez potvrdzovania (symbolická konštanta z manuálovej stránky)",
     "answer": "SOCK_DGRAM",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 414,
     "q": "Akú hodnotu musí mať druhý parameter služby pre vytvorenie koncového komunikačného bodu pre priamy prístup k sieťovému protokolu (symbolická konštanta z manuálovej stránky)",
     "answer": "SOCK_RAW",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 415,
     "q": "Uveďte názov služby jadra, ktorou priradíme adresu koncovému komunikačnému bodu v rámci zvoleného protokolu.",
     "answer": "bind",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 416,
     "q": "Uveďte názov argumentu, prostredníctvom ktorého nastavíme adresu koncového komunikačného bodu (podľa mauálovej stránky)",
     "answer": "addr",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 417,
     "q": "Uveďte názov zložky/prvku zodpovedajúceho záznamu (štruktúry) pre nastavenie adresy koncového komunikačného bodu v rámci protokolu IP (viď 'man 7 ip'; len názov zložky/prvku, bez názvu záznamu)",
     "answer": "sin_addr",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 418,
     "q": "Uveďte názov zložky/prvku zodpovedajúceho záznamu (štruktúry) pre nastavenie portu koncového komunikačného bodu v rámci protokolu IP (viď 'man 7 ip'; len názov zložky/prvku, bez názvu záznamu)",
     "answer": "sin_port",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 419,
     "q": "Uveďte názov služby jadra, ktorou 'spasívnime' koncový komunikačný bod aby čakal na prichádzajúce spojenia .",
     "answer": "listen",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 420,
     "q": "Uveďte názov parametra zodpovedajúcej služby jadra, ktorý špecifikuje počet požiadaviek, ktoré budú zaznamenané (archivované) v štruktúrach jadra OS počas obsluhy/spracovania aktuálnej požiadavky (podľa manuálovej stránky).",
     "answer": "backlog",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 421,
     "q": "Uveďte názov služby, ktorá uspí proces až do príchodu požiadavky na vytvorenie spojenia.",
     "answer": "accept",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 422,
     "q": "Ktorou službou získame hodnotu prvého parametra služby accept()?",
     "answer": "socket",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 423,
     "q": "Ktorou službou získame hodnotu prvého parametra služby listen()?",
     "answer": "socket",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 424,
     "q": "Ktorou službou získame hodnotu prvého parametra služby bind()?",
     "answer": "socket",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 425,
     "q": "Ktorá služba nám vráti adresu 'protiľahlého' koncového komunikačného bodu (ten, ktorý žiada o spojenie)",
     "answer": "accept",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 426,
     "q": "Ktorou službou jadra odošleme dáta 'protiľahlému' koncovému komunikačnému bodu pri použití doručovania s potvrdzovaním?",
     "answer": "write",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 427,
     "q": "Ktorou službou jadra prečítame dáta od 'protiľahlého' koncového komunikačného bodu pri použití doručovania s potvrdzovaním?",
     "answer": "read",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 428,
     "q": "Ktorou službou jadra odošleme dáta 'protiľahlému' koncovému komunikačnému bodu pri použití doručovania bez potvrdzovania?",
     "answer": "sendto",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 429,
     "q": "Ktorou službou jadra prečítame dáta od 'protiľahlého' koncového komunikačného bodu pri použití doručovania bez potvrdzovania?",
     "answer": "recvfrom",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 430,
     "q": "Ktorá služba nám vráti adresu 'protiľahlého' koncového komunikačného bodu pri komunikácii protokolom bez potvrdzovania? (Ten, ktorý žiada o spojenie)",
     "answer": "recvfrom",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 431,
     "q": "Uveďte názov služby, ktorou klient nadviaže spojenie so serverom v prípade potvrdzovaného spojenia v rámci IP protokolu",
     "answer": "connect",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 432,
     "q": "Uveďte názov protokolu v rámci sieťového protokolu IPv4 pre potvrdzované doručovanie paketov.",
     "answer": "tcp",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 433,
     "q": "Uveďte názov protokolu v rámci sieťového protokolu IPv4 pre doručovanie paketov bez potvrdzovania.",
     "answer": "udp",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 434,
-    "q": "Označme si služby jadra číslami takto:  1.accept()  2.bind()  3.connect()  4.listen()  5.socket()  Určte, ktoré služby a v akom poradí musíme použiť pre zriadenie/iniciáciu procesu-servera (tzv. daemona) pre TCP spojenie. Služby špecifikujte ako postupnosť relevantných číslic bez medzier; napr. 12345.",
+    "q": "Označme si služby jadra číslami takto:\n1.accept()\n2.bind()\n3.connect()\n4.listen()\n5.socket()\nUrčte, ktoré služby a v akom poradí musíme použiť pre zriadenie/iniciáciu procesu-servera (tzv. daemona) pre TCP spojenie. Služby špecifikujte ako postupnosť relevantných číslic bez medzier; napr. 12345.",
     "answer": "5241",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 435,
-    "q": "Označme si služby jadra číslami takto:  1.accept()  2.bind()  3.connect()  4.listen()  5.socket()  Určte, ktoré služby a v akom poradí musíme použiť pre zriadenie/iniciáciu procesu-klienta pre TCP spojenie. Služby špecifikujte ako postupnosť relevantných číslic bez medzier; napr. 12345.",
+    "q": "Označme si služby jadra číslami takto:\n1.accept()\n2.bind()\n3.connect()\n4.listen()\n5.socket()\nUrčte, ktoré služby a v akom poradí musíme použiť pre zriadenie/iniciáciu procesu-klienta pre TCP spojenie. Služby špecifikujte ako postupnosť relevantných číslic bez medzier; napr. 12345.",
     "answer": "53",
     "alt": [],
-    "pretests": []
+    "pretests": [
+      "T8 – Sokety – príprava na cvičenie v 10. týždni"
+    ]
   },
   {
     "id": 436,

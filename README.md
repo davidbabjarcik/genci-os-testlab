@@ -81,6 +81,7 @@ Hotové pretesty:
 - **T5** – Rúry a signály – príprava na cvičenie v 7. týždni (30 otázok)
 - **T6** – Zdieľaná pamäť – príprava na cvičenie v 8. týždni (25 otázok)
 - **T7** – Semafory – príprava na cvičenie v 9. týždni (34 otázok)
+- **T8** – Sokety – príprava na cvičenie v 10. týždni (26 otázok)
 
 ## 🎓 Zápočet (bol v 6. týždni)
 

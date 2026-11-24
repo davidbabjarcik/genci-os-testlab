@@ -1,0 +1,196 @@
+NAME: T8 – Sokety – príprava na cvičenie v 10. týždni
+SOURCE: 2025-T10--bez-ES--Test-Príprava-na-ďalší-týždeň--na cvičenie v 10. týždni (kópia) (25,00/26, prepísané zo screenshotov)
+
+Otázka 1
+Správna odpoveď
+Uveďte názov služby jadra pre vytvorenie koncového komunikačného bodu.
+Odpoveď: Otázka 1
+socket
+Správna odpoveď je: socket.
+
+Otázka 2
+Správna odpoveď
+Uveďte hodnotu prvého parametra služby pre vytvorenie koncového komunikačného bodu pre komunikáciu protokolom IPv4 (symbolická konstanta z manualovej stránky)
+Odpoveď: Otázka 2
+PF_INET
+Správna odpoveď je: PF_INET.
+
+Otázka 3
+Správna odpoveď
+Akú hodnotu musí mať druhý parameter služby pre vytvorenie koncového komunikačného bodu pre komunikáciu (transportným) protokolom s potvrdzovaním (spoľahlivý protokol, symbolická konštanta z manuálovej stránky)
+Odpoveď: Otázka 3
+SOCK_STREAM
+Správna odpoveď je: SOCK_STREAM.
+
+Otázka 4
+Správna odpoveď
+Akú hodnotu musí mať druhý parameter služby pre vytvorenie koncového komunikačného bodu pre komunikáciu (transportným) protokolom bez potvrdzovania (symbolická konštanta z manuálovej stránky)
+Odpoveď: Otázka 4
+SOCK_DGRAM
+Správna odpoveď je: SOCK_DGRAM.
+
+Otázka 5
+Správna odpoveď
+Akú hodnotu musí mať druhý parameter služby pre vytvorenie koncového komunikačného bodu pre priamy prístup k sieťovému protokolu (symbolická konštanta z manuálovej stránky)
+Odpoveď: Otázka 5
+SOCK_RAW
+Správna odpoveď je: SOCK_RAW.
+
+Otázka 6
+Správna odpoveď
+Uveďte názov služby jadra, ktorou priradíme adresu koncovému komunikačnému bodu v rámci zvoleného protokolu.
+Odpoveď: Otázka 6
+bind
+Správna odpoveď je: bind.
+
+Otázka 7
+Správna odpoveď
+Uveďte názov argumentu, prostredníctvom ktorého nastavíme adresu koncového komunikačného bodu (podľa mauálovej stránky)
+Odpoveď: Otázka 7
+addr
+Správna odpoveď je: addr.
+
+Otázka 8
+Správna odpoveď
+Uveďte názov zložky/prvku zodpovedajúceho záznamu (štruktúry) pre nastavenie adresy koncového komunikačného bodu v rámci protokolu IP (viď 'man 7 ip'; len názov zložky/prvku, bez názvu záznamu)
+Odpoveď: Otázka 8
+sin_addr
+Správna odpoveď je: sin_addr.
+
+Otázka 9
+Správna odpoveď
+Uveďte názov zložky/prvku zodpovedajúceho záznamu (štruktúry) pre nastavenie portu koncového komunikačného bodu v rámci protokolu IP (viď 'man 7 ip'; len názov zložky/prvku, bez názvu záznamu)
+Odpoveď: Otázka 9
+sin_port
+Správna odpoveď je: sin_port.
+
+Otázka 10
+Správna odpoveď
+Uveďte názov služby jadra, ktorou 'spasívnime' koncový komunikačný bod aby čakal na prichádzajúce spojenia .
+Odpoveď: Otázka 10
+listen
+Správna odpoveď je: listen.
+
+Otázka 11
+Správna odpoveď
+Uveďte názov parametra zodpovedajúcej služby jadra, ktorý špecifikuje počet požiadaviek, ktoré budú zaznamenané (archivované) v štruktúrach jadra OS počas obsluhy/spracovania aktuálnej požiadavky (podľa manuálovej stránky).
+Odpoveď: Otázka 11
+backlog
+Správna odpoveď je: backlog.
+
+Otázka 12
+Správna odpoveď
+Uveďte názov služby, ktorá uspí proces až do príchodu požiadavky na vytvorenie spojenia.
+Odpoveď: Otázka 12
+accept
+Správna odpoveď je: accept.
+
+Otázka 13
+Správna odpoveď
+Ktorou službou získame hodnotu prvého parametra služby accept()?
+Odpoveď: Otázka 13
+socket
+Správna odpoveď je: socket.
+
+Otázka 14
+Správna odpoveď
+Ktorou službou získame hodnotu prvého parametra služby listen()?
+Odpoveď: Otázka 14
+socket
+Správna odpoveď je: socket.
+
+Otázka 15
+Správna odpoveď
+Ktorou službou získame hodnotu prvého parametra služby bind()?
+Odpoveď: Otázka 15
+socket
+Správna odpoveď je: socket.
+
+Otázka 16
+Správna odpoveď
+Ktorá služba nám vráti adresu 'protiľahlého' koncového komunikačného bodu (ten, ktorý žiada o spojenie)
+Odpoveď: Otázka 16
+accept
+Správna odpoveď je: accept.
+
+Otázka 17
+Správna odpoveď
+Ktorou službou jadra odošleme dáta 'protiľahlému' koncovému komunikačnému bodu pri použití doručovania s potvrdzovaním?
+Odpoveď: Otázka 17
+write
+Správna odpoveď je: write.
+
+Otázka 18
+Správna odpoveď
+Ktorou službou jadra prečítame dáta od 'protiľahlého' koncového komunikačného bodu pri použití doručovania s potvrdzovaním?
+Odpoveď: Otázka 18
+read
+Správna odpoveď je: read.
+
+Otázka 19
+Správna odpoveď
+Ktorou službou jadra odošleme dáta 'protiľahlému' koncovému komunikačnému bodu pri použití doručovania bez potvrdzovania?
+Odpoveď: Otázka 19
+sendto
+Správna odpoveď je: sendto.
+
+Otázka 20
+Správna odpoveď
+Ktorou službou jadra prečítame dáta od 'protiľahlého' koncového komunikačného bodu pri použití doručovania bez potvrdzovania?
+Odpoveď: Otázka 20
+recvfrom
+Správna odpoveď je: recvfrom.
+
+Otázka 21
+Správna odpoveď
+Ktorá služba nám vráti adresu 'protiľahlého' koncového komunikačného bodu pri komunikácii protokolom bez potvrdzovania? (Ten, ktorý žiada o spojenie)
+Odpoveď: Otázka 21
+recvfrom
+Správna odpoveď je: recvfrom.
+
+Otázka 22
+Správna odpoveď
+Uveďte názov služby, ktorou klient nadviaže spojenie so serverom v prípade potvrdzovaného spojenia v rámci IP protokolu
+Odpoveď: Otázka 22
+connect
+Správna odpoveď je: connect.
+
+Otázka 23
+Správna odpoveď
+Uveďte názov protokolu v rámci sieťového protokolu IPv4 pre potvrdzované doručovanie paketov.
+Odpoveď: Otázka 23
+tcp
+Správna odpoveď je: tcp.
+
+Otázka 24
+Správna odpoveď
+Uveďte názov protokolu v rámci sieťového protokolu IPv4 pre doručovanie paketov bez potvrdzovania.
+Odpoveď: Otázka 24
+udp
+Správna odpoveď je: udp.
+
+Otázka 25
+Správna odpoveď
+Označme si služby jadra číslami takto:
+1.accept()
+2.bind()
+3.connect()
+4.listen()
+5.socket()
+Určte, ktoré služby a v akom poradí musíme použiť pre zriadenie/iniciáciu procesu-servera (tzv. daemona) pre TCP spojenie. Služby špecifikujte ako postupnosť relevantných číslic bez medzier; napr. 12345.
+Odpoveď: Otázka 25
+5241
+Správna odpoveď je: 5241.
+
+Otázka 26
+Správna odpoveď
+Označme si služby jadra číslami takto:
+1.accept()
+2.bind()
+3.connect()
+4.listen()
+5.socket()
+Určte, ktoré služby a v akom poradí musíme použiť pre zriadenie/iniciáciu procesu-klienta pre TCP spojenie. Služby špecifikujte ako postupnosť relevantných číslic bez medzier; napr. 12345.
+Odpoveď: Otázka 26
+53
+Správna odpoveď je: 53.
