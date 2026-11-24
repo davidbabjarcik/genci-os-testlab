@@ -13,7 +13,7 @@ const store = window.api || {
 // =======================
 // STATE
 // =======================
-const allQuestions = [...(window.QUESTIONS || []), ...(window.COPYMASTER || []), ...(window.UNIX1 || [])];
+const allQuestions = [...(window.QUESTIONS || []), ...(window.COPYMASTER || []), ...(window.UNIX1 || []), ...(window.IPCPRAX || [])];
 const byId = new Map(allQuestions.map(q => [q.id, q]));
 
 let history = [];
@@ -154,90 +154,137 @@ const ZAPOCET2_PRETESTS = ['T5', 'T6', 'T7', 'T8'];
 const inZapocet2 = (q) => (q.pretests || []).some(p => ZAPOCET2_PRETESTS.includes(p.split(' ')[0]));
 const isCopymaster = (q) => q.topic === 'copymaster';
 const isUnix1 = (q) => q.topic === 'unix1';
-// 🤖 AI generované (Claude podľa zadaní) – nie sú z pretestov ani z gencisearch
-function isAI(q) { return isCopymaster(q) || isUnix1(q); }
+const isIpcPrax = (q) => q.topic === 'ipc-prax';
+// 🤖 AI generované (Claude) – nie sú z pretestov ani z gencisearch
+function isAI(q) { return isCopymaster(q) || isUnix1(q) || isIpcPrax(q); }
 
-function buildPoolSelect() {
-  const sel = $('poolSelect');
-  const pretests = allPretests();
-  let html = `<option value="all">Všetky otázky (${allQuestions.length})</option>`;
-  if (pretests.length) {
-    const n = allQuestions.filter(inPretest).length;
-    const nz = allQuestions.filter(inZapocet).length;
-    const np = allQuestions.filter(q => inZapocet(q) && isPractical(q)).length;
-    const ncm = allQuestions.filter(isCopymaster).length;
-    const ncmCode = allQuestions.filter(q => isCopymaster(q) && q.kind === 'code').length;
-    html += `<optgroup label="🎓 Zápočet (bol v 6. týždni) – pretesty T1–T4">`;
-    html += `<option value="any">Zápočet – všetko z pretestov T1–T4 (${nz})</option>`;
-    html += `<option value="practical">Zápočet – praktické úlohy T1–T4 + 🤖 AI copymaster (${np} + ${ncm})</option>`;
-    html += `<option value="practical-only">Zápočet – len praktické úlohy T1–T4 (${np})</option>`;
-    html += `</optgroup><optgroup label="🤖 Copymaster (zadanie 1) – AI generované otázky, neoficiálne">`;
-    html += `<option value="cm">🤖 Copymaster – všetko, AI generované (${ncm})</option>`;
-    html += `<option value="cm-code">🤖 Copymaster – fragment kódu → prepínač, AI generované (${ncmCode})</option>`;
-    const nz2 = allQuestions.filter(inZapocet2).length;
-    const nu = allQuestions.filter(isUnix1).length;
-    const nuCode = allQuestions.filter(q => isUnix1(q) && q.kind === 'code').length;
-    html += `</optgroup><optgroup label="🎓 Zápočet 2 (IPC) – pretesty T5–T8 + zadanie Unix1">`;
-    html += `<option value="z2">Zápočet 2 – pretesty T5–T8 + 🤖 AI Unix1 (${nz2} + ${nu})</option>`;
-    html += `<option value="z2-pre">Zápočet 2 – len pretesty T5–T8 (${nz2})</option>`;
-    html += `<option value="u1">🤖 Zadanie Unix1 – všetko, AI generované (${nu})</option>`;
-    html += `<option value="u1-code">🤖 Zadanie Unix1 – fragment kódu → proces, AI generované (${nuCode})</option>`;
-    html += `</optgroup><optgroup label="Pretesty">`;
-    html += `<option value="all-pretests">Všetky pretesty – ${pretests.map(p => p.split(' ')[0]).join(', ')} (${n})</option>`;
-    pretests.forEach(p => {
-      const c = allQuestions.filter(q => (q.pretests || []).includes(p)).length;
-      html += `<option value="p:${esc(p)}">${esc(p)} (${c})</option>`;
-    });
-    html += `</optgroup>`;
-    const allPrac = allQuestions.filter(isPractical).length;
-    html += `<option value="practical-all">Tréning – všetky praktické varianty, aj mimo pretestov (${allPrac})</option>`;
-    const none = allQuestions.filter(q => !inPretest(q) && !isAI(q)).length;
-    html += `<option value="none">Neboli v žiadnom preteste (${none})</option>`;
-  }
-  sel.innerHTML = html;
-  if (settings.pool && [...sel.options].some(o => o.value === settings.pool)) sel.value = settings.pool;
-  if (settings.count) $('countSelect').value = settings.count;
+// =======================
+// VÝBER OTÁZOK – filtre Rozsah / Typ / Zdroj
+// =======================
+// kategórie otázky: pretesty, v ktorých bola; inak téma, ku ktorej ju zaradila AI (aiCat)
+function catsOf(q) {
+  const c = (q.pretests || []).map(p => p.split(' ')[0]);
+  return c.length ? c : (q.aiCat ? [q.aiCat] : []);
+}
+
+// zdroj: pre = z pretestu, out = gencisearch mimo pretestov (🤖 zaradené), ai = 🤖 vytvorené AI
+const sourceOf = (q) => inPretest(q) ? 'pre' : (isAI(q) ? 'ai' : 'out');
+const isPrax = (q) => isPractical(q) || q.kind === 'code' || q.kind === 'prax';
+
+const SCOPES = [
+  { id: 'all', label: 'Všetko', test: () => true },
+  { id: 'z1', label: '🎓 Zápočet 1 · T1–T4', hint: 'pretesty 2.–5. týždeň, zápočet bol v 6. týždni; + 🤖 copymaster', test: q => catsOf(q).some(c => ZAPOCET_PRETESTS.includes(c)) || isCopymaster(q) },
+  { id: 'z2', label: '🎓 Zápočet 2 · T5–T8', hint: 'IPC: rúry a signály, zdieľaná pamäť, semafory, sokety; + 🤖 zadanie Unix1', test: q => catsOf(q).some(c => ZAPOCET2_PRETESTS.includes(c)) || isUnix1(q) },
+];
+const AI_SCOPES = [
+  { id: 'cm', label: '🤖 Copymaster', hint: 'AI otázky k zadaniu copymaster (zápočet 1)', test: isCopymaster, ai: true },
+  { id: 'u1', label: '🤖 Unix1', hint: 'AI otázky k zadaniu Unix1 (zápočet 2)', test: isUnix1, ai: true },
+];
+const TYPES = [
+  { id: 'all', label: 'Všetky', test: () => true },
+  { id: 'prax', label: '🧮 Len praktické', test: isPrax },
+  { id: 'teo', label: '📖 Len teória', test: q => !isPrax(q) },
+];
+const SOURCES = [
+  { id: 'pre', label: '📝 Z pretestov' },
+  { id: 'out', label: '📚 Mimo pretestov', hint: 'z gencisearch, neboli v žiadnom preteste – k téme ich zaradila 🤖 AI' },
+  { id: 'ai', label: '🤖 Vytvorené AI', hint: 'copymaster, Unix1 a praktické IPC úlohy – neoficiálne' },
+];
+
+function pretestScopes() {
+  return allPretests().map(p => {
+    const code = p.split(' ')[0];
+    const week = (p.match(/v (\d+)\. týždni/) || [])[1];
+    return { id: code, label: code, hint: p + (week ? '' : ''), test: q => catsOf(q).includes(code) };
+  });
+}
+
+function allScopes() { return [...SCOPES, ...pretestScopes(), ...AI_SCOPES]; }
+
+function poolFilter() {
+  const f = settings.filter || {};
+  const scopes = allScopes();
+  return {
+    scope: scopes.find(s => s.id === f.scope) || SCOPES[1],
+    type: TYPES.find(t => t.id === f.type) || TYPES[0],
+    src: Array.isArray(f.src) && f.src.length ? f.src : ['pre', 'out', 'ai'],
+  };
+}
+
+function filterPool(scope, type, src) {
+  return allQuestions.filter(q => scope.test(q) && type.test(q) && (scope.ai || src.includes(sourceOf(q))));
 }
 
 function currentPool() {
-  const v = $('poolSelect').value;
-  if (v === 'any') return allQuestions.filter(inZapocet);
-  if (v === 'all-pretests') return allQuestions.filter(inPretest);
-  if (v === 'practical') return allQuestions.filter(q => (inZapocet(q) && isPractical(q)) || isCopymaster(q));
-  if (v === 'practical-all') return allQuestions.filter(isPractical);
-  if (v === 'none') return allQuestions.filter(q => !inPretest(q) && !isAI(q));
-  if (v === 'z2') return allQuestions.filter(q => inZapocet2(q) || isUnix1(q));
-  if (v === 'z2-pre') return allQuestions.filter(inZapocet2);
-  if (v === 'u1') return allQuestions.filter(isUnix1);
-  if (v === 'u1-code') return allQuestions.filter(q => isUnix1(q) && q.kind === 'code');
-  if (v === 'cm') return allQuestions.filter(isCopymaster);
-  if (v === 'cm-code') return allQuestions.filter(q => isCopymaster(q) && q.kind === 'code');
-  if (v === 'practical-only') return allQuestions.filter(q => inZapocet(q) && isPractical(q));
-  if (v.startsWith('p:')) {
-    const p = v.slice(2);
-    return allQuestions.filter(q => (q.pretests || []).includes(p));
-  }
-  return allQuestions;
+  const f = poolFilter();
+  return filterPool(f.scope, f.type, f.src);
+}
+
+function describePool() {
+  const f = poolFilter();
+  const parts = [f.scope.label];
+  if (f.type.id !== 'all') parts.push(f.type.id === 'prax' ? 'praktické' : 'teória');
+  if (!f.scope.ai && f.src.length < 3) parts.push(f.src.map(s => ({ pre: 'z pretestov', out: 'mimo pretestov', ai: 'AI' })[s]).join(' + '));
+  return parts.join(' · ');
+}
+
+function chip(group, item, active, count, onclick) {
+  return `<button type="button" class="chip${active ? ' active' : ''}${item.ai ? ' chip-ai' : ''}" title="${esc(item.hint || '')}" onclick="${onclick}">${esc(item.label)}${count != null ? ` <span class="chip-n">${count}</span>` : ''}</button>`;
+}
+
+function buildPoolSelect() {
+  const f = poolFilter();
+  const cnt = (scope) => filterPool(scope, f.type, f.src).length;
+  $('scopeChips').innerHTML =
+    `<div class="chips">${SCOPES.map(s => chip('scope', s, s.id === f.scope.id, cnt(s), `setFilter('scope','${s.id}')`)).join('')}</div>` +
+    `<div class="chips chips-small">${pretestScopes().map(s => chip('scope', s, s.id === f.scope.id, cnt(s), `setFilter('scope','${s.id}')`)).join('')}` +
+    `${AI_SCOPES.map(s => chip('scope', s, s.id === f.scope.id, cnt(s), `setFilter('scope','${s.id}')`)).join('')}</div>`;
+  $('typeChips').innerHTML = TYPES.map(t => chip('type', t, t.id === f.type.id, filterPool(f.scope, t, f.src).length, `setFilter('type','${t.id}')`)).join('');
+  $('srcChips').innerHTML = SOURCES.map(s => {
+    const n = filterPool(f.scope, f.type, [s.id]).length;
+    return chip('src', s, f.src.includes(s.id), n, `toggleSource('${s.id}')`);
+  }).join('');
+  $('srcRow').classList.toggle('disabled', !!f.scope.ai);
+  if (settings.count) $('countSelect').value = settings.count;
+}
+
+function setFilter(key, value) {
+  const f = poolFilter();
+  settings.filter = { scope: f.scope.id, type: f.type.id, src: f.src, [key]: value };
+  onPoolChange();
+}
+
+function toggleSource(id) {
+  const src = poolFilter().src;
+  const next = src.includes(id) ? src.filter(s => s !== id) : [...src, id];
+  if (!next.length) return toast('Aspoň jeden zdroj musí ostať zapnutý');
+  settings.filter = { scope: poolFilter().scope.id, type: poolFilter().type.id, src: next };
+  onPoolChange();
 }
 
 function onPoolChange() {
-  settings.pool = $('poolSelect').value;
   settings.count = $('countSelect').value;
   store.saveJSON('settings.json', settings);
+  buildPoolSelect();
   const pool = currentPool();
-  const pretests = allPretests();
+  const f = poolFilter();
   const ai = pool.filter(isAI).length;
-  const aiFrom = [pool.some(isCopymaster) && 'copymaster', pool.some(isUnix1) && 'Unix1'].filter(Boolean).join(', ');
-  const aiNote = ai ? ` 🤖 ${ai === pool.length ? 'Všetky sú' : ai + ' z nich je'} AI generované (${aiFrom}, neoficiálne).` : '';
-  $('poolInfo').innerText = pretests.length
-    ? `V tomto výbere je ${pool.length} otázok.${aiNote} · T1–T4 = pretesty pred cvičením v 2.–5. týždni · zápočet bol v 6. týždni (z T1–T4) · T5 = rúry a signály (7. týždeň) · T6 = zdieľaná pamäť (8. týždeň) · T7 = semafory (9. týždeň) · T8 = sokety (10. týždeň)`
-    : 'Zatiaľ nie sú označené žiadne pretesty – test ide zo všetkých otázok.';
+  const out = pool.filter(q => sourceOf(q) === 'out').length;
+  const notes = [];
+  if (ai) notes.push(`🤖 ${ai === pool.length ? 'všetky sú' : ai} vytvorené AI (neoficiálne)`);
+  if (out) notes.push(`📚 ${out} mimo pretestov – k téme ich zaradila AI`);
+  $('poolInfo').innerText = `V tomto výbere je ${pool.length} otázok${notes.length ? ' · ' + notes.join(' · ') : ''}.` +
+    (f.scope.hint ? ` · ${f.scope.hint}` : '');
 }
 
 function tagsHtml(q) {
   const tags = (q.pretests || []).map(p => `<span class="tag">${esc(p)}</span>`);
   if (isCopymaster(q)) tags.push('<span class="tag tag-ai" title="Otázku vytvorila AI (Claude) podľa textu zadania copymaster – nie je z pretestu ani z gencisearch">🤖 AI generovaná · Copymaster – neoficiálna</span>');
   if (isUnix1(q)) tags.push('<span class="tag tag-ai" title="Otázku vytvorila AI (Claude) podľa textu zadania Unix1 – nie je z pretestu ani z gencisearch">🤖 AI generovaná · Zadanie Unix1 (IPC) – neoficiálna</span>');
+  if (isIpcPrax(q)) tags.push(`<span class="tag tag-ai" title="Praktickú úlohu vytvorila AI (Claude) – nebola v preteste ani v gencisearch">🤖 AI generovaná · praktická úloha k ${esc(q.aiCat)} – neoficiálna</span>`);
+  if (sourceOf(q) === 'out') tags.push(q.aiCat
+    ? `<span class="tag tag-out" title="Otázka je z gencisearch, ale nebola v žiadnom preteste. K téme ju zaradila AI podľa najpodobnejšej otázky z pretestov.">📚 nebola v preteste · 🤖 podľa AI patrí k ${esc(q.aiCat)}</span>`
+    : '<span class="tag tag-out">📚 nebola v preteste</span>');
   return tags.join('');
 }
 
@@ -342,7 +389,7 @@ function startTest() {
   const count = $('countSelect').value;
   const n = count === 'all' ? pool.length : Math.min(Number(count), pool.length);
   testQuestions = shuffle(pool).slice(0, n);
-  const label = $('poolSelect').selectedOptions[0].text.replace(/\s*\(\d+\)$/, '');
+  const label = describePool();
   initTest(label);
 }
 
@@ -630,7 +677,7 @@ function renderSearch() {
     ? pool.filter(q => stripDiacritics((q.q + ' ' + q.answer + ' ' + (q.alt || []).join(' ')).toLowerCase()).includes(needle))
     : pool;
   const shown = hits.slice(0, 100);
-  $('searchInfo').innerText = `${hits.length} výsledkov${hits.length > shown.length ? ' (zobrazených prvých 100)' : ''} · výber: ${$('poolSelect').selectedOptions[0].text}`;
+  $('searchInfo').innerText = `${hits.length} výsledkov${hits.length > shown.length ? ' (zobrazených prvých 100)' : ''} · výber: ${describePool()}`;
   $('searchResults').innerHTML = shown.map(q => questionCard(q, '')).join('');
 }
 

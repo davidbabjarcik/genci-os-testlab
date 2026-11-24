@@ -6,7 +6,8 @@ window.QUESTIONS = [
     "q": "Zmysel života",
     "answer": "linux",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": null
   },
   {
     "id": 2,
@@ -845,63 +846,72 @@ window.QUESTIONS = [
     "q": "Krátko a výstižne opíšte účel služby open()",
     "answer": "Služba open() otvorí súbor uvedený v parametri path pre čítanie alebo zápis, podľa toho, ako je to špecifikované argumentom flags a ako návratovú hodnotu vráti deskriptor pre otvorený súbor.",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T1"
   },
   {
     "id": 92,
     "q": "Krátko a výstižne opíšte účel služby read()",
     "answer": "Každé volanie služby read() vráti počet bytov, ktoré boli skutočne systémom prenesené. Ak je počet prenesených bajtov nižší, ako je zadaná (požadovaná) hodnota uvedená vo volaní služby, je to znamenie konca súboru.",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T1"
   },
   {
     "id": 93,
     "q": "Krátko a výstižne opíšte účel služby write()",
     "answer": "write () zapisuje, aby sa spočítal počet bajtov z vyrovnávacej pamäte poukázanej do súboru, na ktorý odkazuje deskriptor súboru fd",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T1"
   },
   {
     "id": 94,
     "q": "Krátko a výstižne opíšte účel služby close()",
     "answer": "close () zatvorí deskriptor súboru, takže už neodkazuje na žiadny súbor a môže sa znovu použiť. Odstránia sa všetky zámky záznamov, ktoré sa nachádzajú v súbore, ku ktorému boli priradené, a ktoré sú vlastnené procesom (bez ohľadu na deskriptor súboru, ktorý sa použil na získanie zámku).",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T1"
   },
   {
     "id": 95,
     "q": "Krátko a výstižne opíšte účel služby lseek()",
     "answer": "Služba lseek() nastaví pozíciu v súbore (určený deskriptorom súboru „fd\"), na miesto určené posunutím „offset\", vzhľadom na pozíciu určenú argumentom „origin\".",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T1"
   },
   {
     "id": 96,
     "q": "Krátko a výstižne opíšte účel parametra príznakov (flags) služby open().",
     "answer": ".....",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T1"
   },
   {
     "id": 97,
     "q": "Krátko a výstižne opíšte pojem \"deskriptor súboru\".",
     "answer": "deskriptor súboru , to je číslo identifikujúce konkrétny súbor, do ktorého môžeme presmerovať výstup (ale aj z ktorého môžeme presmerovať vstup)",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T1"
   },
   {
     "id": 98,
     "q": "Krátko a výstižne opíšte účel tretieho parametra služby write()",
     "answer": "Tretí argument udáva počet slabík, ktoré budú prenesené.",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T1"
   },
   {
     "id": 99,
     "q": "Krátko a výstižne opíšte pojem \"ukazovateľ aktuálnej pozície (súborový kurzor)\".",
     "answer": "Funkcia fseek () nastavuje pozíciu v dátovom toku určenom argumentom toku. V pomere k zavedenej pozícii sa údaje prečítajú a zapíšu.Počiatočný bod polohy, ktorá sa má nastaviť, je určený argumentom whence, ktorý môže nadobúdať hodnoty: SEEK_SET - offset sa počíta od začiatku súboru SEEK_CUR - offset sa počíta z aktuálnej polohy SEEK_END - posun sa meria od konca súboruOdsadenie je špecifikované argumentom odsadenia, pričom kladná hodnota argumentu znamená odsadenie doprava od polohy určenej odtiaľ, záporná hodnota je odsadenie doľava.Pre binárne dátové toky je ofset počet bajtov.",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T1"
   },
   {
     "id": 100,
@@ -998,42 +1008,48 @@ window.QUESTIONS = [
     "q": "Uveďte príznak, resp. kombináciu príznakov (korektný syntaktický zápis v jazyku C bez akýchkoľvek medzier), ktoré musíme použiť, ak chceme, pri sprístupňovaní súboru v programe pre čítanie a zápis, zabrániť prepísaniu existujúceho súboru.",
     "answer": "O_CREAT | O_EXCL",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 111,
     "q": "Uveďte príznak, resp. kombináciu príznakov (korektný synaktický zápis v jazyku C bez akýchkoľvek medzier), ktoré musíme použiť, ak chceme, pri sprístupňovaní súboru v programe pre čítanie a zápis, zabrániť prepísaniu obsahu existujúceho súboru",
     "answer": "O_APPEND",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 112,
     "q": "Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'read(0,buff,11)' po svojom úspešnom vykonaní a prenesení požadovaného počtu bajtov.",
     "answer": "11",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 113,
     "q": "Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'write(2,buff,11)' po svojom úspešnom vykonaní.",
     "answer": "11",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 114,
     "q": "Veľkosť súboru je 62 bajtov. Aktuálna pozícia súborového kurzora je 17, fd má hodnotu 5. Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'lseek(fd,55L,SEEK_SET)' po svojom úspešnom vykonaní.",
     "answer": "55",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 115,
     "q": "Veľkosť súboru je 87 bajtov. Aktuálna pozícia súborového kurzora je 22, fd má hodnotu 5. Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'lseek(fd,-6L,SEEK_CUR)' po svojom úspešnom vykonaní.",
     "answer": "16",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 116,
@@ -1049,56 +1065,64 @@ window.QUESTIONS = [
     "q": "Veľkosť (!!!) súboru je 123 bajtov. Aktuálna pozícia súborového kurzora je 25, fd má hodnotu 5. Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'lseek(fd,-3L,SEEK_SET)' po svojom vykonaní.",
     "answer": "-1",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 118,
     "q": "Veľkosť (!!!) súboru je 52 bajtov. Aktuálna pozícia súborového kurzora je 28, fd má hodnotu 5. Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'lseek(fd,-10L,SEEK_SET)' po svojom vykonaní.",
     "answer": "-1",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 119,
     "q": "Majme súbor qwe.txt, ktorého aktuálny stav v mieste vykonania služby read() je definovaný takto: Znaky: anrcnmouhwyjpmbwpjdbkoupie Pozicia: 00000000001111111111222222 01234567890123456789012345 Ukazovatel: ...................^  a fragmnet kodu: //--------- zaciatok fragmnetu int fd,i; char buffer[80]; ... fd=open(\"qwe.txt\",O_RDONLY); ... i=read(fd,buffer,6); printf(\"%d\",i); ... //--------- koniec fragmnetu  Špecifikujte postupnosť znakov, ktoré do vyrovnávacej pamäte \"buffer\" umiestni fragment kódu v jazyku C uvedený vyššie. Predpokladáme, že sa obe služby vykonajú korektne. (Reťazec špecifikujte presne aj so zohľadnením malých a veľkých písmen.)",
     "answer": "bkoupi",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 120,
     "q": "Majme súbor qwe.txt, aktuálny stav ktorého (obsah a súborový kurzor) je v mieste vykonania služby read() definovaný takto: Znaky: pnywpxsvmiaaoqldhwbnlwlcwr Pozicia: 00000000001111111111222222 01234567890123456789012345 Ukazovatel: .....................^  a fragmnet kodu: //--------- zaciatok fragmentu int fd,i; char buffer[80]; ... fd=open(\"qwe.txt\",O_RDONLY); ... i=read(fd,buffer,3); printf(\"%d\",i); ... //--------- koniec fragmentu Špecifikujte akú hodnotu premennej i vytlačí fragment kódu v jazyku C. Predpokladáme, že sa obe služby vykonajú korektne.",
     "answer": "3",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 121,
     "q": "Majme súbor qwe.txt, ktorého aktuálny stav v mieste vykonania služby read() je definovaný takto: Znaky: ghpyngsjbettperycucoafopbr Pozicia: 00000000001111111111222222 01234567890123456789012345 Ukazovatel: .....................^  a fragmnet kodu: //--------- zaciatok fragmnetu int fd,i; char buffer[80]; ... fd=open(\"qwe.txt\",O_RDONLY); ... i=read(fd,buffer,7); printf(\"%d\",i); ... //--------- koniec fragmnetu  Špecifikujte postupnosť znakov, ktoré do vyrovnávacej pamäte \"buffer\" umiestni fragment kódu v jazyku C uvedený vyššie. Predpokladáme, že sa obe služby vykonajú korektne. (Reťazec špecifikujte presne aj so zohľadnením malých a veľkých písmen.)",
     "answer": "fopbr",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 122,
     "q": "Majme súbor qwe.txt, aktuálny stav ktorého (obsah a súborový kurzor) je v mieste vykonania služby read() definovaný takto: Znaky: pnywpxsvmiaaoqldhwbnlwlcwr Pozicia: 00000000001111111111222222 01234567890123456789012345 Ukazovatel: ........................^  a fragmnet kodu: //--------- zaciatok fragmentu int fd,i; char buffer[80]; ... fd=open(\"qwe.txt\",O_RDONLY); ... i=read(fd,buffer,5); printf(\"%d\",i); ... //--------- koniec fragmentu Špecifikujte akú hodnotu premennej i vytlačí fragment kódu v jazyku C. Predpokladáme, že sa obe služby vykonajú korektne.",
     "answer": "2",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 123,
     "q": "Majme súbor qwe.txt, aktuálny stav ktorého (obsah a súborový kurzor) je v mieste vykonania služby write() definovaný takto: Znaky: qijqfdfryu Pozicia: 0123456789 Ukazovatel: ___^   a fragmnet kodu: //--------- zaciatok fragmnetu int fd,i; char buffer[80]=\"PKUJHKETKK\"; ... i=write(fd,&buffer[5],2); ... //--------- koniec fragmnetu Špecifikujte vo forme reťazca obsah súboru qwe.txt po vykonaní uvedeného fragmentu kódu v jazyku C. (Reťazec špecifikujte presne aj so zohľadnením malých a veľkých písmen.)",
     "answer": "qijKEdfryu",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 124,
     "q": "Majme súbor qwe.txt, aktuálny stav ktorého (obsah a súborový kurzor) je definovaný takto: Znaky: ovmeojkwel Pozicia: 0123456789 a fragmnet kodu: //--------- zaciatok fragmnetu int fd,i; char buffer[80]=\"GXCQQ\"; ... fd=open(\"qwe.txt\",O_WRONLY|O_APPEND); i=write(fd,buffer,4); ... //--------- koniec fragmnetu Špecifikujte vo forme reťazca obsah súboru qwe.txt po vykonaní uvedeného fragmentu kódu v jazyku C.Pozn.1.Reťazec špecifikujte presne aj so zohľadnením malých a veľkých písmen.2.Nezabudnite zohľadniť príznaky (flags) služby open().3.Predpokladáme, že všetky služby sa vykonajú korektne.",
     "answer": "ovmeojkwelGXCQ",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 125,
@@ -1262,7 +1286,8 @@ window.QUESTIONS = [
     "q": "V premennej akého typu vráti funkcia stat() informáciu o súbore? Uveďte iba typ premennej, nie premennú samotnú!Odpoveď uveďte podľa syntaxe jazyka C.",
     "answer": "struct stat",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 142,
@@ -1493,112 +1518,128 @@ window.QUESTIONS = [
     "q": "Krátko a výstižne opíšte účel služby truncate(). (Nebojte sa používať rozvité vety, odpoveď bude vyhodnotená vyučujúcim)",
     "answer": "truncate() - slúži na zmenšenie alebo rozšírenie veľkosti súboru na zadanú veľkosť.",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 167,
     "q": "Krátko a výstižne opíšte účel služby link(). (Nebojte sa používať rozvité vety, odpoveď bude vyhodnotená vyučujúcim)",
     "answer": "link() - vytvorte nový názov súboru (vytvorí nový odkaz na existujúci súbor).",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 168,
     "q": "Krátko a výstižne opíšte pojem \"alternatívne meno súboru\" (hard link). (Nebojte sa používať rozvité vety, odpoveď bude vyhodnotená vyučujúcim)",
     "answer": "......",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 169,
     "q": "Krátko a výstižne opíšte účel služieb opendir() a readdir(). (Nebojte sa používať rozvité vety, odpoveď bude vyhodnotená vyučujúcim)",
     "answer": "readdir() - slúži na čítanie adresára.Funkcia readdir () vráti ukazovateľ na štruktúru adresára predstavujúcu ďalšiu položku adresára v adresárovom prúde, na ktorú odkazuje adresár dirp. Vráti NULL po dosiahnutí konca toku adresárov alebo v prípade, že sa vyskytla chyba. opendir() - slúži na otvoránie adresára.",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 170,
     "q": "Krátko a výstižne opíšte účel záznamu (štruktúry) \"dirent\". (Nebojte sa používať rozvité vety, odpoveď bude vyhodnotená vyučujúcim)",
     "answer": "Položka adresára je vrátená ako ukazovateľ na štruktúru dirent. Štruktúra dirent obsahuje informácie o súbore, ktoré sú uložené v adresári.",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 171,
     "q": "Uveďte argumenty, načo a prečo je potrebná služba close(). (Nestačí povedať, že na uzavretie súboru resp. kanálu!)",
     "answer": "služba close() zavrie deskriptor súboru, ktorý potom neodkazuje na žiadny súbor a môže byť znovu použitý. Všetky zámky umiestnené v príslušnom súbore sa uvoľnia (bez ohľadu na to, či sa tento popisovač súboru použil na nastavenie zámku).Ak je fd poslednou kópiou akéhokoľvek deskriptora súboru, zdroje s ním spojené sú uvoľnené; ak bol deskriptor posledným odkazom na súbor odstránený pomocou unlink(2), súbor sa natrvalo odstráni.",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T1"
   },
   {
     "id": 172,
     "q": "Služba open() je určená, okrem iného, aj na vytváranie súborov. Ako/odkiaľ/'na základe čoho' bude vytváranému súboru priradený vlastník a skupina?",
     "answer": "......",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 173,
     "q": "Vyjadrite aké práva nastavíme súboru „file\" službouchmod(\"file\",0636)Nastavené práva vyjadrite vo forme rwxrwxrwx uvedením písmen r,w,x tam, kde je právo pridelené a znakom \"-\" (minus), kde právo udelené nie je. Nezabudnite na úvodné mínus, indikujúce, že ide o obyčajný súbor.",
     "answer": "-rw--wxrw-",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 174,
     "q": "Požadujeme pre súbor „file\" nastaviť prístupové práva na hodnotu -r---w-rwx. Uveďte hodnotu osmičkovej konštanty, ktorú použijeme pri volaní služby chmod(). Konštantu zapíšte v tvare korektnej osmičkovej konštanty jazyka C.",
     "answer": "0427",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 175,
     "q": "Po zadaní príkazu$ls -linsme dostali nasledujúci výstup: 100 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 ghq 102 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 pvj 103 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 oji 101 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 rui 100 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 kil 100 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 fvhUveďte, ktorý z vyššie uvedených súborov je zaručene identický so súborompvjUveďte práve jeden aj vtedy, ak ich je viac (vtedy - hociktorý z nich). Ak žiaden, uveďte \"žiadny\" alebo \"ziadny\" (bez úvodzoviek). Súbor pvj sa nepočíta. Hodnota tretej položky výpisu bola skrytá - znak X.",
     "answer": "ziadny",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 176,
     "q": "Po zadaní príkazu$ls -linsme dostali nasledujúci výstup:141 -rw-r--r-- 2 59 70 46 2011-02-26 06:35 hhhUrčte hodnotu premennejx.d_name,po úspešnom volaní službyreaddir(&x),vzťahujúcom sa na horeuvedený súbor.",
     "answer": "hhh",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 177,
     "q": "Po zadaní príkazu$ls -linsme dostali nasledujúci výstup:128 -rw-r--r-- 6 37 13 66 2011-02-26 06:35 bbbUrčte hodnotu premennejx.st_gid,po úspešnom volaní službystat(\"bbb\",&x)pre horeuvedený súbor.",
     "answer": "13",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 178,
     "q": "Po zadaní príkazu$ls -linsme dostali nasledujúci výstup:183 -rw-r--r-- 5 15 39 59 2011-02-26 06:35 nnnUrčte hodnotu premennejx.st_ino,po úspešnom volaní službystat(\"nnn\",&x)pre horeuvedený súbor.",
     "answer": "183",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 179,
     "q": "Po zadaní príkazu$ls -linsme dostali nasledujúci výstup:146 -rw-r--r-- 1 64 37 62 2011-02-26 06:35 mmmUrčte hodnotu premennejx.st_nlink,po úspešnom volaní službystat(\"mmm\",&x)pre horeuvedený súbor.",
     "answer": "1",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 180,
     "q": "Po zadaní príkazu$ls -linsme dostali nasledujúci výstup:172 -rw-r--r-- 4 75 80 31 2011-02-26 06:35 cccUrčte hodnotu premennejx.st_size,po úspešnom volaní službystat(\"ccc\",&x)pre horeuvedený súbor.",
     "answer": "31",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 181,
     "q": "Po zadaní príkazu$ls -linsme dostali nasledujúci výstup:160 -rw-r--r-- 8 45 74 59 2011-02-26 06:35 rrrUrčte hodnotu premennejx.st_uid,po úspešnom volaní službystat(\"rrr\",&x)pre horeuvedený súbor.",
     "answer": "45",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 182,
@@ -1650,7 +1691,8 @@ window.QUESTIONS = [
     "q": "Akú hodnotu vráti služba umask() po svojom úspešnom vykonaní? hodnotu špecifikujte niektorou z relácií <, >, <=, >=, =, != a číslom bez medzier!)",
     "answer": ">=0",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 188,
@@ -1668,7 +1710,8 @@ window.QUESTIONS = [
     "q": "Doplňte vetu: \"Služba chmod() slúži na zmenu/nastavenie .... ... súboru\". doplňte dve slová)",
     "answer": "pristupovych prav",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 190,
@@ -1720,7 +1763,8 @@ window.QUESTIONS = [
     "q": "Akú hodnotu vráti služba chmod() po svojom neúspešnom vykonaní? hodnotu špecifikujte celým číslom bez typovej konverzie!)",
     "answer": "-1",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 196,
@@ -1745,7 +1789,8 @@ window.QUESTIONS = [
     "q": "Doplňte vetu: \"Služba chown() slúži na zmenu/nastavenie .... súboru\". doplňte jedno slovo)",
     "answer": "vlastnika",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 199,
@@ -1788,14 +1833,16 @@ window.QUESTIONS = [
     "q": "Akú hodnotu vráti služba chown() po svojom úspešnom vykonaní? hodnotu špecifikujte niektorou z relácií <, >, <=, >=, =, != a číslom bez medzier!)",
     "answer": "=0",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 204,
     "q": "Akú hodnotu vráti služba chown() po svojom neúspešnom vykonaní? hodnotu špecifikujte celým číslom bez typovej konverzie!)",
     "answer": "-1",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 205,
@@ -1822,7 +1869,8 @@ window.QUESTIONS = [
     "q": "te zoznam služieb relevatných k téme \"ovládanie zariadení\".Služby uveďte v poradí, v akom sú uvedené v dokumente, oddelené práve jednou medzerou",
     "answer": "ioctl() tcgetattr() tcsetattr()",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 208,
@@ -1937,35 +1985,40 @@ window.QUESTIONS = [
     "q": "Krátko a výstižne opíšte účel služby umask().",
     "answer": "Pomocou služby umask() (maska práv) môžeme počas behu programu ešte ovplyvniť práva vytváraného súboru. Maska špecifikuje, ktoré práva budú z hodnoty parametra mode odobrané.Maska práv je väčšinou nastavovaná raz - pri prihlásení - konfiguračným súborom shell-u a zvyčajne už nie je menená. Spravidla je nastavená na hodnotu 022 (odobratie práva zápisu do súboru pre skupinu a ostatných). Ak chceme nastaviť špecifickú masku práv, môžeme tak urobiť pred spustením programu príkazom umask alebo v programe službou umask().",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 221,
     "q": "Krátko a výstižne opíšte účel služby umask(). (Nebojte sa používať rozvité vety, odpoveď bude vyhodnotená vyučujúcim)",
     "answer": "...",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 222,
     "q": "Krátko a výstižne opíšte účel služby chmod().",
     "answer": "Pomocou tejto služby môžeme meniť prístupové práva k súboru. Z bezpečnostných dôvodov len užívateľ root alebo vlastník súborov môže meniť práva súboru.",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 223,
     "q": "Krátko a výstižne opíšte účel ovládačov zariadení. (Nebojte sa používať rozvité vety, odpoveď bude vyhodnotená vyučujúcim)",
     "answer": "Ovládač zariadenia (drajver, driver) je počitačový program, ktorý umožňuje komunikáciu operačného systému s hardvérovým zariadením.",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 224,
     "q": "Uveďte aké prístupové práva bude mať súbor „abc\" po vykonaní fragmentu programu  . . . umask(003); open(\"abc\",O_RDWR|O_CREAT,0770); . . . Predpokladáme, že súbor „abc\" neexistoval.",
     "answer": "0770",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 225,
@@ -2216,35 +2269,40 @@ window.QUESTIONS = [
     "q": "Krátko a výstižne opíšte účel služby execve(). (Nebojte sa používať rozvité vety, odpoveď bude vyhodnotená vyučujúcim)",
     "answer": "služba jadra execve() môže priradiť nový program novovytvorenému procesu (ale nielen jemu).jej prvým parametrom je názov spustiteľného programu, ktorý má proces vykonávať. Ďalším parametrom má byť pole argumentov, ktoré chceme danému spúšťanému programu odovzdať. Posledný parameter určuje vlastnosti prostredia (environment) spúšťaného programu.",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 252,
     "q": "Krátko a výstižne opíšte účel služby fork(). (Nebojte sa používať rozvité vety, odpoveď bude vyhodnotená vyučujúcim)",
     "answer": "služba fork() pri vytváraní procesov vytvorí (takmer) identický proces - klon (to, ktoré vlastnosti zdedí potomok od rodiča, si Sofia pozrie v študijnej literatúre.).",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 253,
     "q": "Krátko a výstižne opíšte účel služby wait(). (Nebojte sa používať rozvité vety, odpoveď bude vyhodnotená vyučujúcim)",
     "answer": "službu jadra wait() používame aby zistiť, čí potomok procesu už skončil a s akým návratovým kódom.",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 254,
     "q": "Krátko a výstižne opíšte účel služby chown().",
     "answer": "zmení používateľa/skupinu.",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 255,
     "q": "Uveďte názov služby jadra, ktorou môžeme získať hodnotu ekvivalentnú návratovej hodnote volania jadra lseek(fd,0,SEEK_END). Hodnota musí byť ekvivalentná nielen číselne, ale aj svojou sémantikou (významom). Pozn. službu môžme zavolať iba raz, bez ohľadu na veľkosť súboru.",
     "answer": "stat",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 256,
@@ -2278,28 +2336,32 @@ window.QUESTIONS = [
     "q": "Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'write(2,buff,8)'  po svojom úspešnom vykonaní.",
     "answer": "8",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 260,
     "q": "Veľkosť súboru je 82 bajtov. Aktuálna pozícia súborového kurzora je 41, fd má hodnotu 5. Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'lseek(fd,21L,SEEK_SET)'  po svojom úspešnom vykonaní.",
     "answer": "21",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 261,
     "q": "Veľkosť súboru je 91 bajtov. Aktuálna pozícia súborového kurzora je 29, fd má hodnotu 5. Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'lseek(fd,0L,SEEK_CUR)'  po svojom úspešnom vykonaní.",
     "answer": "29",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 262,
     "q": "Veľkosť (!!!) súboru je 100 bajtov. Aktuálna pozícia súborového kurzora je 21, fd má hodnotu 5. Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'lseek(fd,9L,SEEK_END)'  po svojom úspešnom vykonaní.",
     "answer": "109",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 263,
@@ -2315,84 +2377,96 @@ window.QUESTIONS = [
     "q": "Veľkosť (!!!) súboru je 83 bajtov. Aktuálna pozícia súborového kurzora je 20, fd má hodnotu 5. Uveďte (číslom) návratovú hodnotu, ktorú vráti systémové volanie 'lseek(fd,-11L,SEEK_SET)'  po svojom vykonaní.",
     "answer": "-1",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 265,
     "q": "Majme súbor qwe.txt, ktorého aktuálny stav v mieste vykonania služby read() je definovaný takto:       Znaky:        anrcnmouhwyjpmbwpjdbkoupie  Pozicia:      00000000001111111111222222                01234567890123456789012345  Ukazovatel:   ...................^    a fragmnet kodu:  t//--------- zaciatok fragmnetu  tint fd,i;  tchar buffer[80];  t...  tfd=open(\"qwe.txt\",O_RDONLY);  t...  ti=read(fd,buffer,6);  tprintf(\"%d\",i);  t...  t//--------- koniec fragmnetu       Špecifikujte postupnosť znakov, ktoré do vyrovnávacej pamäte \"buffer\" umiestni   fragment kódu v jazyku C uvedený vyššie. Predpokladáme, že sa obe služby vykonajú   korektne. (Reťazec špecifikujte presne aj so zohľadnením malých a veľkých písmen.)",
     "answer": "bkoupi",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 266,
     "q": "Majme súbor qwe.txt, ktorého aktuálny stav v mieste vykonania služby read() je   definovaný takto:       Znaky:        ghpyngsjbettperycucoafopbr  Pozicia:      00000000001111111111222222                01234567890123456789012345  Ukazovatel:   .....................^    a fragmnet kodu:  t//--------- zaciatok fragmnetu  tint fd,i;  tchar buffer[80];  t...  tfd=open(\"qwe.txt\",O_RDONLY);  t...  ti=read(fd,buffer,7);  tprintf(\"%d\",i);  t...  t//--------- koniec fragmnetu       Špecifikujte postupnosť znakov, ktoré do vyrovnávacej pamäte \"buffer\" umiestni   fragment kódu v jazyku C uvedený vyššie. Predpokladáme, že sa obe služby vykonajú   korektne. (Reťazec špecifikujte presne aj so zohľadnením malých a veľkých písmen.)",
     "answer": "fopbr",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 267,
     "q": "Majme súbor qwe.txt, aktuálny stav ktorého (obsah a súborový kurzor) je  <u>v mieste vykonania služby write()</u> definovaný takto:   Znaky:         qijqfdfryu Pozicia:       0123456789 Ukazovatel:    ___^       a fragmnet kodu:        //--------- zaciatok fragmnetu        int fd,i;        char buffer[80]=\"PKUJHKETKK\";        ...        i=write(fd,&buffer[5],2);         ...        //--------- koniec fragmnetu   Špecifikujte vo forme reťazca obsah súboru qwe.txt po vykonaní uvedeného fragmentu  kódu v jazyku C.  (Reťazec špecifikujte presne aj so zohľadnením malých a veľkých písmen.)",
     "answer": "qijKEdfryu",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 268,
     "q": "Majme súbor qwe.txt, aktuálny stav ktorého (obsah a súborový kurzor) je  definovaný takto:   Znaky:         ovmeojkwel Pozicia:       0123456789   a fragmnet kodu:         //--------- zaciatok fragmnetu       int fd,i;       char buffer[80]=\"GXCQQ\";       ...       fd=open(\"qwe.txt\",O_WRONLY|O_APPEND);       i=write(fd,buffer,4);         ...       //--------- koniec fragmnetu   Špecifikujte vo forme reťazca obsah súboru qwe.txt po vykonaní uvedeného fragmentu  kódu v jazyku C.<p> Pozn.  1.Reťazec špecifikujte presne aj so zohľadnením malých a veľkých písmen.   2.Nezabudnite zohľadniť príznaky (flags) služby open().  3.Predpokladáme, že všetky služby sa vykonajú korektne. </p>",
     "answer": "ovmeojkwelGXCQ",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 269,
     "q": "Majme súbor qwe.txt, aktuálny stav ktorého pred volanim sluzby open()  je definovaný takto:    Znaky:    t  ojoqasmjtg Pozicia:t  0123456789 Ukazovatel:                  a fragmnet kodu: t//--------- zaciatok fragmnetu tint fd,i; tchar buffer[80]= \"KFRDGPSJBC\"; t... tfd=open(\"qwe.txt\",O_RDWR); tlseek(fd,5,SEEK_SET) tread(fd,buffer,1); tlseek(fd,5,SEEK_SET) twrite(fd,buffer,3);       ... t//--------- koniec fragmnetu    Špecifikujte obsah súboru po vykonaní fragmentu kodu v programe v jazyku C,  za predpokladu, ze sa všetky služby vykonajú korektne.",
     "answer": "ojoqasFRtg",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 270,
     "q": "Potrebujete zrealizovať program, ktorý realizuje nasledujúcu činnosť:<p>prekopíruje obsah súboru <u>zadaného na štandardnom vstupe</u> do súboru <u>zadaného na príkazovom riadku</u> (teda v jednom prípade využije presmerovanie vstupu)Vyberte <u>minimálny</u> súbor služieb jadra operačného systému UNIX/Linux, ktoré musíte použiť pre napísanie takéhoto programu. </p> Možnosti:a.topen()b.tread()c.twrite()d.tlseek()e.tstat()f.tlink()g.tumask()h.tftruncate()i.tchmod()j.tchown()k.topendir()l.treaddir() Odpoveď špecifikujte ako postupnosť písmen, ktorými sú služby označené v zozname služieb, v abecednom poradí v sekcii možnosti. (t.j. napr. ak chcete uviesť služby link(), read() a chown() zadáte bfj).",
     "answer": "abc",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 271,
     "q": "Doplňte vetu: \"Služby stat(), lstat() a fstat() využívame na ... ... o súbore\". (viď Sofia, napr. služba fstat(), KROK 1)",
     "answer": "získanie informácií",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 272,
     "q": "Doplňte vetu: \"Služba link() slúži na vytvorenie ... mena súboru\" (viď man 2 link).",
     "answer": "nového",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 273,
     "q": "Doplňte vetu: \"Služba unlink() slúži na zmazanie .... mena súboru\". (viď man 2 unlink)",
     "answer": "alternatívneho",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 274,
     "q": "Doplňte vetu: \"Služba truncate() slúži na nastavenie novej .... súboru\". (viď man 2 truncate)",
     "answer": "dĺžky",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 275,
     "q": "Akú hodnotu vráti služba dup() po svojom úspešnom vykonaní? (Hodnotu špecifikujte niektorou z relácií <, >, <=, >=, =, != a číslom, bez medzier!)",
     "answer": ">=0",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 276,
@@ -2408,21 +2482,24 @@ window.QUESTIONS = [
     "q": "Uveďte význam (sémantiku) návratovej hodnoty služieb dup() a dup2()? (viď sekcia RETURN VALUE manulálovej stránky man 2 dup(). Pozn. Dve, prípadne tri slová, bez slovesa a po slovensky.",
     "answer": "nový deskriptor",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 278,
     "q": "Uveďte význam (sémantiku) návratovej hodnoty služieb stat(), lstat() a fstat(), po úspešnom vykonaní služby? (viď sekcia RETURN VALUE manulálovej stránky man 2 stat() )",
     "answer": "vracia nulu",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 279,
     "q": "Uveďte význam (sémantiku) návratovej hodnoty služieb link()  a unlink(), po úspešnom vykonaní služby? (viď sekcia RETURN VALUE manulálovej stránky man 2 link() )",
     "answer": "vracia nulu",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 280,
@@ -2438,77 +2515,88 @@ window.QUESTIONS = [
     "q": "Akú hodnotu vráti funkcia opendir() v prípade chyby? (viď sekcia RETURN VALUE)",
     "answer": "NULL",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 282,
     "q": "Akú hodnotu vráti funkcia readdir() v prípade chyby? (viď sekcia RETURN VALUE)",
     "answer": "NULL",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T2"
   },
   {
     "id": 283,
     "q": "Vyjadrite aké práva nastavíme súboru „file“ službou  chmod(“file”,0422)  Nastavené práva vyjadrite vo forme  rwxrwxrwx uvedením písmen r,w,x tam, kde je právo pridelené a znakom “-“ (minus), kde právo udelené nie je. Nezabudnite na úvodné mínus, indikujúce, že ide o obyčajný súbor.",
     "answer": "-r---w--w-",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 284,
     "q": "Požadujeme pre súbor „file“ nastaviť prístupové práva na hodnotu -r-xrw-rw-. Uveďte hodnotu osmičkovej konštanty, ktorú použijeme pri volaní služby chmod(). Konštantu zapíšte v tvare korektnej osmičkovej konštanty jazyka C.",
     "answer": "0566",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 285,
     "q": "Po zadaní príkazu  $ls –lin  sme dostali nasledujúci výstup:  100 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 hia  102 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 ghq  100 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 mes  103 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 tsl  101 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 zgz  103 -rw-r--r-- X usr1 group 38 2011-02-26 06:35 ytn    Uveďte, ktorý z vyššie uvedených súborov je zaručene identický so súborom  mes Uveďte práve jeden aj vtedy, ak ich je viac (vtedy - hociktorý z nich). Ak žiaden, uveďte “žiadny” alebo “ziadny” (bez úvodzoviek). Súbor mes sa nepočíta. Hodnota tretej položky výpisu bola skrytá – znak X.",
     "answer": "hia",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 286,
     "q": "Po zadaní príkazu  $ls –lin  sme dostali nasledujúci výstup: 145 -rw-r--r-- 2 54 19 58 2011-02-26 06:35 ooo    Určte hodnotu premennej  x.d_name,  po úspešnom volaní služby  readdir(&x),  vzťahujúcom sa na horeuvedený súbor.",
     "answer": "ooo",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 287,
     "q": "Po zadaní príkazu  $ls –lin  sme dostali nasledujúci výstup: 175 -rw-r--r-- 7 62 66 71 2011-02-26 06:35 ttt    Určte hodnotu premennej  x.st_gid,  po úspešnom volaní služby  stat(”ttt”,&x)  pre horeuvedený súbor.",
     "answer": "66",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 288,
     "q": "Po zadaní príkazu  $ls –lin  sme dostali nasledujúci výstup: 155 -rw-r--r-- 4 64 42 29 2011-02-26 06:35 ddd    Určte hodnotu premennej  x.st_ino,  po úspešnom volaní služby  stat(”ddd”,&x)  pre horeuvedený súbor.",
     "answer": "155",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 289,
     "q": "Po zadaní príkazu  $ls –lin  sme dostali nasledujúci výstup: 190 -rw-r--r-- 3 77 89 45 2011-02-26 06:35 jjj    Určte hodnotu premennej  x.st_nlink,  po úspešnom volaní služby  stat(”jjj”,&x)  pre horeuvedený súbor.",
     "answer": "3",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 290,
     "q": "Po zadaní príkazu  $ls –lin  sme dostali nasledujúci výstup: 160 -rw-r--r-- 8 45 74 59 2011-02-26 06:35 rrr    Určte hodnotu premennej  x.st_size,  po úspešnom volaní služby  stat(”rrr”,&x)  pre horeuvedený súbor.",
     "answer": "59",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 291,
     "q": "Po zadaní príkazu  $ls –lin  sme dostali nasledujúci výstup: 172 -rw-r--r-- 4 75 80 31 2011-02-26 06:35 ccc    Určte hodnotu premennej  x.st_uid,  po úspešnom volaní služby  stat(”ccc”,&x)  pre horeuvedený súbor.",
     "answer": "75",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 292,
@@ -2524,7 +2612,8 @@ window.QUESTIONS = [
     "q": "Uveďte význam (sémantiku) návratovej hodnoty služby umask() ? (viď sekcia RETURN VALUE manulálovej stránky man 2 umask() Pozn. - bez slovesa; po slovensky; v prvom páde (nominatív)",
     "answer": "predchádzajúca hodnota",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 294,
@@ -2540,21 +2629,24 @@ window.QUESTIONS = [
     "q": "Uveďte maximálny počet parametrov služby  chmod(). (viď man 2 chmod. Počet vyjadrite číslom v desiatkovej sústave)",
     "answer": "2",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 296,
     "q": "Uveďte typ návratovej hodnoty služby chmod() (podľa man 2 chmod.)",
     "answer": "int",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 297,
     "q": "Akú hodnotu vráti služba chmod() po svojom úspešnom vykonaní? (viď sekcia RETURN VALUE manulálovej stránky man 2 chmod; hodnotu špecifikujte niektorou z relácií <, >, <=, >=, =, != a číslom bez medzier!)",
     "answer": "=0",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 298,
@@ -2570,14 +2662,16 @@ window.QUESTIONS = [
     "q": "Uveďte názov globálnej premennej, v ktorej jadro (kernel) vráti kód chyby po neúspešnom vykonaní služby chmod ? (viď sekcia RETURN VALUE manulálovej stránky man 2 chmod",
     "answer": "errno",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 300,
     "q": "Uveďte význam (sémantiku) návratovej hodnoty služby chmod() pri úspešnom vykonaní služby (viď sekcia RETURN VALUE manulálovej stránky man 2 chmod)",
     "answer": "vracia nulu",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 301,
@@ -2593,7 +2687,8 @@ window.QUESTIONS = [
     "q": "Uveďte maximálny počet parametrov služby  chown(). (viď man 2 chown. Počet vyjadrite číslom)",
     "answer": "3",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 303,
@@ -2618,14 +2713,16 @@ window.QUESTIONS = [
     "q": "Uveďte názov globálnej premennej, v ktorej jadro (kernel) vráti kód chyby po neúspešnom vykonaní služby chown ? (viď sekcia RETURN VALUE manulálovej stránky man 2 chown",
     "answer": "errno",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 306,
     "q": "Uveďte význam (sémantiku) návratovej hodnoty služby chown pri úspešnom vykonaní služby (viď sekcia RETURN VALUE manulálovej stránky man 2 chown).",
     "answer": "vracia nulu",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 307,
@@ -2641,91 +2738,104 @@ window.QUESTIONS = [
     "q": "Uveďte zoznam dátových štruktúr relevatných k téme \"ovládanie zariadení\". (Podľa Sofie, Téma: Ovládanie zariadení, terminálová disciplína, str. 2. Dátové štruktúry uveďte v poradí, v akom sú uvedené v dokumente, oddelené práve jednou medzerou).",
     "answer": "termios",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 309,
     "q": "Doplňte vetu: \"Zariadenie, do ktorého OS zapisuje dáta ako sekvenčnú postupnosť bajtov, nazývame zariadením ...  (viď Sofia; pozor na správny pád doplňovaného slova).",
     "answer": "znakovým",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 310,
     "q": "Doplňte vetu: \"Zariadenie, do ktorého OS zapisuje dáta v blokoch stanovenej veľkosti, nazývame zariadením ...  (viď Sofia).",
     "answer": "blokovým",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T3"
   },
   {
     "id": 311,
     "q": "Uveďte aké prístupové práva bude mať súbor „abc“ po vykonaní fragmentu programu     . . .  umask(003);  open(“abc”,O_RDWR|O_CREAT,0751);  . . .    Predpokladáme, že súbor „abc“ neexistoval.",
     "answer": "0750",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 312,
     "q": "Aký je najmenší počet argumentov (parametrov) funkcie main() - začiatok vykonávania C programu? (Odpoveď zadajte číslom)",
     "answer": "0",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 313,
     "q": "Doplňte tvrdenie: Služba fork() slúži na vytvorenie ... ... . (dve slová - Sofia alebo man 2 fork)",
     "answer": "dcérskeho procesu",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 314,
     "q": "Doplňte tvrdenie: Služba wait() slúži na ... vykonávania rodičovského procesu . (Sofia alebo man 2 wait)",
     "answer": "pozastavenie",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 315,
     "q": "Doplňte tvrdenie: Služba waitpid() slúži na ... vykonávania rodičovského procesu . (Sofia alebo man 2 waitpid)",
     "answer": "pozastavenie",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 316,
     "q": "Doplňte tvrdenie: Služba getpid() slúži na zistenie ID ... . (Sofia alebo man 2 getpid)",
     "answer": "procesu",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 317,
     "q": "Doplňte tvrdenie: Služba getppid() slúži na zistenie ID ... procesu. (Sofia alebo man 2 getpid)",
     "answer": "rodiča",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 318,
     "q": "Doplňte tvrdenie: Služba/funkcia exit() slúži na ... procesu. (Sofia alebo man 2 exit)",
     "answer": "ukončenie",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 319,
     "q": "Uveďte názov funkcie, ktorej služba execve() \"odovzdá riadenie\" v spustenom programe napísanom v jazuky C (man 2 execve, sekcia DESCRIPTION)",
     "answer": "main",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 320,
     "q": "Doplňte tvrdenie: Služba wait() vráti ID procesu .... potomka. (man 2 wait, sekcia RETURN VALUE)",
     "answer": "ukončeného",
     "alt": [],
-    "pretests": []
+    "pretests": [],
+    "aiCat": "T4"
   },
   {
     "id": 321,

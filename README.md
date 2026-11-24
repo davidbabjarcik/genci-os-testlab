@@ -23,7 +23,11 @@ Otázky a odpovede pochádzajú z **[https://gencisearch.surge.sh/](https://genc
 - ✍️ Odpoveď sa **píše** – kontrola ignoruje veľké/malé písmená, medzery, `()` za názvom služby a (voliteľne) diakritiku
 - ✔ Pri preklepe si odpoveď môžeš uznať tlačidlom **„Mal som pravdu“**
 - 🃏 Dlhé (opisné) odpovede fungujú ako kartička: odkryješ a povieš, či si vedel
-- 🏷️ **Filter podľa pretestov** – test len z konkrétneho pretestu alebo zo všetkých, ktoré môžu byť na zápočte
+- 🏷️ **Výber otázok tlačidlami** v troch radoch:
+  - **Rozsah** – Všetko, 🎓 Zápočet 1 (T1–T4 + copymaster), 🎓 Zápočet 2 (T5–T8 + Unix1), jednotlivé T1–T8, 🤖 Copymaster, 🤖 Unix1
+  - **Typ** – všetky / 🧮 len praktické / 📖 len teória
+  - **Zdroj** – 📝 z pretestov, 📚 mimo pretestov (z gencisearch, k téme ich zaradila 🤖 AI podľa najpodobnejšej otázky z pretestov), 🤖 vytvorené AI
+- 🧮 **Praktické IPC úlohy** (🤖 AI, 39): rúry, fork, signály, zdieľaná pamäť, semafory, sokety – odpovede overené spustením v Linuxe
 - 📘 **Učenie na zápočet** – ťahák služieb z T1–T4 (hlavičky, parametre, návratové hodnoty tak, ako ich chcú pretesty) s precvičovaním po témach
   a nástroje: práva rwx ↔ osmičkovo, umask + open, lseek kalkulačka, simulátor súboru (open/read/write/lseek krok po kroku), rozklad výpisu `ls -lin`
 - ⚡ **Bleskovky** – učenie na týždenné testy (T1–T8): kartičky z pretestu daného týždňa (odkryješ odpoveď a povieš, či si vedel;

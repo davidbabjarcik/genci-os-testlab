@@ -21,10 +21,20 @@
   </header>
 
   <div class="card action-card">
-    <div class="pool-row">
-      <label for="poolSelect">Otázky:</label>
-      <select id="poolSelect" onchange="onPoolChange()"></select>
-      <label for="countSelect">Počet:</label>
+    <div class="filter-row">
+      <span class="filter-label">Rozsah</span>
+      <div id="scopeChips" class="filter-chips"></div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Typ</span>
+      <div id="typeChips" class="chips"></div>
+    </div>
+    <div class="filter-row" id="srcRow">
+      <span class="filter-label">Zdroj</span>
+      <div id="srcChips" class="chips"></div>
+    </div>
+    <div class="filter-row">
+      <label class="filter-label" for="countSelect">Počet</label>
       <select id="countSelect" onchange="onPoolChange()">
         <option value="10">10</option>
         <option value="20">20</option>
@@ -34,7 +44,7 @@
     </div>
     <p class="pool-info" id="poolInfo"></p>
 
-    <button class="btn-learn" onclick="showLearn()">📘 Učenie na zápočet – ťahák a nástroje (T1–T4)</button>
+    <button class="btn-learn" onclick="showLearn()">📘 Učenie – ťahák, nástroje a ⚡ bleskovky</button>
 
     <div class="action-row primary-actions">
       <button class="btn-primary" onclick="startTest()">🎯 Spustiť test</button>
@@ -320,6 +330,7 @@
 <script src="data/questions.js"></script>
 <script src="data/copymaster.js"></script>
 <script src="data/unix1.js"></script>
+<script src="data/ipcprax.js"></script>
 <script src="js/script.js"></script>
 <script src="js/learn.js"></script>
 <script src="js/blesk.js"></script>

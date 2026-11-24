@@ -129,6 +129,29 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--prim
 
 .pool-info { margin: 10px 0 18px; color: var(--muted); font-size: 0.9rem; }
 
+/* ===== FILTRE (výber otázok) ===== */
+.filter-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+.filter-label { flex: 0 0 64px; padding-top: 8px; color: var(--muted); font-size: 0.85rem; }
+.filter-chips { flex: 1; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.chips { flex: 1; display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  flex: 0 0 auto; padding: 8px 12px; border-radius: 999px; font-size: 0.88rem;
+  background: transparent; color: var(--text); border: 1px solid var(--border); min-height: 36px;
+}
+.chip:hover { border-color: var(--primary); opacity: 1; }
+.chip.active { background: var(--primary); border-color: var(--primary); color: white; font-weight: 600; }
+.chip-ai.active { background: #a855f7; border-color: #a855f7; }
+.chip-n { opacity: .65; font-size: 0.8em; margin-left: 2px; }
+.chips-small .chip { padding: 6px 10px; font-size: 0.82rem; min-height: 32px; }
+#srcRow.disabled .chips { opacity: .35; pointer-events: none; }
+.filter-row #countSelect { margin-top: 2px; }
+.tag-out { background: rgba(148, 163, 184, 0.15); border-color: var(--muted); }
+
+@media (max-width: 600px) {
+  .filter-row { flex-direction: column; gap: 4px; }
+  .filter-label { flex: none; padding-top: 0; }
+}
+
 /* ===== TEST ===== */
 .test-header { justify-content: space-between; }
 .timer { font-weight: 600; }
