@@ -13,7 +13,7 @@ const store = window.api || {
 // =======================
 // STATE
 // =======================
-const allQuestions = [...(window.QUESTIONS || []), ...(window.COPYMASTER || [])];
+const allQuestions = [...(window.QUESTIONS || []), ...(window.COPYMASTER || []), ...(window.UNIX1 || [])];
 const byId = new Map(allQuestions.map(q => [q.id, q]));
 
 let history = [];
@@ -140,7 +140,7 @@ function allPretests() {
 
 // Praktické úlohy: výpočty a ukážky kódu (lseek, read/write fragmenty, chmod, umask, výpis ls…)
 function isPractical(q) {
-  if (q.topic === 'copymaster') return false;
+  if (isAI(q)) return false;
   const t = q.q;
   return /Znaky:|\$ls|fragment|umask\(\d|chmod\(["“”']|'(read|write|lseek)\(|súboru je \d+ bajtov|práva na hodnotu [-d][-rwx]{9}|Potrebujete zrealizovať program/.test(t);
 }
@@ -149,7 +149,13 @@ const inPretest = (q) => (q.pretests || []).length > 0;
 // 1. zápočet (6. týždeň) pokrýva len pretesty T1–T4
 const ZAPOCET_PRETESTS = ['T1', 'T2', 'T3', 'T4'];
 const inZapocet = (q) => (q.pretests || []).some(p => ZAPOCET_PRETESTS.includes(p.split(' ')[0]));
+// 2. zápočet: IPC – pretesty T5–T8 (rúry a signály, zdieľaná pamäť, semafory, sokety) + zadanie Unix1
+const ZAPOCET2_PRETESTS = ['T5', 'T6', 'T7', 'T8'];
+const inZapocet2 = (q) => (q.pretests || []).some(p => ZAPOCET2_PRETESTS.includes(p.split(' ')[0]));
 const isCopymaster = (q) => q.topic === 'copymaster';
+const isUnix1 = (q) => q.topic === 'unix1';
+// 🤖 AI generované (Claude podľa zadaní) – nie sú z pretestov ani z gencisearch
+function isAI(q) { return isCopymaster(q) || isUnix1(q); }
 
 function buildPoolSelect() {
   const sel = $('poolSelect');
@@ -168,6 +174,14 @@ function buildPoolSelect() {
     html += `</optgroup><optgroup label="🤖 Copymaster (zadanie 1) – AI generované otázky, neoficiálne">`;
     html += `<option value="cm">🤖 Copymaster – všetko, AI generované (${ncm})</option>`;
     html += `<option value="cm-code">🤖 Copymaster – fragment kódu → prepínač, AI generované (${ncmCode})</option>`;
+    const nz2 = allQuestions.filter(inZapocet2).length;
+    const nu = allQuestions.filter(isUnix1).length;
+    const nuCode = allQuestions.filter(q => isUnix1(q) && q.kind === 'code').length;
+    html += `</optgroup><optgroup label="🎓 Zápočet 2 (IPC) – pretesty T5–T8 + zadanie Unix1">`;
+    html += `<option value="z2">Zápočet 2 – pretesty T5–T8 + 🤖 AI Unix1 (${nz2} + ${nu})</option>`;
+    html += `<option value="z2-pre">Zápočet 2 – len pretesty T5–T8 (${nz2})</option>`;
+    html += `<option value="u1">🤖 Zadanie Unix1 – všetko, AI generované (${nu})</option>`;
+    html += `<option value="u1-code">🤖 Zadanie Unix1 – fragment kódu → proces, AI generované (${nuCode})</option>`;
     html += `</optgroup><optgroup label="Pretesty">`;
     html += `<option value="all-pretests">Všetky pretesty – ${pretests.map(p => p.split(' ')[0]).join(', ')} (${n})</option>`;
     pretests.forEach(p => {
@@ -177,7 +191,7 @@ function buildPoolSelect() {
     html += `</optgroup>`;
     const allPrac = allQuestions.filter(isPractical).length;
     html += `<option value="practical-all">Tréning – všetky praktické varianty, aj mimo pretestov (${allPrac})</option>`;
-    const none = allQuestions.filter(q => !inPretest(q) && !isCopymaster(q)).length;
+    const none = allQuestions.filter(q => !inPretest(q) && !isAI(q)).length;
     html += `<option value="none">Neboli v žiadnom preteste (${none})</option>`;
   }
   sel.innerHTML = html;
@@ -191,7 +205,11 @@ function currentPool() {
   if (v === 'all-pretests') return allQuestions.filter(inPretest);
   if (v === 'practical') return allQuestions.filter(q => (inZapocet(q) && isPractical(q)) || isCopymaster(q));
   if (v === 'practical-all') return allQuestions.filter(isPractical);
-  if (v === 'none') return allQuestions.filter(q => !inPretest(q) && !isCopymaster(q));
+  if (v === 'none') return allQuestions.filter(q => !inPretest(q) && !isAI(q));
+  if (v === 'z2') return allQuestions.filter(q => inZapocet2(q) || isUnix1(q));
+  if (v === 'z2-pre') return allQuestions.filter(inZapocet2);
+  if (v === 'u1') return allQuestions.filter(isUnix1);
+  if (v === 'u1-code') return allQuestions.filter(q => isUnix1(q) && q.kind === 'code');
   if (v === 'cm') return allQuestions.filter(isCopymaster);
   if (v === 'cm-code') return allQuestions.filter(q => isCopymaster(q) && q.kind === 'code');
   if (v === 'practical-only') return allQuestions.filter(q => inZapocet(q) && isPractical(q));
@@ -208,8 +226,9 @@ function onPoolChange() {
   store.saveJSON('settings.json', settings);
   const pool = currentPool();
   const pretests = allPretests();
-  const ai = pool.filter(isCopymaster).length;
-  const aiNote = ai ? ` 🤖 ${ai === pool.length ? 'Všetky sú' : ai + ' z nich je'} AI generované (copymaster, neoficiálne).` : '';
+  const ai = pool.filter(isAI).length;
+  const aiFrom = [pool.some(isCopymaster) && 'copymaster', pool.some(isUnix1) && 'Unix1'].filter(Boolean).join(', ');
+  const aiNote = ai ? ` 🤖 ${ai === pool.length ? 'Všetky sú' : ai + ' z nich je'} AI generované (${aiFrom}, neoficiálne).` : '';
   $('poolInfo').innerText = pretests.length
     ? `V tomto výbere je ${pool.length} otázok.${aiNote} · T1–T4 = pretesty pred cvičením v 2.–5. týždni · zápočet bol v 6. týždni (z T1–T4) · T5 = rúry a signály (7. týždeň) · T6 = zdieľaná pamäť (8. týždeň) · T7 = semafory (9. týždeň) · T8 = sokety (10. týždeň)`
     : 'Zatiaľ nie sú označené žiadne pretesty – test ide zo všetkých otázok.';
@@ -218,6 +237,7 @@ function onPoolChange() {
 function tagsHtml(q) {
   const tags = (q.pretests || []).map(p => `<span class="tag">${esc(p)}</span>`);
   if (isCopymaster(q)) tags.push('<span class="tag tag-ai" title="Otázku vytvorila AI (Claude) podľa textu zadania copymaster – nie je z pretestu ani z gencisearch">🤖 AI generovaná · Copymaster – neoficiálna</span>');
+  if (isUnix1(q)) tags.push('<span class="tag tag-ai" title="Otázku vytvorila AI (Claude) podľa textu zadania Unix1 – nie je z pretestu ani z gencisearch">🤖 AI generovaná · Zadanie Unix1 (IPC) – neoficiálna</span>');
   return tags.join('');
 }
 

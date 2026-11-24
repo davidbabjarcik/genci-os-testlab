@@ -105,6 +105,15 @@ Režimy zápočtu berú len pretesty **T1–T4** (zoznam `ZAPOCET_PRETESTS` v `p
 Pri prepínačoch záleží na veľkosti písmen (`-d` ≠ `-D`, `-s` ≠ `-S`). Uznáva sa `-c`, `c` aj `--create`.
 Fragmenty kódu sú ilustračné – typické riešenie daného prepínača, nie jediné správne.
 
+## 🎓 Zápočet 2 (IPC) a 🤖 zadanie Unix1 – AI generované otázky
+
+Výber **Zápočet 2** = pretesty T5–T8 (rúry a signály, zdieľaná pamäť, semafory, sokety) + otázky k zadaniu Unix1.
+
+`public/data/unix1.js` – 97 **AI generovaných otázok** k zadaniu Unix1 (vytvoril ich Claude podľa textu zadania, nie sú oficiálne), s fialovým štítkom „🤖 AI generovaná · Zadanie Unix1“:
+- zo zadania: procesy, súbory, rúry R1/R2, zdieľané pamäte SM1/SM2, semafory S1/S2 (kto sa riadi ktorým, inicializácia, farby), makefile, odovzdanie
+- použitie služieb jadra v zadaní: pipe, fork/execve, signal/kill/pause, shmget/shmat/shmdt/shmctl, semget/semctl/semop, socket/bind/listen/accept/connect, sendto/recvfrom, htons
+- fragment kódu → ktorému procesu patrí (P1, T, D, Serv2, Zadanie) a doplňovačky do fragmentov
+
 ---
 
 ## ⚠️ Upozornenie
