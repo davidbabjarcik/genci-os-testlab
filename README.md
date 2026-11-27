@@ -27,6 +27,8 @@ Otázky a odpovede pochádzajú z **[https://gencisearch.surge.sh/](https://genc
   - **Rozsah** – Všetko, 🎓 Zápočet 1 (T1–T4 + copymaster), 🎓 Zápočet 2 (T5–T8 + Unix1), jednotlivé T1–T8, 🤖 Copymaster, 🤖 Unix1
   - **Typ** – všetky / 🧮 len praktické / 📖 len teória
   - **Zdroj** – 📝 z pretestov, 📚 mimo pretestov (z gencisearch, k téme ich zaradila 🤖 AI podľa najpodobnejšej otázky z pretestov), 🤖 vytvorené AI
+- ✅ **Viem** – v hľadaní si pri otázke zaklikneš, že ju vieš (spoločné s kartičkami v bleskovkách); hľadanie sa dá filtrovať Všetky / Ešte neviem / Viem
+  a na úvodnej obrazovke môžeš z testov **vynechať, čo už vieš**
 - 🧮 **Praktické IPC úlohy** (🤖 AI, 39): rúry, fork, signály, zdieľaná pamäť, semafory, sokety – odpovede overené spustením v Linuxe
 - 📘 **Učenie na zápočet** – ťahák služieb z T1–T4 (hlavičky, parametre, návratové hodnoty tak, ako ich chcú pretesty) s precvičovaním po témach
   a nástroje: práva rwx ↔ osmičkovo, umask + open, lseek kalkulačka, simulátor súboru (open/read/write/lseek krok po kroku), rozklad výpisu `ls -lin`

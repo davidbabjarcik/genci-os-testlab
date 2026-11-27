@@ -147,6 +147,18 @@ input[type="text"]:focus, select:focus { outline: none; border-color: var(--prim
 .filter-row #countSelect { margin-top: 2px; }
 .tag-out { background: rgba(148, 163, 184, 0.15); border-color: var(--muted); }
 
+/* ===== VIEM ===== */
+.card-actions { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+.known-btn {
+  flex: 0 0 auto; padding: 6px 12px; min-height: 36px; border-radius: 999px; font-size: 0.85rem;
+  background: transparent; color: var(--muted); border: 1px solid var(--border); white-space: nowrap;
+}
+.known-btn.on { background: rgba(22, 163, 74, 0.15); color: var(--secondary); border-color: var(--secondary); font-weight: 600; }
+.review-card.is-known { border-left-color: var(--secondary); opacity: .75; }
+.review-card.is-known:hover { opacity: 1; }
+.search-known { margin-top: 12px; }
+.known-note { align-self: center; font-size: 0.85rem; }
+
 @media (max-width: 600px) {
   .filter-row { flex-direction: column; gap: 4px; }
   .filter-label { flex: none; padding-top: 0; }

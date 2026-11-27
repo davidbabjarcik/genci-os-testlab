@@ -208,11 +208,20 @@ function poolFilter() {
     scope: scopes.find(s => s.id === f.scope) || SCOPES[1],
     type: TYPES.find(t => t.id === f.type) || TYPES[0],
     src: Array.isArray(f.src) && f.src.length ? f.src : ['pre', 'out', 'ai'],
+    hideKnown: !!f.hideKnown,
   };
 }
 
-function filterPool(scope, type, src) {
-  return allQuestions.filter(q => scope.test(q) && type.test(q) && (scope.ai || src.includes(sourceOf(q))));
+// ignoreKnown: hľadanie má vlastný filter Viem/Neviem
+function filterPool(scope, type, src, ignoreKnown = false) {
+  const hide = !ignoreKnown && poolFilter().hideKnown;
+  return allQuestions.filter(q => scope.test(q) && type.test(q) && (scope.ai || src.includes(sourceOf(q))) && !(hide && isKnown(q.id)));
+}
+
+function toggleHideKnown() {
+  const f = poolFilter();
+  settings.filter = { scope: f.scope.id, type: f.type.id, src: f.src, hideKnown: !f.hideKnown };
+  onPoolChange();
 }
 
 function currentPool() {
@@ -245,12 +254,16 @@ function buildPoolSelect() {
     return chip('src', s, f.src.includes(s.id), n, `toggleSource('${s.id}')`);
   }).join('');
   $('srcRow').classList.toggle('disabled', !!f.scope.ai);
+  const all = filterPool(f.scope, f.type, f.src, true);
+  const known = all.filter(q => isKnown(q.id)).length;
+  $('knownChips').innerHTML = `<button type="button" class="chip${f.hideKnown ? ' active' : ''}" title="Otázky označené ✅ Viem (v hľadaní alebo v kartičkách) sa do testu nedostanú" onclick="toggleHideKnown()">🙈 Vynechať, čo už viem <span class="chip-n">${known}</span></button>` +
+    `<span class="muted known-note">vieš ${known} z ${all.length}</span>`;
   if (settings.count) $('countSelect').value = settings.count;
 }
 
 function setFilter(key, value) {
   const f = poolFilter();
-  settings.filter = { scope: f.scope.id, type: f.type.id, src: f.src, [key]: value };
+  settings.filter = { scope: f.scope.id, type: f.type.id, src: f.src, hideKnown: f.hideKnown, [key]: value };
   onPoolChange();
 }
 
@@ -258,7 +271,7 @@ function toggleSource(id) {
   const src = poolFilter().src;
   const next = src.includes(id) ? src.filter(s => s !== id) : [...src, id];
   if (!next.length) return toast('Aspoň jeden zdroj musí ostať zapnutý');
-  settings.filter = { scope: poolFilter().scope.id, type: poolFilter().type.id, src: next };
+  settings.filter = { scope: poolFilter().scope.id, type: poolFilter().type.id, src: next, hideKnown: poolFilter().hideKnown };
   onPoolChange();
 }
 
@@ -299,6 +312,7 @@ function showScreen(name) {
 }
 
 function goHome() {
+  onPoolChange();   // počty „viem“ sa mohli zmeniť v hľadaní alebo v kartičkách
   updateCounts();
   renderHistory();
   showScreen('home');
@@ -650,12 +664,41 @@ function openReview(test) {
 // =======================
 // LISTS (search / wrong / favorites)
 // =======================
+// „Viem“ – spoločné pre hľadanie, testy aj kartičky v bleskovkách (settings.known)
+const isKnown = (id) => !!(settings.known && settings.known[id]);
+
+function toggleKnown(id) {
+  settings.known = settings.known || {};
+  if (settings.known[id]) delete settings.known[id];
+  else settings.known[id] = 1;
+  store.saveJSON('settings.json', settings);
+  return isKnown(id);
+}
+
+function knownBtn(q) {
+  const k = isKnown(q.id);
+  return `<button class="known-btn${k ? ' on' : ''}" title="Označ, či túto otázku už vieš" onclick="onKnownClick(this, ${q.id})">${k ? '✅ Viem' : '☐ Viem'}</button>`;
+}
+
+function onKnownClick(btn, id) {
+  const k = toggleKnown(id);
+  btn.classList.toggle('on', k);
+  btn.innerText = k ? '✅ Viem' : '☐ Viem';
+  btn.closest('.review-card')?.classList.toggle('is-known', k);
+  // v hľadaní s filtrom Viem/Neviem otázka z výsledkov zmizne až pri ďalšom hľadaní – nech neskáče pod rukou
+  if (document.querySelector('[data-screen="search"]').style.display !== 'none') renderSearchInfo();
+  onPoolChange();
+}
+
 function questionCard(q, extraClass, buttons) {
   return `
-    <div class="card review-card ${extraClass}">
+    <div class="card review-card ${extraClass}${isKnown(q.id) ? ' is-known' : ''}">
       <div class="question-row">
         <strong>${esc(q.q)}</strong>
-        <button class="fav-btn" onclick="toggleFavorite(${q.id}); this.innerText = favoriteIds.includes(${q.id}) ? '⭐' : '☆'">${favoriteIds.includes(q.id) ? '⭐' : '☆'}</button>
+        <div class="card-actions">
+          ${knownBtn(q)}
+          <button class="fav-btn" onclick="toggleFavorite(${q.id}); this.innerText = favoriteIds.includes(${q.id}) ? '⭐' : '☆'">${favoriteIds.includes(q.id) ? '⭐' : '☆'}</button>
+        </div>
       </div>
       <div class="tags">${tagsHtml(q)}</div>
       <div class="review-answer correct">${esc(q.answer)}${q.alt && q.alt.length ? ` <span class="muted">/ ${q.alt.map(esc).join(' / ')}</span>` : ''}</div>
@@ -669,16 +712,45 @@ function showSearch() {
   $('searchInput').focus();
 }
 
-function renderSearch() {
+const SEARCH_KNOWN = [
+  { id: 'all', label: 'Všetky' },
+  { id: 'no', label: '☐ Ešte neviem' },
+  { id: 'yes', label: '✅ Viem' },
+];
+
+// v hľadaní sa ignoruje „vynechať, čo viem“ z úvodnej obrazovky – tu sa to filtruje tlačidlami
+function searchHits() {
   const raw = $('searchInput').value.trim();
   const needle = stripDiacritics(raw.toLowerCase());
-  const pool = currentPool();
-  const hits = needle
+  const f = poolFilter();
+  const pool = filterPool(f.scope, f.type, f.src, true);
+  const textHits = needle
     ? pool.filter(q => stripDiacritics((q.q + ' ' + q.answer + ' ' + (q.alt || []).join(' ')).toLowerCase()).includes(needle))
     : pool;
-  const shown = hits.slice(0, 100);
-  $('searchInfo').innerText = `${hits.length} výsledkov${hits.length > shown.length ? ' (zobrazených prvých 100)' : ''} · výber: ${describePool()}`;
-  $('searchResults').innerHTML = shown.map(q => questionCard(q, '')).join('');
+  return { textHits, mode: settings.searchKnown || 'all' };
+}
+
+function renderSearchInfo() {
+  const { textHits, mode } = searchHits();
+  const known = textHits.filter(q => isKnown(q.id)).length;
+  $('searchKnownChips').innerHTML = SEARCH_KNOWN.map(k => {
+    const n = k.id === 'all' ? textHits.length : k.id === 'yes' ? known : textHits.length - known;
+    return `<button type="button" class="chip${k.id === mode ? ' active' : ''}" onclick="setSearchKnown('${k.id}')">${k.label} <span class="chip-n">${n}</span></button>`;
+  }).join('');
+  const hits = textHits.filter(q => mode === 'all' || (mode === 'yes') === isKnown(q.id));
+  $('searchInfo').innerText = `${hits.length} výsledkov${hits.length > 100 ? ' (zobrazených prvých 100)' : ''} · vieš ${known} z ${textHits.length} · výber: ${describePool()}`;
+  return hits;
+}
+
+function renderSearch() {
+  const hits = renderSearchInfo();
+  $('searchResults').innerHTML = hits.slice(0, 100).map(q => questionCard(q, '')).join('');
+}
+
+function setSearchKnown(mode) {
+  settings.searchKnown = mode;
+  store.saveJSON('settings.json', settings);
+  renderSearch();
 }
 
 function showWrong() {

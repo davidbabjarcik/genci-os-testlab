@@ -34,6 +34,10 @@
       <div id="srcChips" class="chips"></div>
     </div>
     <div class="filter-row">
+      <span class="filter-label">Viem</span>
+      <div id="knownChips" class="chips"></div>
+    </div>
+    <div class="filter-row">
       <label class="filter-label" for="countSelect">Počet</label>
       <select id="countSelect" onchange="onPoolChange()">
         <option value="10">10</option>
@@ -138,6 +142,7 @@
   </header>
   <div class="card">
     <input id="searchInput" type="text" autocomplete="off" placeholder="Napíš časť otázky alebo odpovede (napr. open, errno, fork)" oninput="renderSearch()">
+    <div id="searchKnownChips" class="chips search-known"></div>
     <p id="searchInfo" class="muted"></p>
   </div>
   <div id="searchResults"></div>
